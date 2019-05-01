@@ -1,13 +1,12 @@
+import ActiveLink from '../components/ActiveLink';
 import React, {Component} from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
 
 Router.onRouteChangeStart = () => {
-  console.log('started');
   NProgress.start();
 };
-
 Router.onRouteChangeComplete = () => {
   NProgress.done();
 };
@@ -19,19 +18,17 @@ Router.onRouteChangeError = () => {
 const Header = () => (
   <header role="banner">
     <div className="header-region-top">
-
-
-      <nav id="block-system-user-menu"
-           className="block block-system block-menu " role="navigation">
-
-
+      <nav id="block-system-user-menu" className="block block-system block-menu " role="navigation">
         <ul className="menu">
-          <li className="first leaf active-trail"><a href="/latest-quotes"
-                                                     title=""
-                                                     className="active-trail active">Viimati
-            lisatud</a></li>
-          <li className="leaf top-100"><a
-              href="/tsitaadid/top-100-tsitaadid" title="">TOP 100</a>
+          <li className="first leaf active-trail">
+            <ActiveLink href="/latest-quotes">
+              <a>Viimati lisatud</a>
+            </ActiveLink>
+          </li>
+          <li className="leaf top-100">
+            <ActiveLink href="/tsitaadid/top-100-tsitaadid">
+              <a>TOP 100</a>
+            </ActiveLink>
           </li>
           <li className="last leaf login"><a
               href="/user?current=latest-quotes" title="" rel="nofollow">Logi
