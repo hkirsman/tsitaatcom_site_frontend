@@ -1,0 +1,40 @@
+
+
+
+@if $layout == global {
+  .page-user {
+    &.not-logged-in {
+      .tabs {
+        display: none;
+      }
+    }
+
+    .main-content {
+      form {
+        margin: 0 auto;
+        width: 287px;
+
+
+
+        small {
+          display: none;
+        }
+
+        > div {
+          margin-bottom: 10px;
+        }
+
+        .form-actions {
+          border: 0;
+          margin-top: 15px;
+          padding: 0;
+
+          a {
+            display: inline-block;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+
+
+@if $layout == global {
+  .imagefield-crop-preview img,
+  .imagefield-crop-cropbox img {
+    max-width: none;
+  }
+
+  .jcrop-preview-wrapper {
+    position: relative;
+
+    &:before {
+      @extend %author-mask-white;
+      background-image: url(../img/sprite_source/author-mask-white.png);
+    }
+  }
+}

@@ -1,0 +1,89 @@
+@import 'bourbon/bourbon';
+@import 'variables.scss';
+@import '_mixin.scss';
+
+
+
+// Use placeholder clearfix instead because .clearfix class is included
+// from modules/system/system.base.css
+.clearfix {
+  @include clearfix;
+}
+
+
+
+%list-reset {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+
+
+// Aligns content side by side. The other element needs to have float set.
+%sidefloat {
+  display:table-cell;
+  vertical-align:top;
+  width:10000px;
+  //=display:block;  // IE7 and below
+  //=zoom:1;         // IE7 and below
+  //=width:auto;     // IE7 and below
+}
+
+
+
+%table-reset {
+  margin: 0 0 18px;
+  width: 100%;
+
+  tr {
+    background: transparent;
+    padding: 0;
+  }
+
+  tbody,
+  th,
+  tr {
+    border: 0;
+  }
+
+  th,
+  td {
+    padding: 5px 10px;
+    vertical-align: top;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  img {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  // Should be relevant only in .node.
+  .node & {
+    &[border='0'],
+    &[border='0'] td,
+    &[border='0'] tbody {
+      border: 0 !important;
+    }
+  }
+}
+
+%author-mask-white {
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}

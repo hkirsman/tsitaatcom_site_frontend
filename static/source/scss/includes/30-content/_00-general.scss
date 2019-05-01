@@ -1,0 +1,32 @@
+
+
+
+@if $layout == global {
+  #main-content {
+    margin: 0 auto;
+    padding: 2em 0 3em;
+
+    .has-quotes & {
+      padding-bottom: 0;
+    }
+
+    .front & {
+      padding-bottom: 10em;
+      padding-top: 0;
+      // Make the frontpage boy (bottom below) be behind content.
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .node-article {
+    ul {
+      list-style-type: disc;
+      margin: 0 0 10px 30px;
+    }
+
+    li {
+      list-style: inherit;
+    }
+  }
+}

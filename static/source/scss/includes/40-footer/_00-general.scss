@@ -1,0 +1,62 @@
+
+
+
+@if $layout == global {
+  .footer-region {
+    padding: 32px 0;
+    position: relative;
+    max-width: $width-normal-content;
+
+    &:before {
+      @include sprite($footer-logo);
+      content: "";
+      display: block;
+      left: -125px;
+      position: absolute;
+      top: 37px;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    .block-menu-block {
+      float: left;
+      font-family: $font_title;
+      padding-right: 65px;
+
+      h2 {
+        color: #fff;
+        font-size: 24px;
+        margin: 0 0 12px 0;
+      }
+
+      li {
+        padding: 2px 0;
+      }
+
+      a {
+        color: #daefbc;
+        font-size: 15px;
+      }
+    }
+
+    .fb_iframe_widget {
+      background: #f8fbfc;
+      border-radius: 5px;
+      display: none;
+      margin-top: 40px;
+      padding-bottom: 5px;
+    }
+  }
+
+
+
+  @media (min-width: 500px) {
+    .footer-region {
+      .fb_iframe_widget {
+        display: block;
+      }
+    }
+  }
+}

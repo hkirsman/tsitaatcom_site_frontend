@@ -1,0 +1,44 @@
+{
+  "root": "./static",
+  "assets": {
+    "base": "static/source/",
+    "dest": "static/public/"
+  },
+  "versioning": {
+    "files": [
+      "./package.json",
+      "./bower.json"
+    ]
+  },
+  "scripts": {
+    "base"  : "static/source/js/",
+    "files" : [
+      "static/source/js/**/*.js"
+    ],
+    "dest"  : "static/public/js/"
+  },
+  "components": {
+    "base": "static/source/components/"
+  },
+  "scss": {
+    "base" : "static/source/scss/",
+    "files": [
+      "static/source/scss/**/*.scss"
+    ],
+    "dest" : "static/public/css/"
+  },
+  "fonts": {
+    "base" : "static/source/fonts/",
+    "files": [
+      "static/source/fonts/**/*"
+    ],
+    "dest" : "static/public/fonts/"
+  },
+  "images": {
+    "base" : "static/source/img/",
+    "files": [
+      "static/source/img/**/*"
+    ],
+    "dest" : "static/public/img/"
+  }
+}

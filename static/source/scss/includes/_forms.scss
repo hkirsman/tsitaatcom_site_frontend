@@ -1,0 +1,246 @@
+//
+// Form overrides.
+//
+// I'll be using px units here for more precise styling.
+//
+
+
+@if $layout == global {
+  form {
+    &,
+    textarea {
+      font-family: $font_title;
+    }
+
+    .chosen-container-single .chosen-single,
+    .chosen-container-multi .chosen-choices li.search-choice,
+    // Remove bold from autocomplete.
+    .chosen-container-active .chosen-choices li.search-field input[type="text"],
+    label,
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      @include fontSize(15px);
+      color: #696269;
+      font-family: $font_title;
+    }
+
+    label {
+      color: #829567;
+      display: block;
+      font-weight: normal;
+      padding: 0 0 5px 0;
+      line-height: 110%;
+
+      &.option {
+        display: inline;
+        vertical-align: middle;
+      }
+    }
+
+    small {
+      margin-top: -4px;
+      padding: 0 0 5px 0;
+    }
+
+    textarea {
+      font-family: $font_title_italic;
+      height: 10.5em;
+      width: 72%;
+    }
+
+    small {
+      @include fontSize(13px);
+    }
+
+    label,
+    .chosen-container-single .chosen-single,
+    .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+      font-family: $font_title_semibold;
+    }
+
+    .form-wrapper {
+      border-top: 1px solid #ddeeef;
+      padding: 12px 0 18px 0;
+
+      &.form-actions {
+        margin-top: 25px;
+        padding-top: 25px;
+      }
+    }
+
+    .chosen-container-multi .chosen-choices li.search-field input[type="text"],
+    .chosen-container-single .chosen-single,
+    .chosen-container-multi .chosen-choices,
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      line-height: 22px;
+    }
+
+    .chosen-container-single .chosen-single,
+    .chosen-container-multi .chosen-choices,
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      background: #fff;
+      border-radius: 6px;
+      border: 1px solid #d9d7d9;
+      -webkit-box-shadow: inset 0 0 9px 0 rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: inset 0 0 9px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 0 9px 0 rgba(0, 0, 0, 0.1);
+      padding: 9px 13px;
+    }
+
+    .chosen-container-single .chosen-single,
+    input[type="text"],
+    input[type="password"] {
+      height: auto;
+    }
+
+    .chosen-container-active .chosen-single,
+    .chosen-container-active .chosen-choices,
+    input:focus,
+    button:focus,
+    select:focus,
+    textarea:focus {
+      -webkit-box-shadow: #829567 0 0 5px 0;
+      -moz-box-shadow: #829567 0 0 5px 0;
+      box-shadow: #829567 0 0 5px 0;
+      border-color: #829567;
+    }
+
+    // Hide tabledrag.
+    .tabledrag-toggle-weight-wrapper,
+    .field-multiple-drag {
+      display: none;
+    }
+
+    // All styles needed to have same width on Chosen elements.
+    select,
+    select[multiple] {
+      border: 0;
+      max-width: 73%;
+      padding: 0;
+      width: 73%;
+    }
+
+    .chosen-container-single .chosen-single {
+      div {
+        width: 25px;
+
+        b {
+          background-image: url(../img/10-global/chosen-sprite.png);
+          background-position: 0px 50%;
+        }
+      }
+    }
+
+    .chosen-container-active.chosen-with-drop .chosen-single div b {
+      background-position: -25px 50%;
+    }
+
+    .chosen-container-multi .chosen-choices {
+      background: url(../img/10-global/chosen-container-multi.png) no-repeat 100% 50%;
+
+      li.search-choice {
+        background: #adc58c;
+        border-radius: 3px;
+        border: 0;
+        box-shadow: none;
+        color: #fff;
+        font-family: $font_title_italic;
+        margin: 0 0 0 5px;
+        padding: 0px 18px 0px 9px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        .search-choice-close {
+          background-image: url(../img/10-global/chosen-sprite.png);
+          background-position: -60px 1px;
+          top: 5px;
+
+          &:hover {
+            background-position: -60px -10px;
+          }
+        }
+      }
+
+      li.search-field input[type="text"] {
+        color: #696269;
+        font-size: 15px;
+        margin: 0;
+      }
+    }
+
+    .chosen-container-active .chosen-choices li.search-field input[type="text"] {
+      font-family: $font_title_italic;
+    }
+
+    .vertical-tabs {
+      $vertical_tabs_padding: 1.2em;
+      border-radius: 0 6px 6px 6px;
+
+      ul.vertical-tabs-list {
+        border-radius:  6px 0 0 0;
+
+        li {
+          border-radius:  6px 0 0 6px;
+
+          a {
+            padding: $vertical_tabs_padding 0 $vertical_tabs_padding $vertical_tabs_padding;
+          }
+        }
+
+        .summary {
+          display: none;
+        }
+      }
+
+      fieldset.vertical-tabs-pane {
+        padding: $vertical_tabs_padding;
+      }
+    }
+
+    button,
+    a.button,
+    input[type="reset"],
+    input[type="submit"],
+    input[type="button"] {
+      @include fontSize(16px);
+      -webkit-appearance: none;
+      -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+      -ms-border-radius: 6px;
+      -o-border-radius: 6px;
+      border-radius: 6px;
+      -webkit-background-clip: padding;
+      -moz-background-clip: padding;
+      background: #c3d5ab; /* Old browsers */
+      background: -moz-linear-gradient(top,  #c3d5ab 0%, #98b66e 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c3d5ab), color-stop(100%,#98b66e)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  #c3d5ab 0%,#98b66e 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  #c3d5ab 0%,#98b66e 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  #c3d5ab 0%,#98b66e 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  #c3d5ab 0%,#98b66e 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3d5ab', endColorstr='#98b66e',GradientType=0 ); /* IE6-9 */
+      border: 1px solid #829567;
+      color: #fff;
+      font-family: $font_title_bold;
+      font-weight: normal;
+      margin-right: 10px;
+      padding: 0.5em;
+      text-shadow: #000 0 -1px 0 rgba(0, 0, 0, 0.25);
+      text-transform: uppercase;
+    }
+  }
+
+  .preview {
+    h3:first-child,
+    .node-teaser {
+      display: none;
+    }
+  }
+}

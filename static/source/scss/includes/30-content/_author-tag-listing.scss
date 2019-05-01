@@ -1,0 +1,57 @@
+
+
+
+@if $layout == global {
+  .page-tsitaadid-autorid {
+    .normal-content {
+      @extend .normal-content-wide;
+    }
+  }
+
+  .author-tag-listing {
+    @include fontSize(13px);
+    font-family: $font_title;
+    line-height: (16px / 13px) * 100%;
+
+    .column {
+      float: left;
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+    .column-0 {
+      width: 36%;
+    }
+
+    .column-1 {
+      width: 26%;
+    }
+
+    .column-2 {
+      float: right;
+      max-width: 31%;
+      width: auto;
+    }
+
+    li {
+      padding: 1px 0 2px 0;
+    }
+
+    a {
+      display: block;
+      padding: 2px;
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        background-color: #ddeeef;
+      }
+    }
+  }
+
+  .author-tag-listing-inner {
+    @extend .clearfix;
+    margin-left: -1%;
+    margin-right: -1%;
+  }
+}

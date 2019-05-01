@@ -1,0 +1,37 @@
+
+
+
+@if $layout == global {
+  .main-content {
+    .google-cse {
+      .container-inline > div {
+        float: left;
+      }
+
+      #edit-submit {
+        float: left;
+        font-size: 14px;
+        margin-left: 5px;
+        margin-top: 19px;
+        padding: 4px 10px 1px 10px;
+      }
+    }
+
+    #google-cse-results-gadget {
+      display: none;
+    }
+
+    #cse {
+      clear: left;
+    }
+
+    .gs-result .gs-title,
+    .gs-result .gs-title * {
+      color: $color-link !important;
+    }
+
+    .gsc-control-cse {
+      padding: 0;
+    }
+  }
+}

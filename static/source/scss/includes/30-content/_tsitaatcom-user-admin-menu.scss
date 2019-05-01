@@ -1,0 +1,130 @@
+
+
+
+@if $layout == global {
+  .content-wrap {
+    // Apply width also to node-form as on some pages like diff the
+    // content-wrap is overwritten.
+    &,
+    .node-form {
+      margin: 0 auto;
+      max-width: $width-wide-content;
+    }
+
+    .has-quotes & {
+      max-width: none;
+    }
+
+    // Overwrite ".has-quotes &".
+    .page-node-revisions & {
+      max-width: $width-wide-content;
+    }
+  }
+
+  .page-node-edit.has-quotes .messages {
+    // display: none;
+  }
+
+  .has-tsitaatcom-user-admin-menu,
+  .page-user-quotes {
+    h1 {
+      display: block;
+    }
+  }
+
+  .has-tsitaatcom-user-admin-menu {
+    // @todo: should we remove tabs from page.tpl.php?
+    .tabs {
+      display: none;
+    }
+
+    #main-content {
+      max-width: none;
+    }
+
+    // Hide on node/*/revisions/view/*
+    .h1 {
+      display: none;
+    }
+
+    .diff-links ul {
+      display: none;
+    }
+  }
+
+  .block-tsitaatcom-user-admin-menu {
+    border-bottom: 1px solid #696269;
+    text-align: center;
+    margin-bottom: 70px;
+
+    &.subitems-are-active {
+      // margin-bottom: 150px;
+    }
+
+    > .menu {
+      display: inline-block;
+      position: relative;
+
+      a {
+        font-family: $font_title_bold;
+        text-transform: uppercase;
+
+        &.active,
+        &.active-trail {
+          color: #696269;
+        }
+      }
+
+      > li {
+        display: inline-block;
+        padding-left: 15px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        > a {
+          font-size: 15px;
+          display: block;
+          padding-bottom: 12px;
+          position: relative;
+
+          &.active,
+          &.active-trail {
+            &:before {
+              @include sprite($tsitaatcom-user-menu-active-item);
+              bottom: 0;
+              content: "";
+              display: block;
+              left: 50%;
+              margin-left: $tsitaatcom-user-menu-active-item-width / -2;
+              position: absolute;
+            }
+          }
+        }
+
+        .menu {
+          display: none;
+        }
+
+        &.active-trail > .menu {
+          bottom: -28px;
+          display: block;
+          left: 0;
+          position: absolute;
+          right: 0;
+          white-space: nowrap;
+
+          li {
+            display: inline-block;
+            padding-left: 13px;
+
+            &:first-child {
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

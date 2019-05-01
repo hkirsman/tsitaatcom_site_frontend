@@ -1,0 +1,338 @@
+
+
+
+%no-word-break {
+     -ms-word-break: normal;
+       word-break: normal;
+
+  -webkit-hyphens: manual;
+     -moz-hyphens: manual;
+          hyphens: manual;
+}
+
+
+
+@if $layout == global {
+  body {
+    background: #696269;
+  }
+
+  .page {
+    background: #fff;
+
+    .front & {
+      background: #ddeeef;
+    }
+  }
+
+  //=== HEADINGS (based on stylebook, @todo: what to set for globally and what to .node? ) ===//
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .h1 {
+    color: #000;
+    font-family: $font_title;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  h1,
+  .h1 {
+    @include fontSize(30px, 34px);
+    //line-height: (26px / 17px) * 100%;
+  }
+
+  .h1 .author_profession {
+    display: block;
+    @include fontSize(18px);
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .status-404 {
+    .h1 {
+      display: none;
+    }
+
+    h1 {
+      color: #d01601;
+      display: block;
+    }
+  }
+
+
+
+  //=== GLOBAL FONT SETTINGS ===//
+
+  body,
+  input,
+  textarea,
+  select,
+  button {
+    font-family: $font_default;
+  }
+
+  body,
+  input,
+  textarea,
+  select {
+    @include fontSize($text-size-default);
+    color: $color-text;
+    line-height: $line-height-default;
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  //=== LINKS ===//
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $color-link-hover;
+    }
+
+    .node & {
+      &:visited {
+        color: $color-link-visited;
+      }
+    }
+
+    h1 &,
+    h2 &,
+    h3 &,
+    h4 &,
+    h5 & {
+      color: inherit;
+      text-shadow: none;
+
+      &:hover,
+      &:focus {
+        color: $color-link;
+      }
+    }
+  }
+
+  sup {
+    vertical-align: super;
+  }
+
+  sub {
+    vertical-align: sub;
+  }
+
+  header {
+    background-color: $header-region-background-color;
+  }
+
+  .header-region-top {
+    @extend .clearfix;
+  }
+
+  .siteinfo,
+  .header-region,
+  .footer-region {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    width: auto; // IE8 fix.
+  }
+
+  .messages {
+    border-radius: 3px;
+
+    &.error {
+      border-color: tint(#ED541D, 40%);
+    }
+  }
+
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  .normal-content {
+    margin: 0 auto;
+    max-width: $width-normal-content;
+  }
+
+  .normal-content-wide {
+    margin: 0 auto;
+    max-width: $width-wide-content;
+  }
+
+  .normal-content,
+  .normal-content-wide {
+    .has-quotes & {
+      max-width: $width-normal-content;
+    }
+  }
+
+  #main-content {
+    margin: 0 auto;
+    max-width: $width-wide-content;
+
+    .has-quotes & {
+      max-width: none;
+    }
+  }
+
+
+  /**
+   * Hide elements from all users.
+   *
+   * Used for elements which should not be immediately displayed to any user. An
+   * example would be a collapsible fieldset that will be expanded with a click
+   * from a user. The effect of this class can be toggled with the jQuery show()
+   * and hide() functions.
+   */
+  .element-hidden {
+    display: none;
+  }
+
+  /**
+   * Hide elements visually, but keep them available for screen-readers.
+   *
+   * Used for information required for screen-reader users to understand and use
+   * the site where visual display is undesirable. Information provided in this
+   * manner should be kept concise, to avoid unnecessary burden on the user.
+   * "!important" is used to prevent unintentional overrides.
+   */
+  .element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    height: 1px;
+  }
+
+  /**
+   * The .element-focusable class extends the .element-invisible class to allow
+   * the element to be focusable when navigated to via the keyboard.
+   */
+  .element-invisible.element-focusable:active,
+  .element-invisible.element-focusable:focus {
+    position: static !important;
+    clip: auto;
+    overflow: visible;
+    height: auto;
+  }
+
+  // Probably temporary solution.
+  header {
+    position: relative;
+    min-height: 409px;
+
+    > div {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:before {
+      @include sprite($clouds);
+      content: "";
+      display: block;
+      left: -200px;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    &:after {
+      @include sprite($boy);
+      bottom: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+
+    .front & {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .front .page {
+    position: relative;
+
+    &:after {
+      @extend header:after;
+      display: block;
+    }
+  }
+
+
+
+  @media (max-width: $width-wide-content) {
+    #main-content {
+      .not-front & {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .has-quotes & {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    /*
+    .normal-content,
+    .normal-content-wide {
+      .has-quotes & {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }*/
+  }
+
+
+
+  @media (min-width: 600px) {
+    header {
+      &:before {
+        left: -100px;
+      }
+    }
+  }
+
+
+
+  @media (min-width: 900px) {
+    body {
+      overflow: auto;
+    }
+
+    header {
+      &:before {
+        left: 0;
+      }
+    }
+  }
+
+
+
+  @media (max-width: 1040px) {
+    header {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+

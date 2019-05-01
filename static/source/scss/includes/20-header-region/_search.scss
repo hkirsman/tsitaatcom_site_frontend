@@ -1,0 +1,90 @@
+
+
+
+@if $layout == global {
+  .block-search {
+    @extend .clearfix;
+    margin: 0 auto;
+    padding-top: 0;
+    width: 200px;
+
+    .google-cse > div {
+      float: left;
+    }
+
+    .form-wrapper.form-actions {
+      border: 0;
+      margin: 0;
+      padding: 0;
+    }
+
+    input[type="text"] {
+      background-position: 17px 50% !important;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      border-radius: 6px 0 0 6px;
+      border-right: 0 !important;
+      border: 1px solid #9db2b3 !important;
+      color: #696269;
+      font-family: $font_title_italic;
+      font-size: 20px;
+      height: 30px;
+      line-height: 30px;
+      margin: 0;
+      padding: 13px 18px 11px 18px !important;
+      width: 100px;
+    }
+
+    input[type="submit"] {
+      @include sprite($header-search-btn);
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      -ms-border-radius: 0;
+      -o-border-radius: 0;
+      border-radius: 0;
+      border: 0;
+      direction: ltr;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      text-indent: -10000px;
+    }
+  }
+
+
+
+  @media (min-width: 300px) {
+    .block-search {
+      width: 280px;
+
+      input[type="text"] {
+        width: 180px;
+      }
+    }
+  }
+
+
+
+  @media (min-width: 400px) {
+    .block-search {
+      width: 380px;
+
+      input[type="text"] {
+        width: 280px;
+      }
+    }
+  }
+
+
+
+  @media (min-width: 500px) {
+    .block-search {
+      width: 460px;
+
+      input[type="text"] {
+        width: 360px;
+      }
+    }
+  }
+}

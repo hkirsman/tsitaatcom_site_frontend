@@ -1,3 +1,6 @@
-# Advanced-React
+# Tsitaat.com Front React
 
-frontend
+## Todo
+
+1. Refactor styles and markup.
+

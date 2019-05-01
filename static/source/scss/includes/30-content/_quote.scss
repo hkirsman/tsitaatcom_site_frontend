@@ -1,0 +1,259 @@
+
+
+
+@if $layout == global {
+  .quote-container {
+    padding: 30px 0 11px 0;
+
+    .group-left {
+      float: left;
+      padding-right: 10px;
+      width: 75px;
+    }
+
+    .group-right {
+      overflow: hidden;
+    }
+
+    .page-node-revisions &,
+    .page-node-edit & {
+      .vote,
+      .edit-quote {
+        display: none;
+      }
+
+      .quote-info {
+        opacity: 1;
+      }
+    }
+
+    &.even {
+      background-color: #f5f4f0;
+    }
+
+    .quote-container-inner {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:focus,
+      &:hover {
+        border-bottom: 1px solid #f8694d;
+      }
+    }
+
+    .wrap--author-name--author-profession,
+    p.quote {
+      .page-tsitaadid-autorid & {
+        padding-left: 0;
+      }
+    }
+
+    .wrap--author-name--author-profession {
+      position: relative;
+      margin: 0 0 ((6px / $text-size-default) * 1em) 0;
+    }
+
+    .quote-image {
+      clear: left;
+      float: left;
+      margin-top: -10px;
+      position: relative;
+
+      img {
+        position: relative;
+        z-index: 2;
+      }
+
+      a {
+        display: block;
+        height: 67px;
+        width: 67px;
+
+        &:focus,
+        &:hover {
+          border: 0;
+        }
+
+        &:before {
+          @extend %author-mask-white;
+          @include sprite-image($author-mask-white);
+          @include sprite-position($author-mask-white);
+        }
+
+        &:after {
+          @include sprite($author-noimage);
+          content: "";
+          display: block;
+          left: 20px;
+          position: absolute;
+          top: 17px;
+          z-index: 1;
+        }
+      }
+    }
+
+    &.even .quote-image a:before {
+      @include sprite-image($author-mask-gray);
+      @include sprite-position($author-mask-gray);
+    }
+
+    // Voting.
+    & {
+      .vote {
+        float: left;
+        height: 49px;
+        margin-left: 8px;
+        margin-top: 10px;
+        position: relative;
+
+        a {
+          opacity: 0.5;
+
+          &:focus,
+          &:hover {
+            border: 0;
+            opacity: 1;
+          }
+        }
+
+        &.is-voted {
+          .vote-up,
+          .vote-down {
+            opacity: 0.2;
+          }
+        }
+      }
+
+      .vote-up,
+      .vote-down {
+        @include sprite($vote-up);
+        display: block;
+        position: relative;
+        z-index: 1;
+      }
+
+      .vote-up {
+        float: left;
+      }
+
+      .vote-down {
+        @include sprite-position($vote-down);
+        left: 0;
+        position: absolute;
+        top: 21px;
+      }
+
+      .vote-current {
+        color: #696269;
+        float: left;
+        padding-left: 5px;
+        padding-top: 10px;
+      }
+    }
+
+    div.quote {
+      @include fontSize(15px);
+      padding-top: 13px;
+    }
+
+    .author-name {
+      @include fontSize(20px);
+      font-family: $font_title;
+
+      a {
+        color: #000;
+      }
+    }
+
+    .author-profession {
+      color: tint(#534c53, 30%);
+      line-height: 125%; // 16px
+      padding: ((1px / $text-size-default) * 1em) 0 ((3px / $text-size-default) * 1em) 0;
+    }
+
+    p.quote a {
+      color: $color-text;
+    }
+
+    .quote-source {
+      @include fontSize(12px);
+      color: #969696;
+      line-height: 15px;
+      padding-top: 10px;
+      text-align: right;
+    }
+
+    .quote-info {
+      $font_size_quote_info: 11px;
+
+      @extend .clearfix;
+      clear: left;
+      font-size: $font_size_quote_info;
+      opacity: 0;
+
+      li {
+        float: left;
+        position: relative;
+        padding: ((3px / $font_size_quote_info) * 1em) ((17px / $font_size_quote_info) * 1em) ((2px / $font_size_quote_info) * 1em) 27px;
+
+        a {
+          color: #696269;
+        }
+
+        &:before {
+          bottom: (5px / $font_size_quote_info) * 1em;
+          content: "";
+          height: $icon-quote-username-height;
+          left: 0;
+          position: absolute;
+          width: $icon-quote-username-width;
+        }
+
+        &.username:before {
+         @include sprite-image($icon-quote-username);
+         @include sprite-position($icon-quote-username);
+        }
+
+        &.translations:before {
+          @include sprite-image($icon-quote-translations);
+          @include sprite-position($icon-quote-translations);
+        }
+
+        &.category:before {
+          @include sprite-image($icon-quote-category);
+          @include sprite-position($icon-quote-category);
+        }
+
+         &.tags:before {
+           @include sprite-image($icon-quote-tags);
+           @include sprite-position($icon-quote-tags);
+        }
+      }
+    }
+
+    &:hover {
+      .quote-info {
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+  @media (max-width: $width-wide-content) {
+    .quote-container {
+      .quote-container-inner {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}

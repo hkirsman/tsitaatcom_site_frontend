@@ -1,0 +1,17 @@
+
+
+
+@if $layout == global {
+  .block-tsitaatcom-tagcloud {
+    font-size: 1.5em;
+    line-height: 45px;
+    margin: 0 auto 20px auto;
+    max-width: 460px;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      white-space: nowrap;
+    }
+  }
+}

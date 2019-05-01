@@ -43,7 +43,6 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
-@import url("../fonts/stylesheet.css");
 .clearfix:after, .header-region-top:after, #block-user-login .hybridauth-widget-wrapper ul.hybridauth-widget li a:after, .block-search:after, .author-tag-listing-inner:after, .quote-container .quote-info:after {
   content: "";
   display: table;
@@ -60,8 +59,7 @@ The `sprites` mixin generates identical output to the CSS template
   z-index: 3; }
 
 body {
-  background: #696269;
-  overflow: hidden; }
+  background: #696269; }
 
 .page {
   background: #fff; }
@@ -74,7 +72,7 @@ h3,
 h4,
 .h1 {
   color: #000;
-  font-family: "RalewayRegular", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   text-align: center; }
 
@@ -105,7 +103,7 @@ input,
 textarea,
 select,
 button {
-  font-family: "Muli", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 body,
 input,
@@ -184,11 +182,7 @@ li {
   margin: 0 auto;
   max-width: 700px; }
 
-.has-quotes .normal-content,
-.has-quotes
-.normal-content-wide,
-.has-quotes .page-tsitaadid-autorid .normal-content,
-.page-tsitaadid-autorid .has-quotes .normal-content {
+.has-quotes .normal-content, .has-quotes .normal-content-wide, .has-quotes .page-tsitaadid-autorid .normal-content, .page-tsitaadid-autorid .has-quotes .normal-content {
   max-width: 500px; }
 
 #main-content {
@@ -303,7 +297,7 @@ header {
 
 form,
 form textarea {
-  font-family: "RalewayRegular", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 form .chosen-container-single .chosen-single,
 form .chosen-container-multi .chosen-choices li.search-choice,
@@ -316,7 +310,7 @@ form textarea {
   font-size: 0.9375rem;
   line-height: 146.66667%;
   color: #696269;
-  font-family: "RalewayRegular", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 form label {
   color: #829567;
@@ -333,7 +327,7 @@ form small {
   padding: 0 0 5px 0; }
 
 form textarea {
-  font-family: "RalewayItalic", sans-serif;
+  font-family: "Open Sans", sans-serif;
   height: 10.5em;
   width: 72%; }
 
@@ -345,7 +339,7 @@ form small {
 form label,
 form .chosen-container-single .chosen-single,
 form .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
-  font-family: "RalewaySemibold", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 form .form-wrapper {
   border-top: 1px solid #ddeeef;
@@ -419,7 +413,7 @@ form .chosen-container-multi .chosen-choices {
     border: 0;
     box-shadow: none;
     color: #fff;
-    font-family: "RalewayItalic", sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0 0 0 5px;
     padding: 0px 18px 0px 9px; }
     form .chosen-container-multi .chosen-choices li.search-choice:first-child {
@@ -436,7 +430,7 @@ form .chosen-container-multi .chosen-choices {
     margin: 0; }
 
 form .chosen-container-active .chosen-choices li.search-field input[type="text"] {
-  font-family: "RalewayItalic", sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 form .vertical-tabs {
   border-radius: 0 6px 6px 6px; }
@@ -485,7 +479,7 @@ form input[type="button"] {
   /* IE6-9 */
   border: 1px solid #829567;
   color: #fff;
-  font-family: "RalewayBold", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   margin-right: 10px;
   padding: 0.5em;
@@ -512,7 +506,7 @@ form input[type="button"] {
       font-size: 15px;
       font-size: 0.9375rem;
       line-height: 146.66667%;
-      font-family: "RalewayBold", sans-serif;
+      font-family: "Open Sans", sans-serif;
       display: block;
       padding: 4px 7px 3px 7px; }
       .header-region-top .block-menu a.active, .header-region-top .block-menu a.active-trail {
@@ -590,13 +584,13 @@ form input[type="button"] {
     font-size: 1.25rem;
     line-height: 110%;
     color: #696269;
-    font-family: "RalewayBold", sans-serif;
+    font-family: "Open Sans", sans-serif;
     margin: 0 0 0 0; }
   #block-user-login label {
     display: none; }
   #block-user-login a {
     color: #696269;
-    font-family: "RalewaySemibold", sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-decoration: underline; }
     #block-user-login a:focus, #block-user-login a:hover {
       text-decoration: none; }
@@ -617,7 +611,7 @@ form input[type="button"] {
   #block-user-login input[type="text"],
   #block-user-login input[type="password"] {
     color: #ababab;
-    font-family: "RalewaySemibold", sans-serif;
+    font-family: "Open Sans", sans-serif;
     height: 45px;
     margin-bottom: 13px;
     padding: 0 0.7em 0 0.7em;
@@ -686,7 +680,7 @@ form input[type="button"] {
     border-right: 0 !important;
     border: 1px solid #9db2b3 !important;
     color: #696269;
-    font-family: "RalewayItalic", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-size: 20px;
     height: 30px;
     line-height: 30px;
@@ -744,7 +738,7 @@ form input[type="button"] {
     font-size: 1.125rem;
     line-height: 122.22222%;
     border-bottom: 1px solid #696269;
-    font-family: "RalewaySemibold", sans-serif; }
+    font-family: "Open Sans", sans-serif; }
     #block-tsitaatcom-tsitaatcom-content-index .header li {
       padding: 0 0.8em; }
     #block-tsitaatcom-tsitaatcom-content-index .header a {
@@ -769,7 +763,7 @@ form input[type="button"] {
     font-size: 22px;
     font-size: 1.375rem;
     line-height: 100%;
-    font-family: "RalewayRegular", sans-serif;
+    font-family: "Open Sans", sans-serif;
     min-height: 5.5em; }
     #block-tsitaatcom-tsitaatcom-content-index .content a {
       background-color: #ddeeef;
@@ -810,7 +804,7 @@ form input[type="button"] {
   font-size: 13px;
   font-size: 0.8125rem;
   line-height: 169.23077%;
-  font-family: "RalewayRegular", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 123.07692%; }
   .author-tag-listing .column {
     float: left;
@@ -1072,7 +1066,7 @@ form input[type="button"] {
     font-size: 20px;
     font-size: 1.25rem;
     line-height: 110%;
-    font-family: "RalewayRegular", sans-serif; }
+    font-family: "Open Sans", sans-serif; }
     .quote-container .author-name a {
       color: #000; }
   .quote-container .author-profession {
@@ -1184,7 +1178,7 @@ form input[type="button"] {
     display: inline-block;
     position: relative; }
     .block-tsitaatcom-user-admin-menu > .menu a {
-      font-family: "RalewayBold", sans-serif;
+      font-family: "Open Sans", sans-serif;
       text-transform: uppercase; }
       .block-tsitaatcom-user-admin-menu > .menu a.active, .block-tsitaatcom-user-admin-menu > .menu a.active-trail {
         color: #696269; }
@@ -1242,7 +1236,7 @@ form input[type="button"] {
     color: #fff; }
   .footer-region .block-menu-block {
     float: left;
-    font-family: "RalewayRegular", sans-serif;
+    font-family: "Open Sans", sans-serif;
     padding-right: 65px; }
     .footer-region .block-menu-block h2 {
       color: #fff;
