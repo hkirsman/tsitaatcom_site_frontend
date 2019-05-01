@@ -1,4 +1,20 @@
 import React, {Component} from 'react';
+import Router from 'next/router';
+import NProgress from 'nprogress';
+
+
+Router.onRouteChangeStart = () => {
+  console.log('started');
+  NProgress.start();
+};
+
+Router.onRouteChangeComplete = () => {
+  NProgress.done();
+};
+
+Router.onRouteChangeError = () => {
+  NProgress.done();
+};
 
 const Header = () => (
   <header role="banner">
@@ -29,8 +45,7 @@ const Header = () => (
 
 
         <form action="/latest-quotes?destination=latest-quotes"
-              method="post" id="user-login-form"
-              accept-charset="UTF-8">Sisselogimine on hetkel keelatud,
+              method="post" id="user-login-form">Sisselogimine on hetkel keelatud,
           sest uus kasutajaliides pole veel valmis. Võtame registreerunud
           kasutajatega ise ühendust.<br />
             Täname mõistva suhtumise eest!

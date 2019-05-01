@@ -38,6 +38,7 @@ const Meta = () => (
     <link rel="stylesheet" href="http://www.tsitaat.com/sites/all/themes/mothership/mothership/css/mothership-default.css?pqti4q" />
     <link rel="stylesheet" href="http://www.tsitaat.com/sites/all/themes/mothership/mothership/css/mothership.css?pqti4q" />
     <link rel="stylesheet" href="/static/public/css/global.css" />
+    <link rel="stylesheet" href="/static/nprogress.css" />
   </Head>
 )
 
