@@ -1,6 +1,7 @@
 import ActiveLink from '../components/ActiveLink';
 import React, {Component} from 'react';
 import Router from 'next/router';
+import Link from 'next/link';
 import NProgress from 'nprogress';
 
 
@@ -54,11 +55,11 @@ const Header = () => (
     <div className="header-region">
       <div className="siteinfo">
         <figure>
-          <a href="/" title="Avaleht" rel="home">
-            <img id="logo"
-                 src="http://www.tsitaat.com/sites/all/themes/tsitaatcom_theme/logo.png"
-                 alt="Avaleht" />
-          </a>
+          <Link href="/">
+            <a title="Avaleht" rel="home">
+              <img id="logo" src="http://www.tsitaat.com/sites/all/themes/tsitaatcom_theme/logo.png" alt="Avaleht" />
+            </a>
+          </Link>
         </figure>
 
       </div>
