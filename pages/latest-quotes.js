@@ -1,12 +1,14 @@
-import Link from 'next/link';
+import fetch from 'isomorphic-unfetch'
+import Quotes from '../components/Quotes';
 
 const LatestQuotes = props => (
-    <div>
-      <p>Latest!!!</p>
-      <Link href="/">
-        <a>Home</a>
-      </Link>
-    </div>
+  <Quotes quotes={props.quotes} />
 );
 
-export default LatestQuotes;
+LatestQuotes.getInitialProps = async ({ req }) => {
+  const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/latest-quotes');
+  const data = await res.json();
+  return { quotes: data }
+};
+
+export default LatestQuotes
