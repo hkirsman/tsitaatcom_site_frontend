@@ -15,15 +15,18 @@ const Quote = props => (
         </div>
         <div className="group-right">
           <div className="wrap--author-name--author-profession">
-            <p className="author-name"><a
-              href="/tsitaadid/autorid/blaise_pascal" dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a></p>
+            <p className="author-name">
+              <Link href={props.quote.quote_author_link}>
+                <a dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a>
+              </Link>
+              </p>
             <p className="author-profession">{props.quote.quote_author_profession_rendered}</p></div>
           <p className="quote">
-            <a href="/tsitaadid/autorid/blaise_pascal/18637" dangerouslySetInnerHTML={ { __html: props.quote.quote } }></a>
+            <Link href={'/tsitaadid/autorid/' + props.quote.quote_author_urlfriendly_name + '/' + props.quote.quote_nid}>
+              <a dangerouslySetInnerHTML={ { __html: props.quote.quote } }></a>
+            </Link>
           </p>
-          <p className="quote-source">
-            {props.quote.quote_source_rendered}
-          </p>
+          <p className="quote-source" dangerouslySetInnerHTML={ { __html: props.quote.quote_source_rendered } }></p>
         </div>
       </div>
       <ul className="quote-info">
