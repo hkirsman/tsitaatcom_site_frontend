@@ -7,7 +7,7 @@ class Page extends Component {
     return (
       <div>
         <Meta />
-        <Header />
+        <Header navContentIndex={this.props.children.props.navContentIndex} />
         <div className="page">
           <div role="main" id="main-content" className="main-content">
             <div className="normal-content">
