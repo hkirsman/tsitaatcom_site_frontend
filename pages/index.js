@@ -1,12 +1,25 @@
-import Link from 'next/link';
+import {Component} from "react";
 
-const Home = props => (
-  <div>
-    <p>Tsitaadid!!!</p>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-  </div>
-);
+class Home extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    document.querySelector("body").classList.add('front')
+  }
+
+  componentWillUnmount() {
+    document.querySelector("body").classList.remove('front')
+  }
+
+  render() {
+    return (
+        <div>
+          Home
+        </div>
+    )
+  }
+};
 
 export default Home;

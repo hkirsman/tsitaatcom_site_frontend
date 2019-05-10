@@ -3,7 +3,7 @@ import Head from 'next/head';
 const Meta = () => (
   <Head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
-    <title>Parimad tsitaadid - Tsitaat.com</title>
+    <title>Tsitaat.com</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="http://www.tsitaat.com/sites/all/themes/tsitaatcom_theme/favicon.ico" />
     <meta name="Generator" content="Drupal Mothership" />

@@ -1,0 +1,128 @@
+{
+  "id": "e60f3f86-6277-4c50-b9f9-fd524ed0a82a",
+  "version": "2.0",
+  "name": "www.tsitaat.com Drupal 7",
+  "url": "http://www.tsitaat.com",
+  "tests": [{
+    "id": "5e0e68a8-a57d-498c-977e-72e5a318a135",
+    "name": "Component and tag checks",
+    "commands": [{
+      "id": "346d6642-bc6b-440b-ad7d-294a363a4616",
+      "comment": "Open home page",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5119e8db-7552-4d01-96d7-627224f60759",
+      "comment": "Title of the page is Tsitaat.com",
+      "command": "assertTitle",
+      "target": "Tsitaat.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "33c84ec3-321b-48a9-8e74-23b44156384d",
+      "comment": "Tag cloud exists",
+      "command": "assertElementPresent",
+      "target": "id=block-tsitaatcom-tagcloud-tsitaatcom-tagcloud-block-delta",
+      "targets": [
+        ["id=block-tsitaatcom-tagcloud-tsitaatcom-tagcloud-block-delta", "id"],
+        ["css=#block-tsitaatcom-tagcloud-tsitaatcom-tagcloud-block-delta", "css:finder"],
+        ["xpath=//div[@id='block-tsitaatcom-tagcloud-tsitaatcom-tagcloud-block-delta']", "xpath:attributes"],
+        ["xpath=//div[@id='main-content']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5014c62-eef3-4d0c-b646-1a906a655972",
+      "comment": "H1 exists and contains Tsitaat.com",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Tsitaat.com')]",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='main-content']/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Tsitaat.com')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb565dd5-9fd3-444c-8a5d-3a669cdb47a0",
+      "comment": "Facebook widget exists",
+      "command": "assertElementPresent",
+      "target": "id=fb-root",
+      "targets": [
+        ["css=.\\_2zfs", "css:finder"],
+        ["xpath=//div[@id='u_0_1']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2393ef68-fb03-4137-bdd3-722eedf8c44a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#block-tsitaatcom-tsitaatcom-content-index .content div.active-item li:nth-child(1) > a",
+      "targets": [
+        ["css=.active-item li:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'a')])[3]", "xpath:link"],
+        ["xpath=//div[@id='block-tsitaatcom-tsitaatcom-content-index']/div[2]/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tsitaadid/teemad/a')]", "xpath:href"],
+        ["xpath=//div[2]/div[2]/div[2]/div/ul/li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74ef5475-bcb1-4438-9771-a5809f769924",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Teema kategooria: a",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7cdbdc35-0bc4-4bc8-a1e5-05f15cb4ef2f",
+      "comment": "Noindex is set",
+      "command": "assertElementPresent",
+      "target": "xpath=//html/head/meta[1][@name='robots'][@content='noindex']",
+      "targets": [
+        ["id=logo", "id"],
+        ["css=#logo", "css:finder"],
+        ["xpath=//img[@alt='Avaleht']", "xpath:img"],
+        ["xpath=//img[@id='logo']", "xpath:attributes"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "102059dd-4e0b-4be2-882a-d83af79d5143",
+      "comment": "H1 exists and contains 'Teema kategooria: a'",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Teema kategooria: a')]",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='main-content']/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Tsitaat.com')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb419fdc-d4b6-447a-b482-1e1290363db5",
+      "comment": "Fake h1 exists and contains 'Teema kategooria: a'",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[@class='h1'][contains(.,'Teema kategooria: a')]",
+      "targets": [
+        ["css=.h1", "css:finder"],
+        ["xpath=//div[@id='main-content']/div/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Teema kategooria: a')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "93d5c6b3-4d5b-4858-9b7f-1fdfea73b3b3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5e0e68a8-a57d-498c-977e-72e5a318a135"]
+  }],
+  "urls": ["http://www.tsitaat.com/"],
+  "plugins": []
+}
