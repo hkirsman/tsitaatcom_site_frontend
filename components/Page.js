@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Header from '../components/Header'
-import Meta from '../components/Meta'
+import Header from '../components/Header';
+import Meta from '../components/Meta';
+import Footer from '../components/Footer';
 
 class Page extends Component {
   render() {
@@ -19,6 +20,7 @@ class Page extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }
