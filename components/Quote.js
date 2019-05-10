@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
+import {Link} from '../routes';
 
 const Quote = props => (
   <div id="quote-{props.quote.quote_nid}" className="quote-container odd">
@@ -16,13 +16,13 @@ const Quote = props => (
         <div className="group-right">
           <div className="wrap--author-name--author-profession">
             <p className="author-name">
-              <Link href={props.quote.quote_author_link}>
+              <Link route={props.quote.quote_author_link}>
                 <a dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a>
               </Link>
               </p>
             <p className="author-profession">{props.quote.quote_author_profession_rendered}</p></div>
           <p className="quote">
-            <Link href={'/tsitaadid/autorid/' + props.quote.quote_author_urlfriendly_name + '/' + props.quote.quote_nid}>
+            <Link route={'/tsitaadid/autorid/' + props.quote.quote_author_urlfriendly_name + '/' + props.quote.quote_nid}>
               <a dangerouslySetInnerHTML={ { __html: props.quote.quote } }></a>
             </Link>
           </p>

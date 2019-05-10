@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Link from 'next/link';
+import {Link} from '../routes';
 
 class NavContentIndex extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class NavContentIndex extends Component {
             <ul>
               {this.props.navContentIndex.tags.map((item, id) => (
                 <li key={'tags' + id}>
-                  <Link href={'/' + item.href}>
+                  <Link route={'/' + item.href}>
                     <a>{item.title}</a>
                   </Link>
                 </li>
@@ -46,7 +46,7 @@ class NavContentIndex extends Component {
             <ul>
               {this.props.navContentIndex.authors.map((item, id) => (
                 <li key={'authors' + id}>
-                  <Link href={'/' + item.href}>
+                  <Link route={'/' + item.href}>
                     <a>{item.title}</a>
                   </Link>
                 </li>

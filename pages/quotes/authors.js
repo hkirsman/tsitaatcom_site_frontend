@@ -1,8 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import React from "react";
 import array_chunk_to_3_groups from '../../lib/array_chunk_to_3_groups';
-import Error from 'next/error';
-import Link from 'next/link';
+import {Link} from '../../routes';
 
 const Authors = props => {
   if (props.query[0].length === 1) {
@@ -14,7 +13,7 @@ const Authors = props => {
               <ul className={'column column-' + index} key={index}>
                 {group.map(item => (
                   <li key={item.quote_author_nid} >
-                    <Link href={'/tsitaadid/autorid/' + item.quote_author_urlfriendly_name}>
+                    <Link route={'/tsitaadid/autorid/' + item.quote_author_urlfriendly_name}>
                       <a dangerouslySetInnerHTML={{__html: item.author_name_formated}}></a>
                     </Link>
                   </li>
