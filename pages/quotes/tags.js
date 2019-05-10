@@ -17,7 +17,6 @@ const Tags = props => {
 };
 
 Tags.getInitialProps = async ({ query }) => {
-  console.log(query);
   return { query: query }
 };
 
