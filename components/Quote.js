@@ -31,7 +31,7 @@ const Quote = props => (
       </div>
       <ul className="quote-info">
         <li className="username"><a href="/user/2/quotes">{props.quote.username}</a></li>
-        <li className="translations">{props.quote.quote_translation_links_rendered}</li>
+        <li className="translations" dangerouslySetInnerHTML={ { __html: props.quote.quote_translation_links_rendered } }></li>
         <li className="category"><a href="/tsitaadid/kategooriad/kategooriata">{props.quote.quote_category}</a></li>
         <li className="tags" dangerouslySetInnerHTML={ { __html: props.quote.tags_rendered } }></li>
       </ul>
