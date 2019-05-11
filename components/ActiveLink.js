@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from '../routes';
 import { withRouter } from "next/router";
 import { Children } from "react";
 

@@ -28,7 +28,7 @@ const Header = (props) => (
             </ActiveLink>
           </li>
           <li className="leaf top-100">
-            <ActiveLink href="/tsitaadid/top-100-tsitaadid">
+            <ActiveLink route="/tsitaadid/top-100-tsitaadid">
               <a>TOP 100</a>
             </ActiveLink>
           </li>
