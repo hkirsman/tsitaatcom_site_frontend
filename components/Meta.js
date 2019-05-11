@@ -40,6 +40,6 @@ const Meta = () => (
     <link rel="stylesheet" href="/static/public/css/global.css" />
     <link rel="stylesheet" href="/static/nprogress.css" />
   </Head>
-)
+);
 
 export default Meta;
