@@ -1,23 +1,70 @@
 import fetch from 'isomorphic-unfetch'
-import Quotes from '../../components/Quotes';
 import React from "react";
+import array_chunk_to_3_groups from '../../lib/array_chunk_to_3_groups';
+import {Link} from '../../routes';
+import Error from 'next/error';
 import Head from 'next/head';
+import Quotes from "../../components/Quotes";
 
-const Tags = props => {
-  return (
-    <div>
-      <Head>
-        <title>Teema kategooria: {props.query[0]}</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <h1>{props.query[0]}</h1>
-      <p>teemad!</p>
-    </div>
-  )
-};
+class Tags extends React.Component {
 
-Tags.getInitialProps = async ({ query }) => {
-  return { query: query }
-};
+  static async getInitialProps({ query }) {
+    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+    let data = await res.json();
+    if (query.tag.length === 1) {
+      data = array_chunk_to_3_groups(Array.from(data));
+    }
+    return { data: data, query: query }
+  }
+
+  render() {
+    if (this.props.query.tag.length === 1) {
+      return (
+        <div>
+          <Head>
+            <title>Teema kategooria: {this.props.query.tag}</title>
+            <meta name="robots" content="noindex" />
+          </Head>
+          <h1>Teema kategooria: {this.props.query.tag}</h1>
+          <div className="author-tag-listing">
+            <div className="author-tag-listing-inner">
+              {this.props.data.map((group, index) => {
+                return (
+                  <ul className={'column column-' + index} key={index}>
+                    {group.map(item => (
+                      <li key={item.quote_author_nid}>
+                        <Link route={'/' + item.link}>
+                          <a>{item.tag}</a>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )
+    }
+    else if (this.props.query.tag.length > 1) {
+      return (
+        <div>
+          <Head>
+            <title>Teema kategooria: {this.props.query.tag}</title>
+            <meta name="robots" content="noindex" />
+          </Head>
+          <h1>Teema kategooria: {this.props.query.tag}</h1>
+          <Quotes quotes={this.props.data} />
+        </div>
+      );
+    }
+    else {
+      return (
+          <Error statusCode={404} />
+      );
+    }
+
+  }
+}
 
 export default Tags
