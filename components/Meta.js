@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 const Meta = () => (
   <Head>
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
     <title>Tsitaat.com</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
