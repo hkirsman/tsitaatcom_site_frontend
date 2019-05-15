@@ -2,6 +2,7 @@
 
 ## Todo
 
+1. Body has to have .has-quotes class if on quotes page to have full width.
 1. Many resources are still pulled from current production - search for www.tsitaat.com
 1. Refactor styles and markup.
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
