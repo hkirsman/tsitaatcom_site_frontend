@@ -25,6 +25,7 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <h1>Tsitaat.com</h1>
         <TagCloud tags={this.props.tags} />
       </div>
     )

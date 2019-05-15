@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Link} from '../routes';
 
 const Quote = props => (
-  <div id="quote-{props.quote.quote_nid}" className="quote-container odd">
+  <div id={'quote-' + props.quote.quote_nid} className={'quote-container ' + (props.i % 2 ? 'even' : 'odd')}>
     <div className="quote-container-inner">
       <div className="quote">
         <div className="group-left">

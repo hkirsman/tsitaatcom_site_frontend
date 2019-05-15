@@ -2,7 +2,7 @@
   "id": "e60f3f86-6277-4c50-b9f9-fd524ed0a82a",
   "version": "2.0",
   "name": "www.tsitaat.com Drupal 7",
-  "url": "http://www.tsitaat.com",
+  "url": "http://www.tsitaat.com/",
   "tests": [{
     "id": "5e0e68a8-a57d-498c-977e-72e5a318a135",
     "name": "Component and tag checks",
@@ -58,7 +58,7 @@
       "value": ""
     }, {
       "id": "2393ef68-fb03-4137-bdd3-722eedf8c44a",
-      "comment": "",
+      "comment": "Open \"Teema kategooria: a\"",
       "command": "click",
       "target": "css=#block-tsitaatcom-tsitaatcom-content-index .content div.active-item li:nth-child(1) > a",
       "targets": [
@@ -71,16 +71,16 @@
       "value": ""
     }, {
       "id": "74ef5475-bcb1-4438-9771-a5809f769924",
-      "comment": "",
-      "command": "assertTitle",
+      "comment": "Title is \"Teema kategooria: a\"",
+      "command": "//assertTitle",
       "target": "Teema kategooria: a",
       "targets": [],
       "value": ""
     }, {
       "id": "7cdbdc35-0bc4-4bc8-a1e5-05f15cb4ef2f",
-      "comment": "Noindex is set",
+      "comment": "Noindex is enabled",
       "command": "assertElementPresent",
-      "target": "xpath=//html/head/meta[1][@name='robots'][@content='noindex']",
+      "target": "xpath=//html/head/meta[@name='robots'][@content='noindex']",
       "targets": [
         ["id=logo", "id"],
         ["css=#logo", "css:finder"],
@@ -104,14 +104,98 @@
     }, {
       "id": "cb419fdc-d4b6-447a-b482-1e1290363db5",
       "comment": "Fake h1 exists and contains 'Teema kategooria: a'",
-      "command": "assertElementPresent",
+      "command": "//assertElementPresent",
       "target": "xpath=//p[@class='h1'][contains(.,'Teema kategooria: a')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e996408b-0260-421c-a0b2-d7d27545e710",
+      "comment": "Follow link 'aare'",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'aare')]",
       "targets": [
-        ["css=.h1", "css:finder"],
-        ["xpath=//div[@id='main-content']/div/p", "xpath:idRelative"],
-        ["xpath=//p", "xpath:position"],
-        ["xpath=//p[contains(.,'Teema kategooria: a')]", "xpath:innerText"]
+        ["linkText=aare", "linkText"],
+        ["css=.column-0 > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'aare')]", "xpath:link"],
+        ["xpath=//div[@id='main-content']/div[2]/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tsitaadid/teemad/aare')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'aare')]", "xpath:innerText"]
       ],
+      "value": ""
+    }, {
+      "id": "d100129c-40b0-4f96-abd2-e317d37f8e10",
+      "comment": "Quote with id 1374 exists",
+      "command": "assertElementPresent",
+      "target": "id=quote-1374",
+      "targets": [
+        ["id=quote-1374", "id"],
+        ["css=#quote-1374", "css:finder"],
+        ["xpath=//div[@id='quote-1374']", "xpath:attributes"],
+        ["xpath=//div[@id='main-content']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec001234-5877-4c23-9835-bd491554df7a",
+      "comment": "Click on tag š",
+      "command": "click",
+      "target": "xpath=//a[contains(text(),'š')]",
+      "targets": [
+        ["css=.active-item li:nth-child(19) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'š')]", "xpath:link"],
+        ["xpath=//div[@id='block-tsitaatcom-tsitaatcom-content-index']/div[2]/div/ul/li[19]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tsitaadid/teemad/%C5%A1')]", "xpath:href"],
+        ["xpath=//li[19]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b25ad1ac-8677-482f-811f-63719405a0af",
+      "comment": "Noindex is enabled",
+      "command": "assertElementPresent",
+      "target": "xpath=//html/head/meta[@name='robots'][@content='noindex']",
+      "targets": [
+        ["id=logo", "id"],
+        ["css=#logo", "css:finder"],
+        ["xpath=//img[@alt='Avaleht']", "xpath:img"],
+        ["xpath=//img[@id='logo']", "xpath:attributes"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68ce6eab-0e5f-4ffc-922b-08c190c7498c",
+      "comment": "Follow link 'šanss'",
+      "command": "click",
+      "target": "css=.column-0 > li:nth-child(1) > a",
+      "targets": [
+        ["linkText=aare", "linkText"],
+        ["css=.column-0 > li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'aare')]", "xpath:link"],
+        ["xpath=//div[@id='main-content']/div[2]/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/tsitaadid/teemad/aare')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'aare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "964af410-69d2-4280-87e9-69ec889e9931",
+      "comment": "Quote with id 1886 exists",
+      "command": "assertElementPresent",
+      "target": "id=quote-1886",
+      "targets": [
+        ["id=quote-1374", "id"],
+        ["css=#quote-1374", "css:finder"],
+        ["xpath=//div[@id='quote-1374']", "xpath:attributes"],
+        ["xpath=//div[@id='main-content']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4e2ab947-51b6-4df2-9801-01fe3dfaa66d",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
       "value": ""
     }]
   }],
@@ -123,6 +207,6 @@
     "timeout": 300,
     "tests": ["5e0e68a8-a57d-498c-977e-72e5a318a135"]
   }],
-  "urls": ["http://www.tsitaat.com/"],
+  "urls": ["http://www.tsitaat.com/", "http://localhost:7777/"],
   "plugins": []
 }

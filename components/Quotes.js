@@ -4,8 +4,8 @@ import Pagination from './Pagination';
 
 const Quotes = props => (
   <div>
-    {props.quotes.map(quote => (
-      <Quote quote={quote} key={quote.quote_nid}></Quote>
+    {props.quotes.map((quote, i) => (
+      <Quote quote={quote} key={i} i={i}></Quote>
     ))}
     <Pagination />
   </div>
