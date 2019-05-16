@@ -1,7 +1,8 @@
 import {Component} from "react";
 import React from "react";
 import TagCloud from '../components/TagCloud';
-import fetch from 'isomorphic-unfetch'
+import fetch from 'isomorphic-unfetch';
+import { title } from '../config';
 
 class Home extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Tsitaat.com</h1>
+        <h1>{title}</h1>
         <TagCloud tags={this.props.tags} />
       </div>
     )

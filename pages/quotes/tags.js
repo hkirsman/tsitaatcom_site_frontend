@@ -5,6 +5,7 @@ import {Link} from '../../routes';
 import Error from 'next/error';
 import Head from 'next/head';
 import Quotes from "../../components/Quotes";
+import { title } from '../../config';
 
 class Tags extends React.Component {
 
@@ -22,7 +23,7 @@ class Tags extends React.Component {
       return (
         <div>
           <Head>
-            <title>Teema kategooria: {this.props.query.tag}</title>
+            <title>Teema kategooria: {this.props.query.tag} - {title}</title>
             <meta name="robots" content="noindex" />
           </Head>
           <h1>Teema kategooria: {this.props.query.tag}</h1>
@@ -50,10 +51,10 @@ class Tags extends React.Component {
       return (
         <div>
           <Head>
-            <title>Teema kategooria: {this.props.query.tag}</title>
+            <title>Teema kategooria: {this.props.query.tag} - {title}</title>
             <meta name="robots" content="noindex" />
           </Head>
-          <h1>Teema kategooria: {this.props.query.tag}</h1>
+          <h1>{this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1)}</h1>
           <Quotes quotes={this.props.data} />
         </div>
       );

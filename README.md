@@ -2,7 +2,6 @@
 
 ## Todo
 
-1. Body has to have .has-quotes class if on quotes page to have full width.
 1. Many resources are still pulled from current production - search for www.tsitaat.com
 1. Refactor styles and markup.
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
@@ -15,3 +14,4 @@
    Was not able to use class functions inside getInitialProps().
 1. Although currently there's also http://www.tsitaat.com/latest-quotes we should translate it.
 1. Remove all different kinds of fonts like Muli and the custom local font
+1. Category pages missing

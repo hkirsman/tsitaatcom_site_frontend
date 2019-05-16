@@ -8,6 +8,7 @@ import isAuthorPage from '../../lib/isAuthorPage';
 import Quotes from '../../components/Quotes';
 import DocumentTitle from 'react-document-title'
 import Head from 'next/head';
+import { title } from '../../config';
 
 class Authors extends React.Component {
 
@@ -30,7 +31,7 @@ class Authors extends React.Component {
       return (
         <div>
           <Head>
-            <title>Autori kategooria: {this.props.query.author_name}</title>
+            <title>Autori kategooria: {this.props.query.author_name} - {title}</title>
             <meta name="robots" content="noindex" />
           </Head>
           <DocumentTitle>
@@ -59,6 +60,17 @@ class Authors extends React.Component {
     else if (isAuthorPage(this.props.query) && this.props.data.length > 0) {
       return (
         <div>
+          <Head>
+            <title>{this.props.data[0].quote_author_name_remove_brackets} - {title}</title>
+            <meta name="description"
+              content={this.props.data[0].quote_author_name_remove_brackets +
+              ' tsitaadid ja ütlemised. ' +
+              this.props.data[0].quote_author_name_without_bracket_content + ' '+
+              this.props.data[0].quote_author_profession_rendered + '.'} />
+          </Head>
+          <div className="normal-content">
+            <h1>{this.props.data[0].quote_author_name_without_bracket_content}</h1>
+          </div>
           <Quotes quotes={this.props.data} />
         </div>
       );
