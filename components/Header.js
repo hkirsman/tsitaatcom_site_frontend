@@ -22,8 +22,8 @@ const Header = (props) => (
     <div className="header-region-top">
       <nav id="block-system-user-menu" className="block block-system block-menu " role="navigation">
         <ul className="menu">
-          <li className="first leaf active-trail">
-            <ActiveLink href="/latest-quotes">
+          <li className="first leaf">
+            <ActiveLink route="/tsitaadid/viimati-lisatud">
               <a>Viimati lisatud</a>
             </ActiveLink>
           </li>
@@ -36,8 +36,6 @@ const Header = (props) => (
               href="/user?current=latest-quotes" title="" rel="nofollow">Logi
             sisse</a></li>
         </ul>
-
-
       </nav>
 
       <div id="block-user-login" className="block block-user ">

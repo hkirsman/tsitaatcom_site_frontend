@@ -4,20 +4,21 @@ import React from "react";
 import Head from 'next/head';
 import headTitle from "../../lib/headTitle";
 
-const Top100Quotes = props => (
+const Latest = props => (
   <div>
     <Head>
-      <title>{headTitle('Parimad tsitaadid')}</title>
+      <title>{headTitle('Viimati lisatud tsitaadid')}</title>
+      <meta name="robots" content="noindex" />
     </Head>
-    <h1>Top 100</h1>
+    <h1>Viimati lisatud tsitaadid</h1>
     <Quotes quotes={props.quotes} />
   </div>
 );
 
-Top100Quotes.getInitialProps = async ({ req }) => {
-  const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/top-100-quotes');
+Latest.getInitialProps = async ({ req }) => {
+  const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/latest-quotes');
   const data = await res.json();
   return { quotes: data }
 };
 
-export default Top100Quotes
+export default Latest
