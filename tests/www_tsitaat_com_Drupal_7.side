@@ -15,7 +15,7 @@
       "value": ""
     }, {
       "id": "5119e8db-7552-4d01-96d7-627224f60759",
-      "comment": "Title of the page is Tsitaat.com",
+      "comment": "Site title of the page is Tsitaat.com",
       "command": "assertTitle",
       "target": "Tsitaat.com",
       "targets": [],
@@ -70,9 +70,23 @@
       ],
       "value": ""
     }, {
+      "id": "4e2ab947-51b6-4df2-9801-01fe3dfaa66d",
+      "comment": "Get tag count",
+      "command": "storeXpathCount",
+      "target": "//div[contains(@class, 'author-tag-listing')]//li",
+      "targets": [],
+      "value": "author_tag_listing_a_count"
+    }, {
+      "id": "2b440878-c84a-4ffe-82a8-da0a1d666f22",
+      "comment": "There are 160 tags on 'a' page",
+      "command": "verify",
+      "target": "author_tag_listing_a_count",
+      "targets": [],
+      "value": "160"
+    }, {
       "id": "74ef5475-bcb1-4438-9771-a5809f769924",
-      "comment": "Title is \"Teema kategooria: a\"",
-      "command": "//assertTitle",
+      "comment": "Site title is \"Teema kategooria: a\"",
+      "command": "assertTitle",
       "target": "Teema kategooria: a",
       "targets": [],
       "value": ""
@@ -104,7 +118,7 @@
     }, {
       "id": "cb419fdc-d4b6-447a-b482-1e1290363db5",
       "comment": "Fake h1 exists and contains 'Teema kategooria: a'",
-      "command": "//assertElementPresent",
+      "command": "assertElementPresent",
       "target": "xpath=//p[@class='h1'][contains(.,'Teema kategooria: a')]",
       "targets": [],
       "value": ""
@@ -150,6 +164,20 @@
       ],
       "value": ""
     }, {
+      "id": "13f61e37-d191-4fc5-9f1a-ca9b8f97d38f",
+      "comment": "Get tag count",
+      "command": "storeXpathCount",
+      "target": "//div[contains(@class, 'author-tag-listing')]//li",
+      "targets": [],
+      "value": "author_tag_listing_sh_count"
+    }, {
+      "id": "20b1105c-fbc1-4f01-898e-ef66c193fdaf",
+      "comment": "There are 1 tags on 'a' page",
+      "command": "verify",
+      "target": "author_tag_listing_sh_count",
+      "targets": [],
+      "value": "1"
+    }, {
       "id": "b25ad1ac-8677-482f-811f-63719405a0af",
       "comment": "Noindex is enabled",
       "command": "assertElementPresent",
@@ -189,13 +217,6 @@
         ["xpath=//div[@id='main-content']/div[2]/div", "xpath:idRelative"],
         ["xpath=//div[3]/div/div[2]/div", "xpath:position"]
       ],
-      "value": ""
-    }, {
-      "id": "4e2ab947-51b6-4df2-9801-01fe3dfaa66d",
-      "comment": "",
-      "command": "",
-      "target": "",
-      "targets": [],
       "value": ""
     }]
   }],
