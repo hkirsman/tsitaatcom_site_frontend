@@ -7,7 +7,7 @@ import { Children } from "react";
 const ActiveLink = withRouter(({ router, children, ...props }) => (
     <Link {...props}>
       {React.cloneElement(Children.only(children), {
-        className: router.pathname === props.href ? `active` : null
+        className: (router.pathname === props.href || router.asPath === props.route) ? `active` : null
       })}
     </Link>
 ));
