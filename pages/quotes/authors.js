@@ -6,9 +6,8 @@ import Error from 'next/error';
 import isAuthorListingPage from '../../lib/isAuthorListingPage';
 import isAuthorPage from '../../lib/isAuthorPage';
 import Quotes from '../../components/Quotes';
-import DocumentTitle from 'react-document-title'
 import Head from 'next/head';
-import { title } from '../../config';
+import headTitle from "../../lib/headTitle";
 
 class Authors extends React.Component {
 
@@ -31,12 +30,11 @@ class Authors extends React.Component {
       return (
         <div>
           <Head>
-            <title>Autori kategooria: {this.props.query.author_name} - {title}</title>
+            <title>{headTitle('Autori kategooria: ' + this.props.query.author_name)}</title>
             <meta name="robots" content="noindex" />
           </Head>
-          <DocumentTitle>
-            <h1>Autori kategooria: {this.props.query.author_name}</h1>
-          </DocumentTitle>
+
+          <h1>Autori kategooria: {this.props.query.author_name}</h1>
           <div className="author-tag-listing">
             <div className="author-tag-listing-inner">
               {this.props.data.map((group, index) => {
@@ -61,9 +59,9 @@ class Authors extends React.Component {
       return (
         <div>
           <Head>
-            <title>{this.props.data[0].quote_author_name_remove_brackets} - {title}</title>
+            <title>{headTitle(this.props.data[0].quote_author_name_without_bracket_content)}</title>
             <meta name="description"
-              content={this.props.data[0].quote_author_name_remove_brackets +
+              content={this.props.data[0].quote_author_name_without_bracket_content +
               ' tsitaadid ja ütlemised. ' +
               this.props.data[0].quote_author_name_without_bracket_content + ' '+
               this.props.data[0].quote_author_profession_rendered + '.'} />

@@ -53,8 +53,9 @@ class Tags extends React.Component {
       return (
         <div>
           <Head>
-            <title>{headTitle( 'Teema kategooria: ' + this.props.query.tag)}</title>
-            <meta name="robots" content="noindex" />
+            <title>{headTitle(this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1))}</title>
+            <meta name="description"
+                  content={'Tsitaadid ja ütlemised teemal ' + this.props.query.tag + '.'} />
           </Head>
           <h1>{this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1)}</h1>
           <Quotes quotes={this.props.data} />
