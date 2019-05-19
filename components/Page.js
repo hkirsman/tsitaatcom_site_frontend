@@ -11,10 +11,6 @@ class Page extends Component {
         <Header navContentIndex={this.props.children.props.navContentIndex} />
         <div className="page">
           <div role="main" id="main-content" className="main-content">
-            <div className="normal-content">
-              <h1>todo: Tsitaat.com</h1>
-              <p className="h1">todo: Viimati lisatud tsitaadid</p>
-            </div>
             <div className="content-wrap">
               {this.props.children}
             </div>

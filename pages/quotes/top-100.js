@@ -1,8 +1,12 @@
 import fetch from 'isomorphic-unfetch'
 import Quotes from '../../components/Quotes';
+import React from "react";
 
 const Top100Quotes = props => (
+  <div>
+    <h1>Top 100</h1>
     <Quotes quotes={props.quotes} />
+  </div>
 );
 
 Top100Quotes.getInitialProps = async ({ req }) => {

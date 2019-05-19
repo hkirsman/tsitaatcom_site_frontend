@@ -37,7 +37,13 @@ const Quote = props => (
             <a>{props.quote.quote_category}</a>
           </Link>
         </li>
-        <li className="tags" dangerouslySetInnerHTML={ { __html: props.quote.tags_rendered } }></li>
+        <li className="tags">
+          {props.quote.tag_links.map((tag, i) => (
+              <Link route={'/tsitaadid/teemad/' + tag.machine_name}>
+                <a>{tag.name}</a>
+              </Link>
+          ))}
+        </li>
       </ul>
     </div>
   </div>
