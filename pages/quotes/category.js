@@ -4,7 +4,7 @@ import {Link} from '../../routes';
 import Error from 'next/error';
 import Head from 'next/head';
 import Quotes from "../../components/Quotes";
-import { title } from '../../config';
+import headTitle from "../../lib/headTitle";
 
 class Category extends React.Component {
 
@@ -19,7 +19,7 @@ class Category extends React.Component {
       return (
         <div>
           <Head>
-            <title>{this.props.data[0].quote_category} - {title}</title>
+            <title>{headTitle(this.props.data[0].quote_category)}</title>
             <meta name="robots" content="noindex" />
           </Head>
           <h1>{this.props.data[0].quote_category.charAt(0).toUpperCase() + this.props.data[0].quote_category.slice(1)}</h1>
