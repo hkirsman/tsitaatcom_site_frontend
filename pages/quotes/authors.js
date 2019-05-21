@@ -41,11 +41,11 @@ class Authors extends React.Component {
                 return (
                   <ul className={'column column-' + index} key={index}>
                     {group.map(item => (
-                        <li key={item.quote_author_nid}>
-                          <Link route={'/tsitaadid/autorid/' + item.quote_author_urlfriendly_name}>
-                            <a dangerouslySetInnerHTML={{__html: item.author_name_formated}}></a>
-                          </Link>
-                        </li>
+                      <li key={item.quote_author_nid}>
+                        <Link route={'/tsitaadid/autorid/' + item.quote_author_urlfriendly_name}>
+                          <a dangerouslySetInnerHTML={{__html: item.author_name_formated}}></a>
+                        </Link>
+                      </li>
                     ))}
                   </ul>
                 );
@@ -67,9 +67,12 @@ class Authors extends React.Component {
               this.props.data[0].quote_author_profession_rendered + '.'} />
           </Head>
           <div className="normal-content">
-            <h1>{this.props.data[0].quote_author_name_without_bracket_content}</h1>
+            <h1>
+              {this.props.data[0].quote_author_name_without_bracket_content}
+            </h1>
+            <p className="author_profession">{this.props.data[0].quote_author_profession_rendered}</p>
           </div>
-          <Quotes quotes={this.props.data} />
+          <Quotes quotes={this.props.data} hide_author_name={true} hide_author_profession={true} />
         </div>
       );
     }

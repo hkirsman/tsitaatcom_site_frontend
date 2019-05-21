@@ -32,7 +32,8 @@
   h2,
   h3,
   h4,
-  .h1 {
+  .h1,
+  p.author_profession {
     color: #000;
     font-family: $font_title;
     font-weight: normal;
@@ -43,11 +44,14 @@
   .h1 {
     @include fontSize(30px, 34px);
     //line-height: (26px / 17px) * 100%;
+    margin-top: 30px;
   }
 
-  .h1 .author_profession {
+  p.author_profession {
     display: block;
     @include fontSize(18px);
+    margin-top: -20px;
+    margin-bottom: 30px;
   }
 
   .front h1 {

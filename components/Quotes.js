@@ -15,7 +15,11 @@ class Quotes extends Component {
     return (
       <div>
         {this.props.quotes.map((quote, i) => (
-          <Quote quote={quote} key={i} i={i}></Quote>
+          <Quote
+            quote={quote}
+            hide_author_name={this.props.hide_author_name}
+            hide_author_profession={this.props.hide_author_profession}
+            key={i} i={i} />
         ))}
         <Pagination />
       </div>

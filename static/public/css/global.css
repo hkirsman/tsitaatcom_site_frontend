@@ -71,7 +71,8 @@ h1,
 h2,
 h3,
 h4,
-.h1 {
+.h1,
+p.author_profession {
   color: #000;
   font-family: "RalewayRegular", sans-serif;
   font-weight: normal;
@@ -81,13 +82,16 @@ h1,
 .h1 {
   font-size: 30px;
   font-size: 1.875rem;
-  line-height: 113.33333%; }
+  line-height: 113.33333%;
+  margin-top: 30px; }
 
-.h1 .author_profession {
+p.author_profession {
   display: block;
   font-size: 18px;
   font-size: 1.125rem;
-  line-height: 122.22222%; }
+  line-height: 122.22222%;
+  margin-top: -20px;
+  margin-bottom: 30px; }
 
 .front h1 {
   display: none; }

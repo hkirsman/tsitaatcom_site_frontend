@@ -14,13 +14,28 @@ const Quote = props => (
           </div>
         </div>
         <div className="group-right">
-          <div className="wrap--author-name--author-profession">
-            <p className="author-name">
-              <Link route={props.quote.quote_author_link}>
-                <a dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a>
-              </Link>
-              </p>
-            <p className="author-profession">{props.quote.quote_author_profession_rendered}</p></div>
+          {
+            !props.hide_author_name && !props.hide_author_profession ? (
+              <div className="wrap--author-name--author-profession">
+                {
+                  !props.hide_author_name
+                    ? (
+                      <p className="author-name">
+                        <Link route={props.quote.quote_author_link}>
+                          <a dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a>
+                        </Link>
+                      </p>
+                    ) : null
+                }
+                {
+                  !props.hide_author_profession
+                    ? (
+                      <p className="author-profession">{props.quote.quote_author_profession_rendered}</p>
+                    ) : null
+                }
+              </div>
+            ): null
+          }
           <p className="quote">
             <Link route={'/tsitaadid/autorid/' + props.quote.quote_author_urlfriendly_name + '/' + props.quote.quote_nid}>
               <a dangerouslySetInnerHTML={ { __html: props.quote.quote } }></a>
@@ -51,6 +66,11 @@ const Quote = props => (
     </div>
   </div>
 
-)
+);
+
+Quote.defaultProps = {
+  hide_author_name: false,
+  hide_author_profession: false,
+};
 
 export default Quote;
