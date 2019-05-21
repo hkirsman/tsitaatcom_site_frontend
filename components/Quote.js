@@ -55,7 +55,7 @@ const Quote = props => (
         {props.quote.tag_links.length > 0 ? (
           <li className="tags">
             {props.quote.tag_links.map((tag, i) => (
-              <Link route={'/tsitaadid/teemad/' + tag.machine_name}>
+              <Link route={'/tsitaadid/teemad/' + tag.machine_name} key={i}>
                 <a>{tag.name}</a>
               </Link>
             ))}
