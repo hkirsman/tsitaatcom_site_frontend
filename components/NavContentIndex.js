@@ -7,8 +7,8 @@ class NavContentIndex extends Component {
 
     this.state = {
       showNavContentIndexTopics: true,
-      showNavContentIndexAuthors: false
-    }
+      showNavContentIndexAuthors: false,
+    };
   }
 
   openTopicsIndex = e => {
@@ -19,6 +19,34 @@ class NavContentIndex extends Component {
   openAuthorIndex = e => {
     this.setState({showNavContentIndexTopics: false});
     this.setState({showNavContentIndexAuthors: true});
+  };
+
+  getAuthorLastNameFirstChar = function() {
+    if (typeof this.props.query.author_name === 'undefined') {
+      return '';
+    }
+
+    if (this.props.query.author_name.length === 1) {
+      return this.props.query.author_name;
+    }
+
+    if (this.props.query.author_name.length > 1) {
+      return this.props.author_last_name.toLowerCase()[0];
+    }
+
+    return '';
+  };
+
+  getTagFirstChar = function() {
+    if (typeof this.props.query.tag !== 'undefined') {
+      return this.props.query.tag.toLowerCase()[0];
+    }
+
+    return '';
+  };
+
+  static defaultProps = {
+    query: {},
   };
 
   render() {
@@ -36,7 +64,7 @@ class NavContentIndex extends Component {
               {this.props.navContentIndex.tags.map((item, id) => (
                 <li key={'tags' + id}>
                   <Link route={'/' + item.href}>
-                    <a>{item.title}</a>
+                    <a className={this.getTagFirstChar() === item.title ? 'active-item' : null}>{item.title}</a>
                   </Link>
                 </li>
               ))}
@@ -47,7 +75,7 @@ class NavContentIndex extends Component {
               {this.props.navContentIndex.authors.map((item, id) => (
                 <li key={'authors' + id}>
                   <Link route={'/' + item.href}>
-                    <a>{item.title}</a>
+                    <a className={this.getAuthorLastNameFirstChar() === item.title ? 'active-item' : null}>{item.title}</a>
                   </Link>
                 </li>
               ))}

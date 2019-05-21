@@ -78,7 +78,11 @@ class Header extends React.Component {
 
           </div>
 
-          <NavContentIndex navContentIndex={this.props.navContentIndex} />
+          <NavContentIndex
+            navContentIndex={this.props.navContentIndex}
+            query={this.props.query}
+            author_last_name={this.props.author_last_name}
+            />
 
           <div id="block-search-form" className="block block-search " role="search">
 
