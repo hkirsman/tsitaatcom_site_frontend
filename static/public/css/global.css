@@ -1155,6 +1155,10 @@ ul.tag-cloud li {
       .quote-container .quote-info li.tags:before {
         background-image: url(../img/sprite.png);
         background-position: -722px -335px; }
+      .quote-container .quote-info li.tags a:after {
+        content: ', '; }
+      .quote-container .quote-info li.tags a:last-child:after {
+        content: ''; }
   .quote-container:hover .quote-info {
     opacity: 1; }
 

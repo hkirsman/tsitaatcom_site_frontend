@@ -232,9 +232,19 @@
           @include sprite-position($icon-quote-category);
         }
 
-         &.tags:before {
-           @include sprite-image($icon-quote-tags);
-           @include sprite-position($icon-quote-tags);
+         &.tags {
+           &:before {
+             @include sprite-image($icon-quote-tags);
+             @include sprite-position($icon-quote-tags);
+           }
+
+           a:after {
+             content: ', '
+           }
+
+           a:last-child:after {
+             content: ''
+           }
         }
       }
     }

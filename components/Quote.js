@@ -37,13 +37,16 @@ const Quote = props => (
             <a>{props.quote.quote_category}</a>
           </Link>
         </li>
-        <li className="tags">
-          {props.quote.tag_links.map((tag, i) => (
+        {props.quote.tag_links.length > 0 ? (
+          <li className="tags">
+            {props.quote.tag_links.map((tag, i) => (
               <Link route={'/tsitaadid/teemad/' + tag.machine_name}>
                 <a>{tag.name}</a>
               </Link>
-          ))}
-        </li>
+            ))}
+          </li>
+        ) : <li className="tags">Sildid puuduvad</li>
+        }
       </ul>
     </div>
   </div>
