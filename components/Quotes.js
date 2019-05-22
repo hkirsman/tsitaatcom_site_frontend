@@ -19,6 +19,7 @@ class Quotes extends Component {
             quote={quote}
             hide_author_name={this.props.hide_author_name}
             hide_author_profession={this.props.hide_author_profession}
+            cookies={this.props.cookies}
             key={i}
             i={i} />
         ))}

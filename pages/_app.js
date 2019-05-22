@@ -1,6 +1,7 @@
 import App, { Container } from 'next/app';
 import Page from '../components/Page';
 import fetch from 'isomorphic-unfetch'
+import nookies from 'nookies'
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -14,6 +15,9 @@ class MyApp extends App {
       const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/nav-content-index');
       pageProps.navContentIndex = await res.json();
     // }
+
+    // @todo: Other options where to add it?
+    pageProps.cookies = nookies.get(ctx);
 
     return { pageProps };
   }

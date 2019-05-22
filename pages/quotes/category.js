@@ -23,7 +23,7 @@ class Category extends React.Component {
             <meta name="robots" content="noindex" />
           </Head>
           <h1>{this.props.data[0].quote_category.charAt(0).toUpperCase() + this.props.data[0].quote_category.slice(1)}</h1>
-          <Quotes quotes={this.props.data} />
+          <Quotes quotes={this.props.data} cookies={this.props.cookies} />
         </div>
       );
     }

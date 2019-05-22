@@ -116,6 +116,9 @@
 
         a {
           opacity: 0.5;
+          overflow: hidden;
+          direction: ltr;
+          text-indent: -10000px;
 
           &:focus,
           &:hover {

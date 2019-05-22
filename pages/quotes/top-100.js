@@ -11,7 +11,7 @@ const Top100Quotes = props => (
       <meta name="description" content="Parimate tsitaatide nimekiri." />
     </Head>
     <h1>Top 100</h1>
-    <Quotes quotes={props.quotes} />
+    <Quotes quotes={props.quotes} cookies={props.cookies} />
   </div>
 );
 

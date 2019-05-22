@@ -11,7 +11,7 @@ const Latest = props => (
       <meta name="robots" content="noindex" />
     </Head>
     <h1>Viimati lisatud tsitaadid</h1>
-    <Quotes quotes={props.quotes} />
+    <Quotes quotes={props.quotes} cookies={props.cookies} />
   </div>
 );
 

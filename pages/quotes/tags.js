@@ -58,7 +58,7 @@ class Tags extends React.Component {
                   content={'Tsitaadid ja ütlemised teemal ' + this.props.query.tag + '.'} />
           </Head>
           <h1>{this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1)}</h1>
-          <Quotes quotes={this.props.data} />
+          <Quotes quotes={this.props.data} cookies={this.props.cookies} />
         </div>
       );
     }

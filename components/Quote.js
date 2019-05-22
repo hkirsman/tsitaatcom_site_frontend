@@ -1,10 +1,71 @@
 import React, { Component } from 'react';
 import {Link} from '../routes';
+import { parseCookies, setCookie, destroyCookie } from 'nookies'
 
 class Quote extends Component {
   static defaultProps = {
     hide_author_name: false,
     hide_author_profession: false,
+  };
+
+  /**
+   * Check if vote has been cast.
+   *
+   * Initially check from cookie, but if state is initialized, then use that.
+   */
+  isVoted = function() {
+    const nid = this.props.quote.quote_nid;
+    const cookie_name = 'Drupal_tsitaatcom_vote_' + nid;
+    if (typeof this.state !== 'undefined' && typeof this.state.voted !== 'undefined') {
+      return this.state.voted;
+    }
+    else {
+      return this.props.cookies[cookie_name] === 'voted';
+    }
+  };
+
+  state = {
+    quote_vote: parseInt(this.props.quote.quote_rank),
+    voted: this.isVoted(),
+  };
+
+  /**
+   * Voting for up and down.
+   */
+  vote = async function(vote) {
+    if (this.isVoted()) {
+      alert('Ei saa rohkem antud tsitaadi poolt hääletada.');
+      return;
+    }
+
+    const nid = this.props.quote.quote_nid;
+    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/vote/' + nid + '/' + vote);
+
+    const cookie_name = 'Drupal_tsitaatcom_vote_' + nid;
+
+    setCookie({}, cookie_name, 'voted', {
+      maxAge: 3600,
+      path: '/',
+    });
+
+    if (vote === 'up') {
+      this.setState({quote_vote: this.state.quote_vote + 1});
+    }
+    else if (vote === 'down') {
+      this.setState({quote_vote: this.state.quote_vote - 1});
+    }
+
+    this.setState({voted: true});
+  };
+
+  handleVoteUp = async e => {
+    e.preventDefault();
+    return this.vote('up');
+  };
+
+  handleVoteDown = async e => {
+    e.preventDefault();
+    return this.vote('down');
   };
 
   render() {
@@ -16,10 +77,10 @@ class Quote extends Component {
             <div className="group-left">
               <p className="quote-image"
                  dangerouslySetInnerHTML={{__html: this.props.quote.author_portrait}}></p>
-              <div className="vote" id="vote-{this.props.quote.quote_nid}">
-                <a className="vote-up sr-only" href="#"></a>
-                <a className="vote-down sr-only" href="#"></a>
-                <div className="vote-current">{this.props.quote.quote_rank}</div>
+              <div className={'vote' + (this.state.voted ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
+                <a className="vote-up sr-only" href="#" onClick={this.handleVoteUp}>Hääleta üles</a>
+                <a className="vote-down sr-only" href="#" onClick={this.handleVoteDown}>Hääleta alla</a>
+                <div className="vote-current">{this.state.quote_vote}</div>
               </div>
             </div>
             <div className="group-right">

@@ -1076,7 +1076,10 @@ ul.tag-cloud li {
     margin-top: 10px;
     position: relative; }
     .quote-container .vote a {
-      opacity: 0.5; }
+      opacity: 0.5;
+      overflow: hidden;
+      direction: ltr;
+      text-indent: -10000px; }
       .quote-container .vote a:focus, .quote-container .vote a:hover {
         border: 0;
         opacity: 1; }

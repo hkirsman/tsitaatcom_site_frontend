@@ -72,7 +72,7 @@ class Authors extends React.Component {
             </h1>
             <p className="author_profession">{this.props.data[0].quote_author_profession_rendered}</p>
           </div>
-          <Quotes quotes={this.props.data} hide_author_name={true} hide_author_profession={true} />
+          <Quotes quotes={this.props.data} hide_author_name={true} hide_author_profession={true} cookies={this.props.cookies} />
         </div>
       );
     }
