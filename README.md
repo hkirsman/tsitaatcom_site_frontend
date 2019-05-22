@@ -14,4 +14,4 @@
    Was not able to use class functions inside getInitialProps().
 1. Although currently there's also http://www.tsitaat.com/latest-quotes we should translate it.
 1. Remove all different kinds of fonts like Muli and the custom local font
-1. Category pages missing
+1. http://localhost:7777/tsitaadid/teemad/inimese_eluiga shows underscore in title.
