@@ -1,76 +1,88 @@
 import React, { Component } from 'react';
 import {Link} from '../routes';
 
-const Quote = props => (
-  <div id={'quote-' + props.quote.quote_nid} className={'quote-container ' + (props.i % 2 ? 'even' : 'odd')}>
-    <div className="quote-container-inner">
-      <div className="quote">
-        <div className="group-left">
-          <p className="quote-image" dangerouslySetInnerHTML={ { __html: props.quote.author_portrait } }></p>
-          <div className="vote" id="vote-{props.quote.quote_nid}">
-            <a className="vote-up sr-only" href="#"></a>
-            <a className="vote-down sr-only" href="#"></a>
-            <div className="vote-current">{props.quote.quote_rank}</div>
-          </div>
-        </div>
-        <div className="group-right">
-          {
-            !props.hide_author_name && !props.hide_author_profession ? (
-              <div className="wrap--author-name--author-profession">
-                {
-                  !props.hide_author_name
-                    ? (
-                      <p className="author-name">
-                        <Link route={props.quote.quote_author_link}>
-                          <a dangerouslySetInnerHTML={ { __html: props.quote.quote_author_name_rendered } }></a>
-                        </Link>
-                      </p>
-                    ) : null
-                }
-                {
-                  !props.hide_author_profession
-                    ? (
-                      <p className="author-profession">{props.quote.quote_author_profession_rendered}</p>
-                    ) : null
-                }
+class Quote extends Component {
+  static defaultProps = {
+    hide_author_name: false,
+    hide_author_profession: false,
+  };
+
+  render() {
+    return (
+      <div id={'quote-' + this.props.quote.quote_nid}
+           className={'quote-container ' + (this.props.i % 2 ? 'even' : 'odd')}>
+        <div className="quote-container-inner">
+          <div className="quote">
+            <div className="group-left">
+              <p className="quote-image"
+                 dangerouslySetInnerHTML={{__html: this.props.quote.author_portrait}}></p>
+              <div className="vote" id="vote-{this.props.quote.quote_nid}">
+                <a className="vote-up sr-only" href="#"></a>
+                <a className="vote-down sr-only" href="#"></a>
+                <div className="vote-current">{this.props.quote.quote_rank}</div>
               </div>
-            ): null
-          }
-          <p className="quote">
-            <Link route={'/tsitaadid/autorid/' + props.quote.quote_author_urlfriendly_name + '/' + props.quote.quote_nid}>
-              <a dangerouslySetInnerHTML={ { __html: props.quote.quote } }></a>
-            </Link>
-          </p>
-          <p className="quote-source" dangerouslySetInnerHTML={ { __html: props.quote.quote_source_rendered } }></p>
+            </div>
+            <div className="group-right">
+              {
+                !this.props.hide_author_name && !this.props.hide_author_profession ? (
+                  <div className="wrap--author-name--author-profession">
+                    {
+                      !this.props.hide_author_name
+                        ? (
+                          <p className="author-name">
+                            <Link route={this.props.quote.quote_author_link}>
+                              <a
+                                dangerouslySetInnerHTML={{__html: this.props.quote.quote_author_name_rendered}}></a>
+                            </Link>
+                          </p>
+                        ) : null
+                    }
+                    {
+                      !this.props.hide_author_profession
+                        ? (
+                          <p
+                            className="author-profession">{this.props.quote.quote_author_profession_rendered}</p>
+                        ) : null
+                    }
+                  </div>
+                ) : null
+              }
+              <p className="quote">
+                <Link
+                  route={'/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                  <a dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></a>
+                </Link>
+              </p>
+              <p className="quote-source"
+                 dangerouslySetInnerHTML={{__html: this.props.quote.quote_source_rendered}}></p>
+            </div>
+          </div>
+          <ul className="quote-info">
+            <li className="username"><a
+              href="/user/2/quotes">{this.props.quote.username}</a></li>
+            <li className="translations"
+                dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
+            <li className="category">
+              <Link
+                route={'/tsitaadid/kategooriad/' + this.props.quote.quote_category_machine_name}>
+                <a>{this.props.quote.quote_category}</a>
+              </Link>
+            </li>
+            {this.props.quote.tag_links.length > 0 ? (
+              <li className="tags">
+                {this.props.quote.tag_links.map((tag, i) => (
+                  <Link route={'/tsitaadid/teemad/' + tag.machine_name} key={i}>
+                    <a>{tag.name}</a>
+                  </Link>
+                ))}
+              </li>
+            ) : <li className="tags">Sildid puuduvad</li>
+            }
+          </ul>
         </div>
       </div>
-      <ul className="quote-info">
-        <li className="username"><a href="/user/2/quotes">{props.quote.username}</a></li>
-        <li className="translations" dangerouslySetInnerHTML={ { __html: props.quote.quote_translation_links_rendered } }></li>
-        <li className="category">
-          <Link route={'/tsitaadid/kategooriad/' + props.quote.quote_category_machine_name}>
-            <a>{props.quote.quote_category}</a>
-          </Link>
-        </li>
-        {props.quote.tag_links.length > 0 ? (
-          <li className="tags">
-            {props.quote.tag_links.map((tag, i) => (
-              <Link route={'/tsitaadid/teemad/' + tag.machine_name} key={i}>
-                <a>{tag.name}</a>
-              </Link>
-            ))}
-          </li>
-        ) : <li className="tags">Sildid puuduvad</li>
-        }
-      </ul>
-    </div>
-  </div>
-
-);
-
-Quote.defaultProps = {
-  hide_author_name: false,
-  hide_author_profession: false,
-};
+    )
+  }
+}
 
 export default Quote;
