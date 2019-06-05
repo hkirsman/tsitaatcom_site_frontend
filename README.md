@@ -2,8 +2,8 @@
 
 ## Todo
 
-1. Many resources are still pulled from current production - search for www.tsitaat.com
 1. Refactor styles and markup.
+1. Start using Webpack
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
 1. Decrease the json payload - probably would need to change to Apollo as it only sends data
    that is needed. /tsitaatcom_json/top-100-quotes currently is 316kb.

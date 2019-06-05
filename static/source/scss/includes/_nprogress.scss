@@ -4,7 +4,7 @@
 }
 
 #nprogress .bar {
-  background: #305891;
+  background: $color-link;
   position: fixed;
   z-index: 1031;
   top: 0;
@@ -14,14 +14,14 @@
   height: 2px;
 }
 
-/* Fancy blur effect */
+// Fancy blur effect
 #nprogress .peg {
   display: block;
   position: absolute;
-  right: 0px;
+  right: 0;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #305891, 0 0 5px #305891;
+  box-shadow: 0 0 10px $color-link, 0 0 5px $color-link;
   opacity: 1.0;
 
   -webkit-transform: rotate(3deg) translate(0px, -4px);
