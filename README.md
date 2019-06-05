@@ -12,6 +12,5 @@
 1. 404 page is too big, just decrease height a bit would be enough for now.
 1. Get rid of frontend/lib/isAuthorPage.js & frontend/lib/isAuthorListingPage.js etc.
    Was not able to use class functions inside getInitialProps().
-1. Although currently there's also http://www.tsitaat.com/latest-quotes we should translate it.
 1. Remove all different kinds of fonts like Muli and the custom local font
 1. http://localhost:7777/tsitaadid/teemad/inimese_eluiga shows underscore in title.
