@@ -23,7 +23,7 @@ class Quotes extends Component {
             key={i}
             i={i} />
         ))}
-        <Pagination />
+        {typeof this.props.pager !== 'undefined' && <Pagination pager={this.props.pager} />}
       </div>
     )
   }

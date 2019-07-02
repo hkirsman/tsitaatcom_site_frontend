@@ -6,18 +6,19 @@ import Error from 'next/error';
 import Head from 'next/head';
 import Quotes from "../../components/Quotes";
 import { title } from '../../config';
-import Title from '../../components/Title';
 import headTitle from '../../lib/headTitle';
 
 class Tags extends React.Component {
 
   static async getInitialProps({ query }) {
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + encodeURI(query.tag) + '?page=' + query.page);
     let data = await res.json();
+    let items = data.items;
+    const pager = data.pager;
     if (query.tag.length === 1) {
-      data = array_chunk_to_3_groups(Array.from(data));
+      items = array_chunk_to_3_groups(Array.from(items));
     }
-    return { data: data, query: query }
+    return { data: items, pager: pager, query: query }
   }
 
   render() {
@@ -58,7 +59,7 @@ class Tags extends React.Component {
                   content={'Tsitaadid ja ütlemised teemal ' + this.props.query.tag + '.'} />
           </Head>
           <h1>{this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1)}</h1>
-          <Quotes quotes={this.props.data} cookies={this.props.cookies} />
+          <Quotes quotes={this.props.data} cookies={this.props.cookies} pager={this.props.pager} />
         </div>
       );
     }
