@@ -161,19 +161,21 @@ class Pagination extends React.Component {
     let items = [];
 
     if (this.props.pager.pager_total[this.props.pager.element] > 1) {
-      items.push(this.pagerLink({
-        'text': '« first',
-        parameters: {
-          'page': 1
-        }
-      }));
+      if (this.props.pager.page > 0) {
+        items.push(this.pagerLink({
+          'text': '« first',
+          parameters: {
+            'page': 1
+          }
+        }));
 
-      items.push(this.pagerLink({
-        'text': '‹ previous',
-        parameters: {
-          'page': this.props.pager.page - 1
-        }
-      }));
+        items.push(this.pagerLink({
+          'text': '‹ previous',
+          parameters: {
+            'page': this.props.pager.page - 1
+          }
+        }));
+      }
 
       // When there is more than one page, create the pager list.
       if (i != this.props.pager.pager_max) {
@@ -216,19 +218,21 @@ class Pagination extends React.Component {
         }
       }
 
-      items.push(this.pagerLink({
-        'text': 'next ›',
-        parameters: {
-          'page': this.props.pager.page + 1
-        }
-      }));
+      if (this.props.pager.page < this.props.pager.pager_max - 1) {
+        items.push(this.pagerLink({
+          'text': 'next ›',
+          parameters: {
+            'page': this.props.pager.page + 1
+          }
+        }));
 
-      items.push(this.pagerLink({
-        'text': 'last »',
-        parameters: {
-          'page': this.props.pager.pager_max - 1
-        }
-      }));
+        items.push(this.pagerLink({
+          'text': 'last »',
+          parameters: {
+            'page': this.props.pager.pager_max - 1
+          }
+        }));
+      }
     }
 
     return (
