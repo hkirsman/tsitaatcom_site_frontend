@@ -2,8 +2,6 @@
 
 ## Todo
 
-1. Make pager work - add to all pages and fix previous going under 0, next probably going over max :)
-1. Feels slow after pager implementation (or may be before that).
 1. Refactor styles and markup.
 1. Start using Webpack
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
