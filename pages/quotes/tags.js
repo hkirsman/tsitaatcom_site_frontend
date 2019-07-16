@@ -31,11 +31,11 @@ class Tags extends React.Component {
           <h1>Teema kategooria: {this.props.query.tag}</h1>
           <div className="author-tag-listing">
             <div className="author-tag-listing-inner">
-              {this.props.data.map((group, index) => {
+              {this.props.data.map((group, col_index) => {
                 return (
-                  <ul className={'column column-' + index} key={index}>
-                    {group.map(item => (
-                      <li key={item.quote_author_nid}>
+                  <ul className={'column column-' + col_index} key={col_index}>
+                    {group.map((item, i) => (
+                      <li key={i}>
                         <Link route={'/' + item.link}>
                           <a>{item.tag}</a>
                         </Link>
