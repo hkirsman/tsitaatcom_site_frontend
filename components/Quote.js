@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Link} from '../routes';
+import { endpoint } from '../config';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import {Link} from '../routes';
 
 class Quote extends Component {
   static defaultProps = {
@@ -39,7 +40,7 @@ class Quote extends Component {
     }
 
     const nid = this.props.quote.quote_nid;
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/vote/' + nid + '/' + vote);
+    const res = await fetch(endpoint + '/tsitaatcom_json/vote/' + nid + '/' + vote);
 
     const cookie_name = 'Drupal_tsitaatcom_vote_' + nid;
 

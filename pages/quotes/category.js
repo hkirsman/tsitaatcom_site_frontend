@@ -1,15 +1,16 @@
-import fetch from 'isomorphic-unfetch'
-import React from "react";
-import {Link} from '../../routes';
 import Error from 'next/error';
+import fetch from 'isomorphic-unfetch'
 import Head from 'next/head';
-import Quotes from "../../components/Quotes";
 import headTitle from "../../lib/headTitle";
+import Quotes from "../../components/Quotes";
+import React from "react";
+import { endpoint } from '../../config';
+import {Link} from '../../routes';
 
 class Category extends React.Component {
 
   static async getInitialProps({ query }) {
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/categories/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+    const res = await fetch(endpoint + '/tsitaatcom_json/categories/' + Object.values(query).map(x => encodeURI(x)).join('/'));
     let data = await res.json();
     return { data: data, query: query }
   }

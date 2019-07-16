@@ -1,7 +1,8 @@
 import App, { Container } from 'next/app';
-import Page from '../components/Page';
 import fetch from 'isomorphic-unfetch'
 import nookies from 'nookies'
+import Page from '../components/Page';
+import { endpoint } from '../config';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -12,7 +13,7 @@ class MyApp extends App {
 
     // @todo: is there any other way not to pull this data on ever page load?
     // if (!process.browser) {
-      const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/nav-content-index');
+      const res = await fetch(endpoint + '/tsitaatcom_json/nav-content-index');
       pageProps.navContentIndex = await res.json();
     // }
 

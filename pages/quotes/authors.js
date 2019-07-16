@@ -1,25 +1,26 @@
-import fetch from 'isomorphic-unfetch'
-import React from "react";
 import array_chunk_to_3_groups from '../../lib/array_chunk_to_3_groups';
-import {Link} from '../../routes';
 import Error from 'next/error';
+import fetch from 'isomorphic-unfetch'
+import Head from 'next/head';
+import headTitle from "../../lib/headTitle";
 import isAuthorListingPage from '../../lib/isAuthorListingPage';
 import isAuthorPage from '../../lib/isAuthorPage';
 import Quotes from '../../components/Quotes';
-import Head from 'next/head';
-import headTitle from "../../lib/headTitle";
+import React from "react";
+import { endpoint } from '../../config';
+import {Link} from '../../routes';
 
 class Authors extends React.Component {
 
   static async getInitialProps({ query }) {
     if (isAuthorListingPage(query)) {
-      const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/authors/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+      const res = await fetch(endpoint + '/tsitaatcom_json/authors/' + Object.values(query).map(x => encodeURI(x)).join('/'));
       let data = await res.json();
       data.items = array_chunk_to_3_groups(Array.from(data.items));
       return { data: data.items, query: query }
     }
     else if (isAuthorPage(query)) {
-      const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/author-quotes/' + encodeURI(query.author_name) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
+      const res = await fetch(endpoint + '/tsitaatcom_json/author-quotes/' + encodeURI(query.author_name) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
       const data = await res.json();
       return { data: data.items, pager: data.pager, query: query }
     }

@@ -1,17 +1,17 @@
-import fetch from 'isomorphic-unfetch'
-import React from "react";
 import array_chunk_to_3_groups from '../../lib/array_chunk_to_3_groups';
-import {Link} from '../../routes';
 import Error from 'next/error';
+import fetch from 'isomorphic-unfetch'
 import Head from 'next/head';
-import Quotes from "../../components/Quotes";
-import { title } from '../../config';
 import headTitle from '../../lib/headTitle';
+import Quotes from "../../components/Quotes";
+import React from "react";
+import { endpoint, title } from '../../config';
+import {Link} from '../../routes';
 
 class Tags extends React.Component {
 
   static async getInitialProps({ query }) {
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + encodeURI(query.tag) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
+    const res = await fetch(endpoint + '/tsitaatcom_json/tags/' + encodeURI(query.tag) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
     let data = await res.json();
     let items = data.items;
     if (query.tag.length === 1) {

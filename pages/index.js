@@ -2,8 +2,9 @@ import {Component} from "react";
 import React from "react";
 import TagCloud from '../components/TagCloud';
 import fetch from 'isomorphic-unfetch';
-import { siteTitle } from '../config';
+import { siteTitle, endpoint } from '../config';
 import Head from 'next/head';
+
 
 class Home extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class Home extends Component {
   }
 
   static async getInitialProps({ query }) {
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tag-cloud');
+    const res = await fetch(endpoint + '/tsitaatcom_json/tag-cloud');
     let tags = await res.json();
     return { tags: tags }
   }
