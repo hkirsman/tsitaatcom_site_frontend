@@ -1,6 +1,7 @@
 import Head from 'next/head';
+import {withRouter} from "next/router";
 
-const Meta = () => (
+const Meta = (props) => (
   <Head>
     <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
@@ -19,7 +20,14 @@ const Meta = () => (
     <meta http-equiv="cleartype" content="on" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <link rel="stylesheet" href="/static/public/css/global.css" />
+    {
+      typeof props.router.query.page !== 'undefined' && props.router.query.page > 0 ?
+        <meta name="robots" content="noindex" />
+        : null
+    }
   </Head>
 );
 
-export default Meta;
+const MetaWithRouter = withRouter(Meta);
+
+export default MetaWithRouter;
