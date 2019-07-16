@@ -15,11 +15,16 @@
     > li {
       display: inline;
 
-      > a:hover,
-      > a:focus {
+      > a:hover {
         color: #23527c;
         background-color: #eee;
         border-color: #ddd;
+      }
+
+      // In next.js the next link from current will have focus styles set but that does not make sense
+      // so resetting here.
+      > a:focus {
+        outline: 0;
       }
 
       &.current > span {

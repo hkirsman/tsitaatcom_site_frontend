@@ -1481,11 +1481,12 @@ ul.tag-cloud li {
   border-radius: 4px; }
   .pager > li {
     display: inline; }
-    .pager > li > a:hover,
-    .pager > li > a:focus {
+    .pager > li > a:hover {
       color: #23527c;
       background-color: #eee;
       border-color: #ddd; }
+    .pager > li > a:focus {
+      outline: 0; }
     .pager > li.current > span {
       background-color: #337AB7;
       color: #fff;

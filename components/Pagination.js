@@ -142,17 +142,19 @@ class Pagination extends React.Component {
     // @todo: scope does not go into functions?
     const element = 0;
     const parameters = {};
+    let pager_last = this.props.pager.pager_last;
+    const pager_current = typeof this.props.router.query.page !== 'undefined' ? parseInt(this.props.router.query.page) + 1 : 0;
 
     // Prepare for generation loop.
     let i = this.props.pager.pager_first;
-    if (this.props.pager.pager_last > this.props.pager.pager_max) {
+    if (pager_last > this.props.pager.pager_max) {
       // Adjust "center" if at end of query.
-      i = i + (this.props.pager.pager_max - this.props.pager.pager_last);
-      this.props.pager.pager_last = this.props.pager.pager_max;
+      i = i + (this.props.pager.pager_max - pager_last);
+      pager_last = this.props.pager.pager_max;
     }
     if (i <= 0) {
       // Adjust "center" if at start of query.
-      this.props.pager.pager_last = this.props.pager.pager_last + (1 - i);
+      pager_last = pager_last + (1 - i);
       i = 1;
     }
     // End of generation loop preparation.
@@ -161,16 +163,16 @@ class Pagination extends React.Component {
     let items = [];
 
     if (this.props.pager.pager_total[this.props.pager.element] > 1) {
-      if (this.props.pager.page > 0) {
+      if (pager_current > 1) {
         items.push(this.pagerLink({
-          'text': '« first',
+          'text': '« esimene',
           parameters: {
-            'page': 1
+            'page': 0
           }
         }));
 
         items.push(this.pagerLink({
-          'text': '‹ previous',
+          'text': '‹ eelmine',
           parameters: {
             'page': this.props.pager.page - 1
           }
@@ -186,8 +188,8 @@ class Pagination extends React.Component {
           });
         }
         // Now generate the actual pager piece.
-        for (; i <= this.props.pager.pager_last && i <= this.props.pager.pager_max; i++) {
-          if (i < this.props.pager.pager_current) {
+        for (; i <= pager_last && i <= this.props.pager.pager_max; i++) {
+          if (i < pager_current) {
             items.push(this.pagerLink({
               'text': i,
               parameters: {
@@ -195,13 +197,13 @@ class Pagination extends React.Component {
               }
             }));
           }
-          if (i == this.props.pager.pager_current) {
+          if (i == pager_current) {
             items.push({
               'class': 'current',
               'text': i,
             });
           }
-          if (i > this.props.pager.pager_current) {
+          if (i > pager_current) {
             items.push(this.pagerLink({
               'text': i,
               parameters: {
@@ -218,16 +220,16 @@ class Pagination extends React.Component {
         }
       }
 
-      if (this.props.pager.page < this.props.pager.pager_max - 1) {
+      if (pager_current < this.props.pager.pager_max) {
         items.push(this.pagerLink({
-          'text': 'next ›',
+          'text': 'järgmine ›',
           parameters: {
             'page': this.props.pager.page + 1
           }
         }));
 
         items.push(this.pagerLink({
-          'text': 'last »',
+          'text': 'viimane »',
           parameters: {
             'page': this.props.pager.pager_max - 1
           }

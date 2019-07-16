@@ -11,7 +11,7 @@ import headTitle from '../../lib/headTitle';
 class Tags extends React.Component {
 
   static async getInitialProps({ query }) {
-    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + encodeURI(query.tag) + '?page=' + query.page);
+    const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + encodeURI(query.tag) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
     let data = await res.json();
     let items = data.items;
     const pager = data.pager;
