@@ -14,11 +14,10 @@ class Tags extends React.Component {
     const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/tags/' + encodeURI(query.tag) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
     let data = await res.json();
     let items = data.items;
-    const pager = data.pager;
     if (query.tag.length === 1) {
       items = array_chunk_to_3_groups(Array.from(items));
     }
-    return { data: items, pager: pager, query: query }
+    return { data: items, pager: data.pager, query: query }
   }
 
   render() {

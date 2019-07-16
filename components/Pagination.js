@@ -20,50 +20,47 @@ class Pagination extends React.Component {
    *
    * @ingroup themeable
    */
-  pagerPrevious(variables) {
-    let text = variables.text;
-    // @todo: Not sure if element should be default here or somewhere - in Drupal it seems to be always 0.
-    let element = ('element' in variables) ? variables.element : 0;
-    // @todo: Not sure if element should be default here or somewhere - in Drupal it seems to be always 1.
-    let interval = ('interval' in variables) ? variables.interval : 1;
-    let parameters = ('parameters' in variables) ? variables.parameters : {};
-    const pager_page_array =  variables.pager_page_array;
-    // @todo: null or empty object?
-    let output = {};
-
-    // console.log('wtf pager_page_array on serveris ja brauseris erinev');
-    // console.log(pager_page_array);
-
-    // If we are anywhere but the first page
-    if (pager_page_array[element] > 0) {
-      const page_new = this.pagerLoadArray(pager_page_array[element] - interval, element, pager_page_array);
-
-      // If the previous page is the first page, mark the link as such.
-      if (page_new[element] == 0) {
-        // output = theme('pager_first', array('text' => $text, 'element' => element, 'parameters' => parameters));
-
-        output = this.pagerLink({
-          'text': text,
-          "page": this.props.pager.page,
-          "element": element,
-          "parameters": parameters
-        });
-      }
-      // The previous page is not the first page.
-      else {
-        // output = theme('pager_link', array('text' => $text, 'page_new' => page_new, 'element' => element, 'parameters' => parameters));
-        output = this.pagerLink({
-          'text': text,
-          "page": this.props.pager.page,
-          "page_new": page_new,
-          "element": element,
-          "parameters": parameters
-        });
-      }
-    }
-
-    return output;
-  }
+  // pagerPrevious(variables) {
+  //   let text = variables.text;
+  //   // @todo: Not sure if element should be default here or somewhere - in Drupal it seems to be always 0.
+  //   let element = ('element' in variables) ? variables.element : 0;
+  //   // @todo: Not sure if element should be default here or somewhere - in Drupal it seems to be always 1.
+  //   let interval = ('interval' in variables) ? variables.interval : 1;
+  //   let parameters = ('parameters' in variables) ? variables.parameters : {};
+  //   const pager_page_array =  variables.pager_page_array;
+  //   // @todo: null or empty object?
+  //   let output = {};
+  //
+  //   // If we are anywhere but the first page
+  //   if (pager_page_array[element] > 0) {
+  //     const page_new = this.pagerLoadArray(pager_page_array[element] - interval, element, pager_page_array);
+  //
+  //     // If the previous page is the first page, mark the link as such.
+  //     if (page_new[element] == 0) {
+  //       // output = theme('pager_first', array('text' => $text, 'element' => element, 'parameters' => parameters));
+  //
+  //       output = this.pagerLink({
+  //         'text': text,
+  //         "page": this.props.pager.page,
+  //         "element": element,
+  //         "parameters": parameters
+  //       });
+  //     }
+  //     // The previous page is not the first page.
+  //     else {
+  //       // output = theme('pager_link', array('text' => $text, 'page_new' => page_new, 'element' => element, 'parameters' => parameters));
+  //       output = this.pagerLink({
+  //         'text': text,
+  //         "page": this.props.pager.page,
+  //         "page_new": page_new,
+  //         "element": element,
+  //         "parameters": parameters
+  //       });
+  //     }
+  //   }
+  //
+  //   return output;
+  // }
 
   // function theme_pager_next($variables)
 
@@ -143,7 +140,7 @@ class Pagination extends React.Component {
     const element = 0;
     const parameters = {};
     let pager_last = this.props.pager.pager_last;
-    const pager_current = typeof this.props.router.query.page !== 'undefined' ? parseInt(this.props.router.query.page) + 1 : 0;
+    const pager_current = typeof this.props.router.query.page !== 'undefined' ? parseInt(this.props.router.query.page) + 1 : 1;
 
     // Prepare for generation loop.
     let i = this.props.pager.pager_first;
@@ -174,7 +171,7 @@ class Pagination extends React.Component {
         items.push(this.pagerLink({
           'text': '‹ eelmine',
           parameters: {
-            'page': this.props.pager.page - 1
+            'page': pager_current - 2
           }
         }));
       }
@@ -224,7 +221,7 @@ class Pagination extends React.Component {
         items.push(this.pagerLink({
           'text': 'järgmine ›',
           parameters: {
-            'page': this.props.pager.page + 1
+            'page': pager_current
           }
         }));
 

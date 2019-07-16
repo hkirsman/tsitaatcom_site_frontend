@@ -11,14 +11,14 @@ const Latest = props => (
       <meta name="robots" content="noindex" />
     </Head>
     <h1>Viimati lisatud tsitaadid</h1>
-    <Quotes quotes={props.quotes} cookies={props.cookies} />
+    <Quotes quotes={props.quotes} cookies={props.cookies} pager={props.pager} />
   </div>
 );
 
-Latest.getInitialProps = async ({ req }) => {
-  const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/latest-quotes');
+Latest.getInitialProps = async ({ query }) => {
+  const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/latest-quotes' + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
   const data = await res.json();
-  return { quotes: data }
+  return { quotes: data.items, pager: data.pager, query: query }
 };
 
 export default Latest

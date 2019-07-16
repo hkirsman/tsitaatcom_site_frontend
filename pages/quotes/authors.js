@@ -15,13 +15,13 @@ class Authors extends React.Component {
     if (isAuthorListingPage(query)) {
       const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/authors/' + Object.values(query).map(x => encodeURI(x)).join('/'));
       let data = await res.json();
-      data = array_chunk_to_3_groups(Array.from(data));
-      return { data: data, query: query }
+      data.items = array_chunk_to_3_groups(Array.from(data.items));
+      return { data: data.items, query: query }
     }
     else if (isAuthorPage(query)) {
-      const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/author-quotes/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+      const res = await fetch('http://tsitaat.com.lndo.site/tsitaatcom_json/author-quotes/' + encodeURI(query.author_name) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
       const data = await res.json();
-      return { data: data, query: query }
+      return { data: data.items, pager: data.pager, query: query }
     }
   }
 
@@ -76,7 +76,8 @@ class Authors extends React.Component {
             quotes={this.props.data}
             hide_author_name={true}
             hide_author_profession={true}
-            cookies={this.props.cookies} />
+            cookies={this.props.cookies}
+            pager={this.props.pager} />
         </div>
       );
     }
