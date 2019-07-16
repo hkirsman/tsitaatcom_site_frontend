@@ -20,15 +20,19 @@ class Tags extends React.Component {
     return { data: items, pager: data.pager, query: query }
   }
 
+  tagWithoutUnderscore() {
+    return this.props.query.tag.replace('_', ' ');
+  }
+
   render() {
     if (this.props.query.tag.length === 1) {
       return (
         <div>
           <Head>
-            <title>{headTitle( 'Teema kategooria: ' + this.props.query.tag)}</title>
+            <title>{headTitle( 'Teema kategooria: ' + this.tagWithoutUnderscore())}</title>
             <meta name="robots" content="noindex" />
           </Head>
-          <h1>Teema kategooria: {this.props.query.tag}</h1>
+          <h1>Teema kategooria: {this.tagWithoutUnderscore()}</h1>
           <div className="author-tag-listing">
             <div className="author-tag-listing-inner">
               {this.props.data.map((group, col_index) => {
@@ -53,11 +57,11 @@ class Tags extends React.Component {
       return (
         <div>
           <Head>
-            <title>{headTitle(this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1))}</title>
+            <title>{headTitle(this.tagWithoutUnderscore().charAt(0).toUpperCase() + this.tagWithoutUnderscore().slice(1))}</title>
             <meta name="description"
-                  content={'Tsitaadid ja ütlemised teemal ' + this.props.query.tag + '.'} />
+                  content={'Tsitaadid ja ütlemised teemal ' + this.tagWithoutUnderscore() + '.'} />
           </Head>
-          <h1>{this.props.query.tag.charAt(0).toUpperCase() + this.props.query.tag.slice(1)}</h1>
+          <h1>{this.tagWithoutUnderscore().charAt(0).toUpperCase() + this.tagWithoutUnderscore().slice(1)}</h1>
           <Quotes quotes={this.props.data} cookies={this.props.cookies} pager={this.props.pager} />
         </div>
       );
