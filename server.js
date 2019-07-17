@@ -3,8 +3,8 @@ const routes = require('./routes')
 const app = next({dev: process.env.NODE_ENV !== 'production'})
 const handler = routes.getRequestHandler(app)
 
-// Without express
-const {createServer} = require('http')
+// With express
+const express = require('express')
 app.prepare().then(() => {
-  createServer(handler).listen(7777)
+  express().use(handler).listen(7777)
 });
