@@ -20,5 +20,11 @@
 1. Where do you add in the build process:
 npm install
 npm run build
+ps2'le peab restardi tegema tundub
 1. configure https://tsitaat.deploybot.com
 1. https://new.tsitaat.com/tsitaadid/autorid/tommy_hellsten/14416 peaks näitama spetsiifilist lehte
+1. Change old ip 212.47.217.129 to new 217.146.69.42
+1. Siimule õlled
+1. IP piirangud ssh'le tagasi pärast deployboti korda tegemist
+1. dns kirjed max peale?
+1. Fix error in dev for allowing data-linkTarget="_self" in Page.js
