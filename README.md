@@ -2,6 +2,7 @@
 
 ## Todo
 
+1. Create users page
 1. Refactor styles and markup.
 1. Start using Webpack
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
@@ -14,3 +15,10 @@
    Was not able to use class functions inside getInitialProps().
 1. Remove all different kinds of fonts like Muli and the custom local font
 1. http://localhost:7777/tsitaadid/teemad/inimese_eluiga shows underscore in title.
+1. npm install express --save but do I need to uninstall the default server?
+1. handle all kinds of weird urls like http://localhost:7777/tsitaadid/autorid/lennart_meri2
+1. Where do you add in the build process:
+npm install
+npm run build
+1. configure https://tsitaat.deploybot.com
+1. https://new.tsitaat.com/tsitaadid/autorid/tommy_hellsten/14416 peaks näitama spetsiifilist lehte

@@ -120,8 +120,7 @@ class Quote extends Component {
             </div>
           </div>
           <ul className="quote-info">
-            <li className="username"><a
-              href="/user/2/quotes">{this.props.quote.username}</a></li>
+            <li className="username">{this.props.quote.username}</li>
             <li className="translations"
                 dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
             <li className="category">
