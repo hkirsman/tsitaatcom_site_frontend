@@ -2,7 +2,7 @@
 // @todo: As I don't know how much this can be configured by Zone.ee, I've disabled everything but minimal and will add more gradually.
 module.exports = {
   apps : [{
-    name: 'API',
+    name: 'tsitaat-com',
     // script: 'app.js',
     script: 'npm start',
     cwd: './domeenid/www.tsitaat.com/frontend',
