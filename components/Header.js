@@ -4,7 +4,7 @@ import Logo from '../components/Logo';
 import React, {Component} from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-
+import Script from 'react-load-script'
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
@@ -85,7 +85,7 @@ class Header extends React.Component {
             />
 
           <div id="block-search-form" className="block block-search " role="search">
-            <script async src="https://cse.google.com/cse.js?cx=011181835781346626771:epdp_edxg1o"></script>
+            <Script async url="https://cse.google.com/cse.js?cx=011181835781346626771:epdp_edxg1o" />
             <div className="gcse-searchbox" data-gname="quotesearch"></div>
           </div>
 
