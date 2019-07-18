@@ -85,29 +85,11 @@ class Header extends React.Component {
             />
 
           <div id="block-search-form" className="block block-search " role="search">
-
-
-            <form className="google-cse" action="/latest-quotes" method="post"
-                  id="search-block-form" acceptCharset="UTF-8" onSubmit={this.handleSubmit}>
-              <h2 className="element-invisible">Otsinguvorm</h2>
-
-              <div>
-                <label className="element-invisible"
-                       htmlFor="edit-search-block-form--2">Otsing</label>
-                <input title="Sisesta märksõnad, mida soovid otsida."
-                       placeholder="" type="text"
-                       id="edit-search-block-form--2" name="search_block_form"
-                       size="30" maxLength="128"
-                       value={this.state.value} onChange={this.handleChange} />
-              </div>
-              <div className="form-actions form-wrapper" id="edit-actions--2">
-                <input type="submit" id="edit-submit--2" name="op" value="Otsing"/>
-              </div>
-            </form>
+            <script async src="https://cse.google.com/cse.js?cx=011181835781346626771:epdp_edxg1o"></script>
+            <div className="gcse-searchbox" data-gname="quotesearch"></div>
           </div>
 
         </div>
-
       </header>
     )
   }

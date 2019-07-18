@@ -22,8 +22,13 @@ class MyApp extends App {
     pageProps.cookies = nookies.get(ctx);
 
     // Google Analytics pageview client-side only, run on page changes, do not run on server (SSR)
-    if (typeof(window) === "object") {
+    if (typeof(window) === 'object') {
       ReactGA.pageview(ctx.asPath);
+    }
+
+    // Clear search when navigating to new page.
+    if (typeof(window) === 'object') {
+      google.search.cse.element.getElement('quotesearch').clearAllResults();
     }
 
     return { pageProps };
@@ -31,9 +36,7 @@ class MyApp extends App {
 
   componentDidMount() {
     // Client-side only, run once on mount.
-    console.log('GA init');
     ReactGA.initialize('UA-4321409-1');
-    console.log(window.location.pathname + window.location.search);
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
 

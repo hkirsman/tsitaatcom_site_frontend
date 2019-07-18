@@ -3,32 +3,43 @@
 
 @if $layout == global {
   .block-search {
-    @extend .clearfix;
     margin: 0 auto;
-    padding-top: 0;
     width: 200px;
 
-    .google-cse > div {
-      float: left;
+    form.gsc-search-box {
+      margin-bottom: 0;
     }
 
-    .form-wrapper.form-actions {
+    table.gsc-search-box {
+      margin-bottom: 0;
+    }
+
+    td {
+      background: none;
+      padding: 0 !important;
+    }
+
+    .gsc-input-box {
       border: 0;
-      margin: 0;
-      padding: 0;
+      background: none;
+    }
+
+    // Hide close button as it kind of breaks the UI visually.
+    td.gsib_b {
+      display: none;
     }
 
     input[type="text"] {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
       background-position: 17px 50% !important;
-      -webkit-box-sizing: content-box;
-      -moz-box-sizing: content-box;
-      box-sizing: content-box;
       border-radius: 6px 0 0 6px;
       border-right: 0 !important;
       border: 1px solid #9db2b3 !important;
       color: #696269;
-      font-family: $font_title_italic;
-      font-size: 20px;
+      //font-family: $font_title_italic;
+      //font-size: 20px;
       height: 30px;
       line-height: 30px;
       margin: 0;
@@ -36,8 +47,9 @@
       width: 100px;
     }
 
-    input[type="submit"] {
+    button.gsc-search-button {
       @include sprite($header-search-btn);
+      background-color: transparent;
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
       -ms-border-radius: 0;
@@ -50,6 +62,10 @@
       padding: 0;
       text-indent: -10000px;
     }
+  }
+
+  .gsc-control-cse {
+    border: 0;
   }
 
 

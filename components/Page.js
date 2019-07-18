@@ -32,6 +32,7 @@ class Page extends Component {
         <div className="page">
           <div role="main" id="main-content" className="main-content">
             <div className="content-wrap">
+              <div className="gcse-searchresults" data-gname="quotesearch"></div>
               {this.props.children}
             </div>
           </div>

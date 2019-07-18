@@ -6,7 +6,8 @@
     // Apply width also to node-form as on some pages like diff the
     // content-wrap is overwritten.
     &,
-    .node-form {
+    .node-form,
+    .gsc-control-cse {
       margin: 0 auto;
       max-width: $width-wide-content;
     }

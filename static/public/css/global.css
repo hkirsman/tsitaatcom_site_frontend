@@ -44,7 +44,7 @@ The `sprites` mixin generates identical output to the CSS template
 @include sprites($spritesheet-sprites);
 */
 @import url("../fonts/stylesheet.css");
-.clearfix:after, .header-region-top:after, #block-user-login .hybridauth-widget-wrapper ul.hybridauth-widget li a:after, .block-search:after, .author-tag-listing-inner:after, .quote-container .quote-info:after {
+.clearfix:after, .header-region-top:after, #block-user-login .hybridauth-widget-wrapper ul.hybridauth-widget li a:after, .author-tag-listing-inner:after, .quote-container .quote-info:after {
   content: "";
   display: table;
   clear: both; }
@@ -1174,35 +1174,39 @@ form input[type="button"] {
 
 .block-search {
   margin: 0 auto;
-  padding-top: 0;
   width: 200px; }
-  .block-search .google-cse > div {
-    float: left; }
-  .block-search .form-wrapper.form-actions {
+  .block-search form.gsc-search-box {
+    margin-bottom: 0; }
+  .block-search table.gsc-search-box {
+    margin-bottom: 0; }
+  .block-search td {
+    background: none;
+    padding: 0 !important; }
+  .block-search .gsc-input-box {
     border: 0;
-    margin: 0;
-    padding: 0; }
+    background: none; }
+  .block-search td.gsib_b {
+    display: none; }
   .block-search input[type="text"] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     background-position: 17px 50% !important;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
     border-radius: 6px 0 0 6px;
     border-right: 0 !important;
     border: 1px solid #9db2b3 !important;
     color: #696269;
-    font-family: "RalewayItalic", sans-serif;
-    font-size: 20px;
     height: 30px;
     line-height: 30px;
     margin: 0;
     padding: 13px 18px 11px 18px !important;
     width: 100px; }
-  .block-search input[type="submit"] {
+  .block-search button.gsc-search-button {
     background-image: url(../img/sprite.png);
     background-position: -215px -385px;
     width: 62px;
     height: 56px;
+    background-color: transparent;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
@@ -1214,6 +1218,9 @@ form input[type="button"] {
     overflow: hidden;
     padding: 0;
     text-indent: -10000px; }
+
+.gsc-control-cse {
+  border: 0; }
 
 @media (min-width: 300px) {
   .block-search {
@@ -1702,10 +1709,12 @@ ul.tag-cloud li {
   color: #305891 !important; }
 
 .main-content .gsc-control-cse {
-  padding: 0; }
+  padding: 0;
+  border: 0; }
 
 .content-wrap,
-.content-wrap .node-form {
+.content-wrap .node-form,
+.content-wrap .gsc-control-cse {
   margin: 0 auto;
   max-width: 700px; }
 
