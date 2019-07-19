@@ -3,9 +3,6 @@
 
 @if $layout == global {
   .block-search {
-    margin: 0 auto;
-    width: 200px;
-
     form.gsc-search-box {
       margin-bottom: 0;
     }
@@ -33,6 +30,36 @@
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
+    }
+
+    // Hide placeholder.
+    & {
+      ::-webkit-input-placeholder { // Chrome/Opera/Safari
+        color: white;
+      }
+      ::-moz-placeholder { // Firefox 19+
+        color: white;
+      }
+      :-ms-input-placeholder { // IE 10+
+        color: white;
+      }
+      :-moz-placeholder { // Firefox 18-
+        color: white;
+      }
+    }
+  }
+
+  .block-search--front {
+    display: none;
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 200px;
+
+    .front & {
+      display: block;
+    }
+
+    input[type="text"] {
       background-position: 17px 50% !important;
       border-radius: 6px 0 0 6px;
       border-right: 0 !important;
@@ -64,6 +91,88 @@
     }
   }
 
+  .block-search--header-top {
+    $block-search--header-animate-speed: 0.2s;
+    $block-search--header-hover-width: 300px;
+    $block-search--header-top-button-height: 28px;
+    $block-search--header-top-button-width: 30px;
+    $block-search--header-top-form-border: 4px;
+
+    background: white;
+    border-radius: 25px;
+    border: $block-search--header-top-form-border solid white;
+    box-sizing: border-box;
+    height: $block-search--header-top-button-height + ($block-search--header-top-form-border * 2);
+    overflow: hidden;
+    position: relative;
+    transition: all $block-search--header-animate-speed;
+    width: $block-search--header-top-button-width + ($block-search--header-top-form-border * 2);
+
+    input[type="text"],
+    button.gsc-search-button {
+      height: $block-search--header-top-button-height;
+      border-radius: 6px;
+    }
+
+    input[type="text"] {
+      background: white !important;
+      border-radius: 0;
+      border: 0;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      display: none;
+      font-size: 1em;
+      height: $block-search--header-top-button-height;
+      left: 0;
+      line-height: $block-search--header-top-button-height;
+      outline: 0;
+      padding: 0 10px !important;
+      position: absolute;
+      right: $block-search--header-top-button-width + ($block-search--header-top-form-border * 2);
+      top: 0;
+      width: $block-search--header-hover-width - $block-search--header-top-button-width - $block-search--header-top-form-border * 3 !important;
+    }
+
+    button.gsc-search-button {
+      background: white;
+      border-radius: 99px;
+      border: 0;
+      color: #07051a;
+      margin: 0;
+      padding: 0;
+      right: 0;
+      text-align: center;
+      top: 0;
+      transition: all $block-search--header-animate-speed;
+      width: $block-search--header-top-button-width;
+      display: block;
+      z-index: 1;
+      position: absolute;
+
+      svg {
+        fill: $color-link-hover;
+      }
+    }
+
+    &:hover {
+      width: $block-search--header-hover-width;
+      cursor: pointer;
+    }
+
+    &:hover input[type="text"] {
+      display: block;
+    }
+
+    &:hover button.gsc-search-button {
+      background: $color-link-hover;
+
+      svg {
+        fill: white;
+      }
+    }
+  }
+
   .gsc-control-cse {
     border: 0;
   }
@@ -71,7 +180,7 @@
 
 
   @media (min-width: 300px) {
-    .block-search {
+    .block-search--front {
       width: 280px;
 
       input[type="text"] {
@@ -83,7 +192,7 @@
 
 
   @media (min-width: 400px) {
-    .block-search {
+    .block-search--front {
       width: 380px;
 
       input[type="text"] {
@@ -95,11 +204,24 @@
 
 
   @media (min-width: 500px) {
-    .block-search {
+    .block-search--front {
       width: 460px;
 
       input[type="text"] {
         width: 360px;
+      }
+    }
+  }
+
+
+
+  @media (max-width: $width-wide-content) {
+    .block-search--header-top {
+      transition: all 0s;
+
+      &:hover {
+        position: absolute;
+        right: 17px;
       }
     }
   }

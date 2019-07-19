@@ -44,13 +44,14 @@
   .h1 {
     @include fontSize(30px, 34px);
     //line-height: (26px / 17px) * 100%;
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   p.author_profession {
     display: block;
     @include fontSize(18px);
-    margin-top: -20px;
+    margin-top: -10px;
     margin-bottom: 30px;
   }
 
@@ -238,8 +239,9 @@
 
   // Probably temporary solution.
   header {
+    min-height: 280px;
+    overflow: hidden;
     position: relative;
-    min-height: 409px;
 
     > div {
       position: relative;
@@ -255,29 +257,20 @@
       top: 0;
       z-index: 1;
     }
-
-    &:after {
-      @include sprite($boy);
-      bottom: 0;
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      z-index: 1;
-    }
-
-    .front & {
-      &:after {
-        display: none;
-      }
-    }
   }
-  .front .page {
-    position: relative;
+  .front {
+    .page {
+      position: relative;
 
-    &:after {
-      @extend header:after;
-      display: block;
+      &:after {
+        @include sprite($boy);
+        bottom: 0;
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
     }
   }
 
@@ -332,10 +325,8 @@
 
 
   @media (max-width: 1040px) {
-    header {
-      &:after {
-        display: none;
-      }
+    .front .page:after {
+      display: none;
     }
   }
 }

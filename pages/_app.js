@@ -28,7 +28,14 @@ class MyApp extends App {
 
     // Clear search when navigating to new page.
     if (typeof(window) === 'object') {
-      google.search.cse.element.getElement('quotesearch').clearAllResults();
+      const quotesearch1 = google.search.cse.element.getElement('quotesearch1');
+      const quotesearch2 = google.search.cse.element.getElement('quotesearch2');
+      if (quotesearch1) {
+        quotesearch1.clearAllResults();
+      }
+      if (quotesearch2) {
+        quotesearch2.clearAllResults();
+      }
     }
 
     return { pageProps };

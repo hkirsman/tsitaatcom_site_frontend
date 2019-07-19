@@ -46,7 +46,6 @@
     .content {
       @include fontSize(22px);
       font-family: $font_title;
-      min-height: 5.5em;
 
       a {
         background-color: $header-region-background-color;

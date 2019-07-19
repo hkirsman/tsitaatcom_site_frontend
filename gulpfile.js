@@ -179,7 +179,7 @@ gulp.task('_serve', function() {
   production = false;
 
   browserSync({
-    proxy: "tsitaat.dev",
+    proxy: "localhost:7777",
     open: "external"
   });
 

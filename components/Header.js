@@ -18,23 +18,6 @@ Router.onRouteChangeError = () => {
 };
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
   render() {
     return (
       <header role="banner">
@@ -50,6 +33,12 @@ class Header extends React.Component {
                 <ActiveLink route="/tsitaadid/top-100-tsitaadid">
                   <a>TOP 100</a>
                 </ActiveLink>
+              </li>
+              <li className="leaf">
+                <div className="block-search block-search--header-top">
+                  <Script async url="https://cse.google.com/cse.js?cx=011181835781346626771:epdp_edxg1o" />
+                  <div className="gcse-searchbox" data-gname="quotesearch1"></div>
+                </div>
               </li>
               <li className="last leaf login"><a
                 href="/user?current=latest-quotes" title="" rel="nofollow">Logi
@@ -84,9 +73,8 @@ class Header extends React.Component {
             author_last_name={this.props.author_last_name}
             />
 
-          <div id="block-search-form" className="block block-search " role="search">
-            <Script async url="https://cse.google.com/cse.js?cx=011181835781346626771:epdp_edxg1o" />
-            <div className="gcse-searchbox" data-gname="quotesearch"></div>
+          <div className="block-search block-search--front">
+            <div className="gcse-searchbox" data-gname="quotesearch2"></div>
           </div>
 
         </div>
