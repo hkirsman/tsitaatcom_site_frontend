@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import React, { Component } from 'react';
 import { endpoint } from '../config';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
@@ -69,6 +70,20 @@ class Quote extends Component {
     return this.vote('down');
   };
 
+  /**
+   * Get translation event that uses simple alert() to show the translation.
+   */
+  handleTranslation = async e => {
+    e.preventDefault();
+    const nid = e.target.dataset.nid;
+    const lang = e.target.dataset.lang;
+    if (typeof nid !== 'undefined' && typeof lang !== 'undefined') {
+      const res = await fetch(endpoint + '/tsitaatcom_json/translation/' + nid + '/' + lang);
+      let data = await res.json();
+      alert(data.quote);
+    }
+  };
+
   render() {
     return (
       <div id={'quote-' + this.props.quote.quote_nid}
@@ -121,8 +136,12 @@ class Quote extends Component {
           </div>
           <ul className="quote-info">
             <li className="username">{this.props.quote.username}</li>
-            <li className="translations"
-                dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
+            {
+              this.props.quote.quote_translation_links_rendered.length > 15 ?
+                <li className="translations" onClick={this.handleTranslation}
+                    dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
+                : null
+            }
             {this.props.quote.tag_links.length > 0 ? (
               <li className="tags">
                 {this.props.quote.tag_links.map((tag, i) => (
