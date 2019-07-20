@@ -123,12 +123,6 @@ class Quote extends Component {
             <li className="username">{this.props.quote.username}</li>
             <li className="translations"
                 dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
-            <li className="category">
-              <Link
-                route={'/tsitaadid/kategooriad/' + this.props.quote.quote_category_machine_name}>
-                <a>{this.props.quote.quote_category}</a>
-              </Link>
-            </li>
             {this.props.quote.tag_links.length > 0 ? (
               <li className="tags">
                 {this.props.quote.tag_links.map((tag, i) => (
@@ -137,7 +131,7 @@ class Quote extends Component {
                   </Link>
                 ))}
               </li>
-            ) : <li className="tags">Sildid puuduvad</li>
+            ) : <li className="tags">Märksõnad puuduvad</li>
             }
           </ul>
         </div>

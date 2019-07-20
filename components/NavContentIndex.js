@@ -54,7 +54,7 @@ class NavContentIndex extends Component {
       <div id="block-tsitaatcom-tsitaatcom-content-index" className="block block-tsitaatcom ">
         <div className="header">
           <ul>
-            <li><a onClick={this.openTopicsIndex} href="#" className={this.state.showNavContentIndexTopics ? 'active-item': null}>Sildid</a></li>
+            <li><a onClick={this.openTopicsIndex} href="#" className={this.state.showNavContentIndexTopics ? 'active-item': null}>Märksõnad</a></li>
             <li><a onClick={this.openAuthorIndex} href="#" className={this.state.showNavContentIndexAuthors ? 'active-item': null}>Autorid</a></li>
           </ul>
         </div>
