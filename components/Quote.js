@@ -6,6 +6,7 @@ import {Link} from '../routes';
 
 class Quote extends Component {
   static defaultProps = {
+    hide_author_image: false,
     hide_author_name: false,
     hide_author_profession: false,
   };
@@ -91,8 +92,20 @@ class Quote extends Component {
         <div className="quote-container-inner">
           <div className="quote">
             <div className="group-left">
-              <p className="quote-image"
-                 dangerouslySetInnerHTML={{__html: this.props.quote.author_portrait}}></p>
+              {
+                !this.props.hide_author_image ?
+                  <p className="quote-image">
+                    <a href={this.props.quote.quote_author_link}>
+                      {
+                        typeof this.props.quote.author_portrait_url !== 'undefined' ?
+                          <img className="thumb" src={this.props.quote.author_portrait_url} alt="" />
+                          : null
+                      }
+
+                    </a>
+                  </p>
+                  : null
+              }
               <div className={'vote' + (this.state.voted ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
                 <a className="vote-up sr-only" href="#" onClick={this.handleVoteUp}>Hääleta üles</a>
                 <a className="vote-down sr-only" href="#" onClick={this.handleVoteDown}>Hääleta alla</a>

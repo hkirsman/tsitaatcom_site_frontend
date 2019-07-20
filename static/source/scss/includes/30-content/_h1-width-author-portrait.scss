@@ -1,0 +1,41 @@
+
+
+
+@if $layout == global {
+  .h1-width-author-portrait {
+    display: flex;
+  }
+
+  .h1-width-author-portrait--has-image {
+    h1,
+    .h1,
+    .author_profession {
+      text-align: left;
+    }
+  }
+
+  .h1-width-author-portrait__author-portrait {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: 15px;
+    width: 110px;
+
+    img {
+      border-radius: 5px;
+    }
+  }
+
+  .h1-width-author-portrait__h1-wrap {
+    flex-grow: 1;
+
+    .h1 h1 {
+      display: inline;
+    }
+  }
+
+  .h1-width-author-portrait__born-death {
+    &:before {
+      content: ", ";
+    }
+  }
+}

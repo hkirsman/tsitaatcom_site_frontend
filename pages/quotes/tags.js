@@ -29,10 +29,10 @@ class Tags extends React.Component {
       return (
         <div>
           <Head>
-            <title>{headTitle( 'Teema kategooria: ' + this.tagWithoutUnderscore())}</title>
+            <title>{headTitle( 'Märksõnad: ' + this.tagWithoutUnderscore())}</title>
             <meta name="robots" content="noindex" />
           </Head>
-          <h1>Teema kategooria: {this.tagWithoutUnderscore()}</h1>
+          <h1>Märksõnad: {this.tagWithoutUnderscore()}</h1>
           <div className="author-tag-listing">
             <div className="author-tag-listing-inner">
               {this.props.data.map((group, col_index) => {
