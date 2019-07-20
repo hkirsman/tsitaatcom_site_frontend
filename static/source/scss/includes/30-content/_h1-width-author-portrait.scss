@@ -4,6 +4,7 @@
 @if $layout == global {
   .h1-width-author-portrait {
     display: flex;
+    margin: 0 $horizontal-padding-mobile;
   }
 
   .h1-width-author-portrait--has-image {
@@ -36,6 +37,14 @@
   .h1-width-author-portrait__born-death {
     &:before {
       content: ", ";
+    }
+  }
+
+
+
+  @media (min-width: 400px) {
+    .h1-width-author-portrait {
+      margin: 0 $horizontal-padding-desktop;
     }
   }
 }

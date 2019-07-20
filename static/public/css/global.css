@@ -1497,7 +1497,8 @@ ul.tag-cloud li {
     white-space: nowrap; }
 
 .h1-width-author-portrait {
-  display: flex; }
+  display: flex;
+  margin: 0 10px; }
 
 .h1-width-author-portrait--has-image h1,
 .h1-width-author-portrait--has-image .h1,
@@ -1519,6 +1520,10 @@ ul.tag-cloud li {
 
 .h1-width-author-portrait__born-death:before {
   content: ", "; }
+
+@media (min-width: 400px) {
+  .h1-width-author-portrait {
+    margin: 0 17px; } }
 
 .imagefield-crop-preview img,
 .imagefield-crop-cropbox img {
