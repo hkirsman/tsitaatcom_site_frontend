@@ -30,4 +30,4 @@ ps2'le peab restardi tegema tundub
 1. Set up old domain for time-being
 1. Beers for Siim
 1. Create tsitaat.com company and pay the bills
-
+1. Remove graphql and apollo for now ( git commit 13cd85f8f9cbbc807f52ff75139fc579f8d1119d )
