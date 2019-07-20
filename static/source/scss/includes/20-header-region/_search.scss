@@ -2,6 +2,12 @@
 
 
 @if $layout == global {
+  $block-search--header-animate-speed: 0.2s;
+  $block-search--header-hover-width: 300px;
+  $block-search--header-top-button-height: 28px;
+  $block-search--header-top-button-width: 30px;
+  $block-search--header-top-form-border: 4px;
+
   .block-search {
     form.gsc-search-box {
       margin-bottom: 0;
@@ -92,12 +98,6 @@
   }
 
   .block-search--header-top {
-    $block-search--header-animate-speed: 0.2s;
-    $block-search--header-hover-width: 300px;
-    $block-search--header-top-button-height: 28px;
-    $block-search--header-top-button-width: 30px;
-    $block-search--header-top-form-border: 4px;
-
     background: white;
     border-radius: 25px;
     border: $block-search--header-top-form-border solid white;
@@ -105,7 +105,7 @@
     height: $block-search--header-top-button-height + ($block-search--header-top-form-border * 2);
     overflow: hidden;
     position: relative;
-    transition: all $block-search--header-animate-speed;
+    transition: all 0s;
     width: $block-search--header-top-button-width + ($block-search--header-top-form-border * 2);
 
     input[type="text"],
@@ -156,8 +156,10 @@
     }
 
     &:hover {
-      width: $block-search--header-hover-width;
       cursor: pointer;
+      position: absolute;
+      right: $horizontal-padding-mobile;
+      width: $block-search--header-hover-width;
     }
 
     &:hover input[type="text"] {
@@ -199,11 +201,17 @@
         width: 280px;
       }
     }
+
+    .block-search--header-top {
+      &:hover {
+        right: $horizontal-padding-desktop;
+      }
+    }
   }
 
 
 
-  @media (min-width: 500px) {
+  @media (min-width: $width-normal-content) {
     .block-search--front {
       width: 460px;
 
@@ -215,13 +223,13 @@
 
 
 
-  @media (max-width: $width-wide-content) {
+  @media (min-width: 600px) {
     .block-search--header-top {
-      transition: all 0s;
+      transition: all $block-search--header-animate-speed;
 
       &:hover {
-        position: absolute;
-        right: 17px;
+        position: relative;
+        right: 0;
       }
     }
   }

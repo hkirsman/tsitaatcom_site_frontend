@@ -3,7 +3,7 @@
 
 @if $layout == global {
   .header-region-top {
-    padding: 10px;
+    padding: 10px $horizontal-padding-mobile;
     z-index: 3;
 
     .block-menu {
@@ -222,8 +222,8 @@
 
   @media (min-width: 400px) {
     .header-region-top {
-      padding-left: 17px;
-      padding-right: 17px;
+      padding-left: $horizontal-padding-desktop;
+      padding-right: $horizontal-padding-desktop;
 
       .block-menu {
         li {
