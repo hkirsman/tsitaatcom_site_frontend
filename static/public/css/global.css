@@ -1,48 +1,3 @@
-/*
-SCSS variables are information about icon's compiled state, stored under its original file name
-
-.icon-home {
-  width: $icon-home-width;
-}
-
-The large array-like variables contain all information about a single icon
-$icon-home: x y offset_x offset_y width height total_width total_height image_path;
-
-At the bottom of this section, we provide information about the spritesheet itself
-$spritesheet: width height image $spritesheet-sprites;
-*/
-/*
-The provided mixins are intended to be used with the array-like variables
-
-.icon-home {
-  @include sprite-width($icon-home);
-}
-
-.icon-email {
-  @include sprite($icon-email);
-}
-
-Example usage in HTML:
-
-`display: block` sprite:
-<div class="icon-home"></div>
-
-To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
-
-// CSS
-.icon {
-  display: inline-block;
-}
-
-// HTML
-<i class="icon icon-home"></i>
-*/
-/*
-The `sprites` mixin generates identical output to the CSS template
-  but can be overridden inside of SCSS
-
-@include sprites($spritesheet-sprites);
-*/
 @import url("../fonts/stylesheet.css");
 .clearfix:after, .header-region-top:after, #block-user-login .hybridauth-widget-wrapper ul.hybridauth-widget li a:after, .author-tag-listing-inner:after, .quote-container .quote-info:after {
   content: "";
@@ -714,7 +669,7 @@ header {
     position: relative;
     z-index: 2; }
   header:before {
-    background-image: url(../img/sprite.png);
+    background-image: url(../img/10-global/clouds.jpg);
     background-position: 0px 0px;
     width: 580px;
     height: 385px;
@@ -729,7 +684,7 @@ header {
   position: relative; }
   .front .page:after {
     background-image: url(../img/sprite.png);
-    background-position: -580px 0px;
+    background-position: 0px 0px;
     width: 390px;
     height: 335px;
     bottom: 0;
@@ -1026,7 +981,7 @@ form input[type="button"] {
       position: relative; }
       .header-region-top .block-menu .top-100 a:before {
         background-image: url(../img/sprite.png);
-        background-position: -742px -335px;
+        background-position: -416px -274px;
         width: 25px;
         height: 7px;
         content: "";
@@ -1045,7 +1000,7 @@ form input[type="button"] {
       position: relative; }
       .header-region-top .block-menu .login a:before {
         background-image: url(../img/sprite.png);
-        background-position: -591px -366px;
+        background-position: -457px -82px;
         width: 11px;
         height: 14px;
         content: "";
@@ -1058,7 +1013,7 @@ form input[type="button"] {
         color: #fff;
         background-position: -138px 50%; }
         .header-region-top .block-menu .login a.active:before {
-          background-position: -580px -366px; }
+          background-position: -457px -68px; }
 
 #block-user-login {
   display: none;
@@ -1224,7 +1179,7 @@ form input[type="button"] {
     width: 100px; }
   .block-search--front button.gsc-search-button {
     background-image: url(../img/sprite.png);
-    background-position: -215px -385px;
+    background-position: -390px -202px;
     width: 62px;
     height: 56px;
     background-color: transparent;
@@ -1359,7 +1314,7 @@ form input[type="button"] {
         text-decoration: none; }
         #block-tsitaatcom-tsitaatcom-content-index .header a.active-item:before {
           background-image: url(../img/sprite.png);
-          background-position: -767px -335px;
+          background-position: -469px -68px;
           width: 1px;
           height: 7px;
           bottom: 0;
@@ -1660,10 +1615,10 @@ ul.tag-cloud li {
         border: 0; }
       .quote-container .quote-image a:before {
         background-image: url(../img/sprite.png);
-        background-position: -148px -385px; }
+        background-position: -390px -135px; }
       .quote-container .quote-image a:after {
         background-image: url(../img/sprite.png);
-        background-position: -580px -335px;
+        background-position: -390px -258px;
         width: 26px;
         height: 31px;
         content: "";
@@ -1674,7 +1629,7 @@ ul.tag-cloud li {
         z-index: 1; }
   .quote-container.even .quote-image a:before {
     background-image: url(../img/sprite.png);
-    background-position: -81px -385px; }
+    background-position: -390px -68px; }
   .quote-container .vote {
     float: left;
     height: 49px;
@@ -1695,7 +1650,7 @@ ul.tag-cloud li {
   .quote-container .vote-up,
   .quote-container .vote-down {
     background-image: url(../img/sprite.png);
-    background-position: -624px -335px;
+    background-position: -452px -220px;
     width: 18px;
     height: 18px;
     display: block;
@@ -1704,7 +1659,7 @@ ul.tag-cloud li {
   .quote-container .vote-up {
     float: left; }
   .quote-container .vote-down {
-    background-position: -606px -335px;
+    background-position: -452px -202px;
     left: 0;
     position: absolute;
     top: 21px; }
@@ -1758,16 +1713,16 @@ ul.tag-cloud li {
         width: 20px; }
       .quote-container .quote-info li.username:before {
         background-image: url(../img/sprite.png);
-        background-position: -682px -335px; }
+        background-position: -430px -289px; }
       .quote-container .quote-info li.translations:before {
         background-image: url(../img/sprite.png);
-        background-position: -662px -335px; }
+        background-position: -410px -289px; }
       .quote-container .quote-info li.category:before {
         background-image: url(../img/sprite.png);
-        background-position: -702px -335px; }
+        background-position: -416px -258px; }
       .quote-container .quote-info li.tags:before {
         background-image: url(../img/sprite.png);
-        background-position: -722px -335px; }
+        background-position: -390px -289px; }
       .quote-container .quote-info li.tags a:after {
         content: ', '; }
       .quote-container .quote-info li.tags a:last-child:after {
@@ -1856,7 +1811,7 @@ ul.tag-cloud li {
         position: relative; }
         .block-tsitaatcom-user-admin-menu > .menu > li > a.active:before, .block-tsitaatcom-user-admin-menu > .menu > li > a.active-trail:before {
           background-image: url(../img/sprite.png);
-          background-position: -742px -342px;
+          background-position: -468px -68px;
           width: 1px;
           height: 9px;
           bottom: 0;
@@ -1886,7 +1841,7 @@ ul.tag-cloud li {
   max-width: 500px; }
   .footer-region:before {
     background-image: url(../img/sprite.png);
-    background-position: 0px -385px;
+    background-position: -390px 0px;
     width: 81px;
     height: 68px;
     content: "";

@@ -249,7 +249,10 @@
     }
 
     &:before {
-      @include sprite($clouds);
+      background-image: url(../img/10-global/clouds.jpg);
+      background-position: 0px 0px;
+      width: 580px;
+      height: 385px;
       content: "";
       display: block;
       left: -200px;
