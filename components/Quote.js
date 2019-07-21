@@ -14,22 +14,12 @@ class Quote extends Component {
   /**
    * Check if vote has been cast.
    *
-   * Initially check from cookie, but if state is initialized, then use that.
+   * Check if quote has been voted by checking the voting cookie.
    */
   isVoted = function() {
     const nid = this.props.quote.quote_nid;
     const cookie_name = 'Drupal_tsitaatcom_vote_' + nid;
-    if (typeof this.state !== 'undefined' && typeof this.state.voted !== 'undefined') {
-      return this.state.voted;
-    }
-    else {
-      return this.props.cookies[cookie_name] === 'voted';
-    }
-  };
-
-  state = {
-    quote_vote: parseInt(this.props.quote.quote_rank),
-    voted: this.isVoted(),
+    return this.props.cookies[cookie_name] === 'voted';
   };
 
   /**
@@ -51,14 +41,17 @@ class Quote extends Component {
       path: '/',
     });
 
+    let vote_el = document.querySelector('#vote-' + nid);
+    let current_vote_el = document.querySelector('#vote-' + nid + ' .vote-current');
+
     if (vote === 'up') {
-      this.setState({quote_vote: this.state.quote_vote + 1});
+      current_vote_el.innerHTML = parseInt(current_vote_el.textContent) + 1;
     }
     else if (vote === 'down') {
-      this.setState({quote_vote: this.state.quote_vote - 1});
+      current_vote_el.innerHTML = parseInt(current_vote_el.textContent) - 1;
     }
 
-    this.setState({voted: true});
+    vote_el.className += " is-voted";
   };
 
   handleVoteUp = async e => {
@@ -108,10 +101,10 @@ class Quote extends Component {
                   </p>
                   : null
               }
-              <div className={'vote' + (this.state.voted ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
+              <div className={'vote' + (this.isVoted() ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
                 <a className="vote-up sr-only" href="#" onClick={this.handleVoteUp}>Hääleta üles</a>
                 <a className="vote-down sr-only" href="#" onClick={this.handleVoteDown}>Hääleta alla</a>
-                <div className="vote-current">{this.state.quote_vote}</div>
+                <div className="vote-current">{this.props.quote.quote_rank}</div>
               </div>
             </div>
             <div className="group-right">
