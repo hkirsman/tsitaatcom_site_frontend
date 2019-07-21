@@ -95,14 +95,16 @@ class Quote extends Component {
               {
                 !this.props.hide_author_image ?
                   <p className="quote-image">
-                    <a href={this.props.quote.quote_author_link}>
-                      {
-                        typeof this.props.quote.author_portrait_url !== 'undefined' ?
-                          <img className="thumb" src={this.props.quote.author_portrait_url} alt="" />
-                          : null
-                      }
+                    <Link route={this.props.quote.quote_author_link}>
+                      <a>
+                        {
+                          typeof this.props.quote.author_portrait_url !== 'undefined' ?
+                            <img className="thumb" src={this.props.quote.author_portrait_url} alt="" />
+                            : null
+                        }
 
-                    </a>
+                      </a>
+                    </Link>
                   </p>
                   : null
               }
