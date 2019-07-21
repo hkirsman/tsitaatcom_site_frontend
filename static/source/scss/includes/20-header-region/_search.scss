@@ -61,10 +61,6 @@
     padding: 30px 0;
     width: 200px;
 
-    .front & {
-      display: block;
-    }
-
     input[type="text"] {
       background-position: 17px 50% !important;
       border-radius: 6px 0 0 6px;
@@ -181,19 +177,11 @@
 
 
 
-  @media (min-width: 300px) {
-    .block-search--front {
-      width: 280px;
-
-      input[type="text"] {
-        width: 180px;
-      }
-    }
-  }
-
-
-
   @media (min-width: 400px) {
+    .front .block-search--front {
+      display: block;
+    }
+
     .block-search--front {
       width: 380px;
 

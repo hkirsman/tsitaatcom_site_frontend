@@ -6,7 +6,7 @@
     padding: 30px 0 10px 0;
 
     &:first-child {
-      padding-top: 20px;
+      padding-top: 10px;
     }
 
     .group-left {
@@ -36,8 +36,8 @@
     }
 
     .quote-container-inner {
-      max-width: 500px;
-      margin: 0 auto;
+      margin-left: $horizontal-padding-mobile;
+      margin-right: $horizontal-padding-mobile;
     }
 
     p {
@@ -265,11 +265,28 @@
 
 
 
-  @media (max-width: $width-wide-content) {
+  @media (min-width: 400px) {
+    .quote-container {
+      padding-top: 30px;
+
+      &:first-child {
+        padding-top: 20px;
+      }
+
+      .quote-container-inner {
+        margin-left: $horizontal-padding-desktop;
+        margin-right: $horizontal-padding-desktop;
+      }
+    }
+  }
+
+
+
+  @media (min-width: $width-wide-content) {
     .quote-container {
       .quote-container-inner {
-        margin-left: 20px;
-        margin-right: 20px;
+        max-width: 500px;
+        margin: 0 auto;
       }
     }
   }

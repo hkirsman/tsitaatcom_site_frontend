@@ -18,11 +18,18 @@
     background: #696269;
   }
 
+  .header-page-wrap {
+    background-color: $header-region-background-color;
+    background-image: url(../img/10-global/clouds.jpg);
+    background-position: -200px 0;
+    background-repeat: no-repeat;
+  }
+
   .page {
     background: #fff;
 
     .front & {
-      background: #ddeeef;
+      background: transparent;
     }
   }
 
@@ -42,17 +49,17 @@
 
   h1,
   .h1 {
-    @include fontSize(30px, 34px);
+    @include fontSize(28px, 32px);
     //line-height: (26px / 17px) * 100%;
-    margin-top: 20px;
+    margin-top: 0;
     margin-bottom: 10px;
   }
 
   p.author_profession {
     display: block;
     @include fontSize(18px);
-    margin-top: -10px;
-    margin-bottom: 30px;
+    margin-top: -5px;
+    margin-bottom: 20px;
   }
 
   .front h1 {
@@ -133,10 +140,6 @@
 
   sub {
     vertical-align: sub;
-  }
-
-  header {
-    background-color: $header-region-background-color;
   }
 
   .header-region-top {
@@ -239,26 +242,13 @@
 
   // Probably temporary solution.
   header {
-    min-height: 280px;
+    min-height: 270px;
     overflow: hidden;
     position: relative;
 
     > div {
       position: relative;
       z-index: 2;
-    }
-
-    &:before {
-      background-image: url(../img/10-global/clouds.jpg);
-      background-position: 0px 0px;
-      width: 580px;
-      height: 385px;
-      content: "";
-      display: block;
-      left: -200px;
-      position: absolute;
-      top: 0;
-      z-index: 1;
     }
   }
   .front {
@@ -301,13 +291,25 @@
     }*/
   }
 
+  @media (min-width: 400px) {
+    h1,
+    .h1 {
+      //line-height: (26px / 17px) * 100%;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    p.author_profession {
+      margin-top: -5px;
+      margin-bottom: 30px;
+    }
+  }
+
 
 
   @media (min-width: 600px) {
-    header {
-      &:before {
-        left: -100px;
-      }
+    .header-page-wrap {
+      background-position: -100px 0;
     }
   }
 
@@ -318,10 +320,8 @@
       overflow: auto;
     }
 
-    header {
-      &:before {
-        left: 0;
-      }
+    .header-page-wrap {
+      background-position: 0 0;
     }
   }
 

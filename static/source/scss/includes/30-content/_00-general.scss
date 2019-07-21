@@ -11,7 +11,6 @@
     }
 
     .front & {
-      padding-bottom: 10em;
       padding-top: 0;
       // Make the frontpage boy (bottom below) be behind content.
       position: relative;
@@ -27,6 +26,16 @@
 
     li {
       list-style: inherit;
+    }
+  }
+
+
+
+  @media (min-width: 400px) {
+    #main-content {
+      .front & {
+        padding-bottom: 10em;
+      }
     }
   }
 }

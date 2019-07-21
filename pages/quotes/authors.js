@@ -72,9 +72,9 @@ class Authors extends React.Component {
                 (typeof this.props.data[0].author_portrait_url !== 'undefined' ? ' h1-width-author-portrait--has-image' : '')}>
               {
                 typeof this.props.data[0].author_portrait_url !== 'undefined' ?
-                  <p className="h1-width-author-portrait__author-portrait">
+                  <div className="h1-width-author-portrait__author-portrait">
                     <img src={this.props.data[0].author_portrait_url} alt="" className="h1-width-author-portrait__author-portrait-img" />
-                  </p> : null
+                  </div> : null
               }
               <div className="h1-width-author-portrait__h1-wrap">
                 <div class="h1">

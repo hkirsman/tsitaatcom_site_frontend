@@ -24,17 +24,19 @@ class Page extends Component {
     return (
       <div>
         <Meta />
-        <Header
-          navContentIndex={this.props.children.props.navContentIndex}
-          query={this.props.children.props.query}
-          author_last_name={this.getAuthorLastName()}
+        <div className="header-page-wrap">
+          <Header
+            navContentIndex={this.props.children.props.navContentIndex}
+            query={this.props.children.props.query}
+            author_last_name={this.getAuthorLastName()}
           />
-        <div className="page">
-          <div role="main" id="main-content" className="main-content">
-            <div className="content-wrap">
-              <div className="gcse-searchresults" data-gname="quotesearch1" data-linkTarget="_self"></div>
-              <div className="gcse-searchresults" data-gname="quotesearch2" data-linkTarget="_self"></div>
-              {this.props.children}
+          <div className="page">
+            <div role="main" id="main-content" className="main-content">
+              <div className="content-wrap">
+                <div className="gcse-searchresults" data-gname="quotesearch1" data-linkTarget="_self"></div>
+                <div className="gcse-searchresults" data-gname="quotesearch2" data-linkTarget="_self"></div>
+                {this.props.children}
+              </div>
             </div>
           </div>
         </div>

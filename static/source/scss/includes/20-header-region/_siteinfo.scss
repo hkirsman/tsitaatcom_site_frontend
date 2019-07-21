@@ -2,11 +2,33 @@
 
 
 @if $layout == global {
+  .logo {
+    margin: 0 auto;
+  }
+
   .siteinfo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: none;
     padding-bottom: 25px;
+    width: auto;
 
     a {
-      display: inline-block;
+      float: left;
+    }
+  }
+
+
+
+  @media (max-width: 400px) {
+    .logo {
+      width: 150px !important;
+    }
+
+    .siteinfo {
+      padding-bottom: 20px;
     }
   }
 }

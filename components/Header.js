@@ -47,8 +47,6 @@ class Header extends React.Component {
           </nav>
 
           <div id="block-user-login" className="block block-user ">
-
-
             <form action="/latest-quotes?destination=latest-quotes"
                   method="post" id="user-login-form">Sisselogimine on hetkel keelatud,
               sest uus kasutajaliides pole veel valmis. Võtame registreerunud
@@ -61,10 +59,7 @@ class Header extends React.Component {
 
         <div className="header-region">
           <div className="siteinfo">
-            <figure>
-              <Logo/>
-            </figure>
-
+            <Logo/>
           </div>
 
           <NavContentIndex

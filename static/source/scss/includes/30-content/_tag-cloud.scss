@@ -1,0 +1,73 @@
+
+
+
+@if $layout == global {
+  .tag-cloud {
+    font-size: 1.3em;
+    line-height: 35px;
+    margin: 0 auto 20px auto;
+    max-width: 460px;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      // @todo: just because in old site there was white-space :)
+      margin: 0 3px 0 2px;
+      white-space: nowrap;
+    }
+  }
+
+  //#content ul.tag-cloud,
+  //#content ul.tag-cloud li,
+  //ul.tag-cloud,
+  //ul.tag-cloud li {
+  //  display: inline;
+  //  margin: 0;
+  //  padding: 0 0.25em 0 0;
+  //}
+
+  .tag-cloud__item {
+    display: inline;
+    padding: 0 0.25em 0 0;
+  }
+
+  .level1 {
+    font-size: 1em;
+  }
+  .level2 {
+    font-size: 1.2em;
+  }
+  .level3 {
+    font-size: 1.4em;
+  }
+  .level4 {
+    font-size: 1.6em;
+  }
+  .level5 {
+    font-size: 1.8em;
+  }
+  .level6 {
+    font-size: 2em;
+  }
+  .level7 {
+    font-size: 2.2em;
+  }
+  .level8 {
+    font-size: 2.4em;
+  }
+  .level9 {
+    font-size: 2.6em;
+  }
+  .level10 {
+    font-size: 2.8em;
+  }
+
+
+
+  @media (min-width: 400px) {
+    .tag-cloud {
+      font-size: 1.5em;
+      line-height: 45px;
+    }
+  }
+}

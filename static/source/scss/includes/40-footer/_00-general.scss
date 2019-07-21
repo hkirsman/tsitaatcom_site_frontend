@@ -3,7 +3,7 @@
 
 @if $layout == global {
   .footer-region {
-    padding: 32px 0;
+    padding: 32px $horizontal-padding-mobile;
     position: relative;
     max-width: $width-normal-content;
 
@@ -11,7 +11,7 @@
       @include sprite($footer-logo);
       content: "";
       display: block;
-      left: -125px;
+      left: -115px;
       position: absolute;
       top: 37px;
     }
@@ -44,19 +44,15 @@
     .fb_iframe_widget {
       background: #f8fbfc;
       border-radius: 5px;
-      display: none;
-      margin-top: 40px;
       padding-bottom: 5px;
     }
   }
 
 
 
-  @media (min-width: 500px) {
-    .footer-region {
-      .fb_iframe_widget {
-        display: block;
-      }
+  @media (min-width: 400px) {
+    .fb_iframe_widget {
+      margin-top: 40px;
     }
   }
 }
