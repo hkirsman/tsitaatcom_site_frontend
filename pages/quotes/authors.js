@@ -79,7 +79,17 @@ class Authors extends React.Component {
               }
               <div className="h1-width-author-portrait__h1-wrap">
                 <div class="h1">
-                  <h1>{this.props.data[0].quote_author_name_without_bracket_content}</h1>
+                  {
+                    typeof this.props.query.quote_id !== 'undefined' ?
+                      <h1>
+                        <Link
+                          route={'/tsitaadid/autorid/' + this.props.data[0].quote_author_urlfriendly_name}>
+                          {this.props.data[0].quote_author_name_without_bracket_content}
+                        </Link>
+                      </h1>
+                      :
+                      <h1>{this.props.data[0].quote_author_name_without_bracket_content}</h1>
+                  }
                   {
                     this.props.data[0].author_born_death ?
                       <span className="h1-width-author-portrait__born-death"

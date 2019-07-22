@@ -11,6 +11,10 @@
     h1,
     .h1 {
       @include fontSize(22px, 26px);
+
+      a {
+        color: $color-link;
+      }
     }
 
     h1,
@@ -50,7 +54,11 @@
 
   .h1-width-author-portrait__born-death {
     &:before {
-      content: ", ";
+      content: " (";
+    }
+
+    &:after {
+      content: ")";
     }
   }
 

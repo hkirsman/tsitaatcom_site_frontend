@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import { endpoint } from '../config';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import {Link} from '../routes';
+import {withRouter} from "next/router";
 
-class Quote extends Component {
+class QuoteInternal extends Component {
   static defaultProps = {
     hide_author_image: false,
     hide_author_name: false,
@@ -132,12 +133,18 @@ class Quote extends Component {
                   </div>
                 ) : null
               }
-              <p className="quote">
-                <Link
-                  route={'/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
-                  <a dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></a>
-                </Link>
-              </p>
+              {
+                typeof this.props.router.query.quote_id === 'undefined' ?
+                  <p className="quote">
+                    <Link
+                      route={'/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                      <a
+                        dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></a>
+                    </Link>
+                  </p>
+                 :
+                   <p className="quote" dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></p>
+              }
               <p className="quote-source"
                  dangerouslySetInnerHTML={{__html: this.props.quote.quote_source_rendered}}></p>
             </div>
@@ -166,5 +173,7 @@ class Quote extends Component {
     )
   }
 }
+
+const Quote = withRouter(QuoteInternal);
 
 export default Quote;

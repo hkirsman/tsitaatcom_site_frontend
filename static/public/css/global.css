@@ -1467,6 +1467,9 @@ form input[type="button"] {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 118.18182%; }
+  .h1-width-author-portrait--has-image h1 a,
+  .h1-width-author-portrait--has-image .h1 a {
+    color: #305891; }
 
 .h1-width-author-portrait--has-image h1,
 .h1-width-author-portrait--has-image .h1,
@@ -1493,7 +1496,10 @@ form input[type="button"] {
     margin-top: 0; }
 
 .h1-width-author-portrait__born-death:before {
-  content: ", "; }
+  content: " ("; }
+
+.h1-width-author-portrait__born-death:after {
+  content: ")"; }
 
 @media (min-width: 400px) {
   .h1-width-author-portrait {
