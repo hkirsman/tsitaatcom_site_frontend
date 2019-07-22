@@ -1146,7 +1146,8 @@ form input[type="button"] {
 .block-search input[type="text"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin-top: 0 !important; }
 
 .block-search ::-webkit-input-placeholder {
   color: white; }
@@ -1171,8 +1172,8 @@ form input[type="button"] {
     border-right: 0 !important;
     border: 1px solid #9db2b3 !important;
     color: #696269;
-    height: 30px;
-    line-height: 30px;
+    height: 56px !important;
+    line-height: 56px;
     margin: 0;
     padding: 13px 18px 11px 18px !important;
     width: 100px; }
@@ -1206,7 +1207,7 @@ form input[type="button"] {
   width: 38px; }
   .block-search--header-top input[type="text"],
   .block-search--header-top button.gsc-search-button {
-    height: 28px;
+    height: 28px !important;
     border-radius: 6px; }
   .block-search--header-top input[type="text"] {
     background: white !important;
