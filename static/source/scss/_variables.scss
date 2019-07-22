@@ -23,3 +23,20 @@ $horizontal-padding-desktop: 17px;
 // WIDHTS
 $width-normal-content: 500px;
 $width-wide-content: 700px;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Borrowed from Bootstrap 3 and 4.
+
+$screen-xs-min:              0;
+$screen-sm-min:              576px;
+$screen-md-min:              768px;
+$screen-lg-min:              992px;
+$screen-xl-min:              1200px;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1);
+$screen-sm-max:              ($screen-md-min - 1);
+$screen-md-max:              ($screen-lg-min - 1);
+$screen-lg-min:              ($screen-xl-min - 1);

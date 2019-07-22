@@ -204,7 +204,6 @@
       @extend .clearfix;
       clear: left;
       font-size: $font_size_quote_info;
-      opacity: 0;
 
       li {
         float: left;
@@ -255,12 +254,6 @@
         }
       }
     }
-
-    &:hover {
-      .quote-info {
-        opacity: 1;
-      }
-    }
   }
 
 
@@ -282,11 +275,21 @@
 
 
 
-  @media (min-width: $width-wide-content) {
+  @media (min-width: $screen-md-min) {
     .quote-container {
       .quote-container-inner {
-        max-width: 500px;
         margin: 0 auto;
+        max-width: 500px;
+      }
+
+      .quote-info {
+        opacity: 0;
+      }
+
+      &:hover {
+        .quote-info {
+          opacity: 1;
+        }
       }
     }
   }

@@ -1713,8 +1713,7 @@ form input[type="button"] {
     text-align: right; }
   .quote-container .quote-info {
     clear: left;
-    font-size: 11px;
-    opacity: 0; }
+    font-size: 11px; }
     .quote-container .quote-info li {
       float: left;
       position: relative;
@@ -1744,8 +1743,6 @@ form input[type="button"] {
         content: ', '; }
       .quote-container .quote-info li.tags a:last-child:after {
         content: ''; }
-  .quote-container:hover .quote-info {
-    opacity: 1; }
 
 @media (min-width: 400px) {
   .quote-container {
@@ -1756,10 +1753,14 @@ form input[type="button"] {
       margin-left: 17px;
       margin-right: 17px; } }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .quote-container .quote-container-inner {
-    max-width: 500px;
-    margin: 0 auto; } }
+    margin: 0 auto;
+    max-width: 500px; }
+  .quote-container .quote-info {
+    opacity: 0; }
+  .quote-container:hover .quote-info {
+    opacity: 1; } }
 
 .main-content .google-cse .container-inline > div {
   float: left; }
