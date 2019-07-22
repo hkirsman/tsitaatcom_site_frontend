@@ -1,0 +1,31 @@
+
+
+
+@if $layout == global {
+  .ShareButton {
+    padding-left: 7px;
+
+    button {
+      background: #696269 url(../img/10-global/fb.png) 2px 50%/16px 16px no-repeat;
+      //border: 1px solid #4267b2;
+      border: 0;
+      color: #fff;
+      cursor: pointer;
+      font-family: Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      -webkit-user-select: none;
+      white-space: nowrap;
+      border-radius: 3px;
+      font-size: 11px;
+      height: 20px;
+      padding: 0 4px 0 20px;
+
+      &:hover,
+      &:focus {
+        background-color: #4267b2;
+        //border: 1px solid #4267b2;
+      }
+    }
+  }
+}

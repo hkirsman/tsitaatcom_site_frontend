@@ -19,6 +19,10 @@ const Meta = (props) => (
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="cleartype" content="on" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <meta property="og:url"           content={props.router.asPath} />
+    <meta property="og:type"          content="website" />
+
     <link rel="stylesheet" href="/static/public/css/global.css" />
     {
       typeof props.router.query.page !== 'undefined' && props.router.query.page > 0 ?

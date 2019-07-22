@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Meta from '../components/Meta';
 import React, {Component} from 'react';
 import Smartad from '../components/Smartad';
+import InitFacebook from '../components/InitFacebook';
 
 class Page extends Component {
   getAuthorLastName = function() {
@@ -43,6 +44,7 @@ class Page extends Component {
         </div>
         <Footer />
         <Smartad />
+        <InitFacebook />
       </div>
     );
   }

@@ -1785,6 +1785,25 @@ form input[type="button"] {
   padding: 0;
   border: 0; }
 
+.ShareButton {
+  padding-left: 7px; }
+  .ShareButton button {
+    background: #696269 url(../img/10-global/fb.png) 2px 50%/16px 16px no-repeat;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    -webkit-user-select: none;
+    white-space: nowrap;
+    border-radius: 3px;
+    font-size: 11px;
+    height: 20px;
+    padding: 0 4px 0 20px; }
+    .ShareButton button:hover, .ShareButton button:focus {
+      background-color: #4267b2; }
+
 .tag-cloud {
   font-size: 1.3em;
   line-height: 35px;

@@ -4,6 +4,7 @@ import { endpoint } from '../config';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import {Link} from '../routes';
 import {withRouter} from "next/router";
+import { FacebookProvider, ShareButton } from 'react-facebook';
 
 class QuoteInternal extends Component {
   static defaultProps = {
@@ -167,6 +168,13 @@ class QuoteInternal extends Component {
               </li>
             ) : <li className="tags">Märksõnad puuduvad</li>
             }
+            <li class="ShareButton">
+              <FacebookProvider appId="188929011649">
+                <ShareButton href={'https://www.tsitaat.com/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                  Jaga
+                </ShareButton>
+              </FacebookProvider>
+            </li>
           </ul>
         </div>
       </div>
