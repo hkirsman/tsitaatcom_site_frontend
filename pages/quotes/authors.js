@@ -13,14 +13,15 @@ import {Link} from '../../routes';
 class Authors extends React.Component {
 
   static async getInitialProps({ query }) {
+    const query_to_string = Object.values(query).map(x => encodeURI(x)).join('/');
     if (isAuthorListingPage(query)) {
-      const res = await fetch(endpoint + '/tsitaatcom_json/authors/' + Object.values(query).map(x => encodeURI(x)).join('/'));
+      const res = await fetch(endpoint + '/tsitaatcom_json/authors/' + query_to_string);
       let data = await res.json();
       data.items = array_chunk_to_3_groups(Array.from(data.items));
       return { data: data.items, query: query }
     }
     else if (isAuthorPage(query)) {
-      const res = await fetch(endpoint + '/tsitaatcom_json/author-quotes/' + encodeURI(query.author_name) + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
+      const res = await fetch(endpoint + '/tsitaatcom_json/author-quotes/' + query_to_string + (typeof query.page != 'undefined' ? '?page=' + query.page : ''));
       const data = await res.json();
       return { data: data.items, pager: data.pager, query: query }
     }
