@@ -36,6 +36,7 @@
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
+      margin-top: 0 !important;
     }
 
     // Hide placeholder.
@@ -69,8 +70,8 @@
       color: #696269;
       //font-family: $font_title_italic;
       //font-size: 20px;
-      height: 30px;
-      line-height: 30px;
+      height: 56px !important;
+      line-height: 56px;
       margin: 0;
       padding: 13px 18px 11px 18px !important;
       width: 100px;
@@ -106,7 +107,7 @@
 
     input[type="text"],
     button.gsc-search-button {
-      height: $block-search--header-top-button-height;
+      height: $block-search--header-top-button-height !important;
       border-radius: 6px;
     }
 
