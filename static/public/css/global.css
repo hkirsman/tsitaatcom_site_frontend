@@ -1787,7 +1787,8 @@ form input[type="button"] {
   border: 0; }
 
 .ShareButton {
-  padding-left: 7px; }
+  padding-left: 7px;
+  display: none; }
   .ShareButton button {
     background: #696269 url(../img/10-global/fb.png) 2px 50%/16px 16px no-repeat;
     border: 0;
