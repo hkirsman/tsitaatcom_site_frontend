@@ -29,7 +29,6 @@ class Home extends Component {
     return (
       <div>
         <Head>
-          <title>{siteTitle}</title>
           <meta name="description" content="Eesti keelsed tsitaadid ja mõtteterad." />
           <meta name="keywords" content="tsitaadid, aforismid, mõtteterad, tsitaat, aforism, mõttetera, vanasõnad, vanasõna" />
         </Head>
