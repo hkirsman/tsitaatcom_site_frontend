@@ -2,7 +2,6 @@
 
 ## Todo
 
-1. Create users page
 1. Refactor styles and markup.
 1. Start using Webpack
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
@@ -31,3 +30,6 @@ ps2'le peab restardi tegema tundub
 1. Beers for Siim
 1. Create tsitaat.com company and pay the bills
 1. Remove graphql and apollo for now ( git commit 13cd85f8f9cbbc807f52ff75139fc579f8d1119d )
+1. Remove space before comma (Napoleon , 1769-1821) - https://www.tsitaat.com/tsitaadid/teemad/alistus
+1. Fix quote - add dot? "Enne laenad. Siis kerjad"
+1. .quote-container-inner margin in mobile is 20px?
