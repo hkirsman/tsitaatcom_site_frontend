@@ -565,16 +565,13 @@ a {
     color: #00688C; }
   .node a:visited {
     color: #A300D8; }
-  h1 a,
   h2 a,
   h3 a,
   h4 a,
   h5 a {
     color: inherit;
     text-shadow: none; }
-    h1 a:hover, h1 a:focus,
-    h2 a:hover,
-    h2 a:focus,
+    h2 a:hover, h2 a:focus,
     h3 a:hover,
     h3 a:focus,
     h4 a:hover,
@@ -1467,9 +1464,6 @@ form input[type="button"] {
   font-size: 22px;
   font-size: 1.375rem;
   line-height: 118.18182%; }
-  .h1-width-author-portrait--has-image h1 a,
-  .h1-width-author-portrait--has-image .h1 a {
-    color: #305891; }
 
 .h1-width-author-portrait--has-image h1,
 .h1-width-author-portrait--has-image .h1,

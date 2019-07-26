@@ -11,10 +11,6 @@
     h1,
     .h1 {
       @include fontSize(22px, 26px);
-
-      a {
-        color: $color-link;
-      }
     }
 
     h1,
