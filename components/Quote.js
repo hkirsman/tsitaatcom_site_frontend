@@ -151,7 +151,11 @@ class QuoteInternal extends Component {
             </div>
           </div>
           <ul className="quote-info">
-            <li className="username">{this.props.quote.username}</li>
+            <li className="username">
+              <Link route={'/user/' + this.props.quote.uid + '/quotes'}>
+                <a rel="nofollow">{this.props.quote.username}</a>
+              </Link>
+            </li>
             {
               this.props.quote.quote_translation_links_rendered.length > 15 ?
                 <li className="translations" onClick={this.handleTranslation}
