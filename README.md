@@ -2,6 +2,9 @@
 
 ## Todo
 
+1. Add cron to https://backend.tsitaat.com/tsitaatcom-qotd-quote-of-the-day-cron-2
+1. Is there point in shortening the twitter messege in _tsitaatcom_qotd_shorten_twitter_message()
+   to that particular size? They increased the message I think
 1. Refactor styles and markup.
 1. Start using Webpack
 1. Remove HTML from json and write logic into frontend. That said, remove dangerouslySetInnerHTML
