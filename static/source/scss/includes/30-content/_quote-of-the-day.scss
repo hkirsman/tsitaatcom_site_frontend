@@ -1,0 +1,79 @@
+
+
+
+@if $layout == global {
+  .quote-of-the-day {
+    background-color: transparent;
+    background-image: url(../img/10-global/quote-of-the-day-bg.png);
+    background-position: 100% 100%;
+    margin: 0 auto;
+    max-width: $width-wide-content - 100;
+    padding: 0 0 4px 0;
+
+    div.quote-container {
+      background-image: url(../img/10-global/quote-of-the-day-bg.png);
+      padding: 60px 70px 60px 75px;
+
+      //.wrap--author-name--author-profession,
+      //p.quote {
+      //  padding-left: 0;
+      //}
+
+      div.quote {
+        &:before {
+          background: url(../img/10-global/quote-of-the-day-quote.png);
+          content: "";
+          height: 22px;
+          left: -50px;
+          position: absolute;
+          top: 0;
+          width: 36px;
+        }
+
+        padding-top: 0;
+        position: relative;
+      }
+
+      .author-name {
+        @include fontSize(24px);
+      }
+
+      .author-profession,
+      .quote-source {
+        @include fontSize(13px);
+      }
+
+      .author-profession {
+        padding-bottom: 8px;
+      }
+
+      .quote-source {
+        padding-top: 16px;
+      }
+    }
+
+    div.quote-container-inner {
+      margin: 0;
+      max-width: none;
+    }
+  }
+
+
+
+  @media (min-width: $screen-xs-min) {
+    .quote-of-the-day {
+
+
+      div.quote-container {
+
+
+        //.wrap--author-name--author-profession,
+        //p.quote {
+        //  padding-left: 23px;
+        //}
+
+
+      }
+    }
+  }
+}

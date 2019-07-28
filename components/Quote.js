@@ -11,6 +11,8 @@ class QuoteInternal extends Component {
     hide_author_image: false,
     hide_author_name: false,
     hide_author_profession: false,
+    hide_voting: false,
+    hide_quote_info: false,
   };
 
   /**
@@ -81,108 +83,124 @@ class QuoteInternal extends Component {
   };
 
   render() {
-    return (
-      <div id={'quote-' + this.props.quote.quote_nid}
-           className={'quote-container ' + (this.props.i % 2 ? 'even' : 'odd')}>
-        <div className="quote-container-inner">
-          <div className="quote">
-            <div className="group-left">
-              {
-                !this.props.hide_author_image ?
-                  <p className="quote-image">
-                    <Link route={this.props.quote.quote_author_link}>
-                      <a>
-                        {
-                          typeof this.props.quote.author_portrait_url !== 'undefined' ?
-                            <img className="thumb" src={this.props.quote.author_portrait_url} alt="" />
-                            : null
-                        }
+    if (typeof this.props.quote !== 'undefined') {
+      return (
+        <div id={'quote-' + this.props.quote.quote_nid}
+             className={'quote-container ' + (this.props.i % 2 ? 'even' : 'odd')}>
+          <div className="quote-container-inner">
+            <div className="quote">
+              <div className="group-left">
+                {
+                  !this.props.hide_author_image ?
+                    <p className="quote-image">
+                      <Link route={this.props.quote.quote_author_link}>
+                        <a>
+                          {
+                            typeof this.props.quote.author_portrait_url !== 'undefined' ?
+                              <img className="thumb" src={this.props.quote.author_portrait_url} alt="" />
+                              : null
+                          }
 
-                      </a>
-                    </Link>
-                  </p>
-                  : null
-              }
-              <div className={'vote' + (this.isVoted() ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
-                <a className="vote-up sr-only" href="#" onClick={this.handleVoteUp}>Hääleta üles</a>
-                <a className="vote-down sr-only" href="#" onClick={this.handleVoteDown}>Hääleta alla</a>
-                <div className="vote-current">{this.props.quote.quote_rank}</div>
+                        </a>
+                      </Link>
+                    </p>
+                    : null
+                }
+                {
+                  !this.props.hide_voting ?
+                    <div className={'vote' + (this.isVoted() ? ' is-voted': '')} id={'vote-' + this.props.quote.quote_nid}>
+                      <a className="vote-up sr-only" href="#" onClick={this.handleVoteUp}>Hääleta üles</a>
+                      <a className="vote-down sr-only" href="#" onClick={this.handleVoteDown}>Hääleta alla</a>
+                      <div className="vote-current">{this.props.quote.quote_rank}</div>
+                    </div>
+                    : null
+                }
+              </div>
+              <div className="group-right">
+                {
+                  !this.props.hide_author_name && !this.props.hide_author_profession ? (
+                    <div className="wrap--author-name--author-profession">
+                      {
+                        !this.props.hide_author_name
+                          ? (
+                            <p className="author-name">
+                              <Link route={this.props.quote.quote_author_link}>
+                                <a
+                                  dangerouslySetInnerHTML={{__html: this.props.quote.quote_author_name_rendered}}></a>
+                              </Link>
+                            </p>
+                          ) : null
+                      }
+                      {
+                        !this.props.hide_author_profession
+                          ? (
+                            <p
+                              className="author-profession">{this.props.quote.quote_author_profession_rendered}</p>
+                          ) : null
+                      }
+                    </div>
+                  ) : null
+                }
+                {
+                  typeof this.props.router.query.quote_id === 'undefined' ?
+                    <p className="quote">
+                      <Link
+                        route={'/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                        <a
+                          dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></a>
+                      </Link>
+                    </p>
+                    :
+                    <p className="quote" dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></p>
+                }
+                <p className="quote-source"
+                   dangerouslySetInnerHTML={{__html: this.props.quote.quote_source_rendered}}></p>
               </div>
             </div>
-            <div className="group-right">
-              {
-                !this.props.hide_author_name && !this.props.hide_author_profession ? (
-                  <div className="wrap--author-name--author-profession">
-                    {
-                      !this.props.hide_author_name
-                        ? (
-                          <p className="author-name">
-                            <Link route={this.props.quote.quote_author_link}>
-                              <a
-                                dangerouslySetInnerHTML={{__html: this.props.quote.quote_author_name_rendered}}></a>
-                            </Link>
-                          </p>
-                        ) : null
-                    }
-                    {
-                      !this.props.hide_author_profession
-                        ? (
-                          <p
-                            className="author-profession">{this.props.quote.quote_author_profession_rendered}</p>
-                        ) : null
-                    }
-                  </div>
-                ) : null
-              }
-              {
-                typeof this.props.router.query.quote_id === 'undefined' ?
-                  <p className="quote">
-                    <Link
-                      route={'/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
-                      <a
-                        dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></a>
-                    </Link>
-                  </p>
-                 :
-                   <p className="quote" dangerouslySetInnerHTML={{__html: this.props.quote.quote}}></p>
-              }
-              <p className="quote-source"
-                 dangerouslySetInnerHTML={{__html: this.props.quote.quote_source_rendered}}></p>
-            </div>
-          </div>
-          <ul className="quote-info">
-            <li className="username">
-              <Link route={'/user/' + this.props.quote.uid + '/quotes'}>
-                <a rel="nofollow">{this.props.quote.username}</a>
-              </Link>
-            </li>
             {
-              this.props.quote.quote_translation_links_rendered.length > 15 ?
-                <li className="translations" onClick={this.handleTranslation}
-                    dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
+              !this.props.hide_quote_info ?
+                <ul className="quote-info">
+                  <li className="username">
+                    <Link route={'/user/' + this.props.quote.uid + '/quotes'}>
+                      <a rel="nofollow">{this.props.quote.username}</a>
+                    </Link>
+                  </li>
+                  {
+                    this.props.quote.quote_translation_links_rendered.length > 15 ?
+                      <li className="translations"
+                          onClick={this.handleTranslation}
+                          dangerouslySetInnerHTML={{__html: this.props.quote.quote_translation_links_rendered}}></li>
+                      : null
+                  }
+                  {this.props.quote.tag_links.length > 0 ? (
+                    <li className="tags">
+                      {this.props.quote.tag_links.map((tag, i) => (
+                        <Link route={'/tsitaadid/teemad/' + tag.machine_name}
+                              key={i}>
+                          <a>{tag.name}</a>
+                        </Link>
+                      ))}
+                    </li>
+                  ) : <li className="tags">Märksõnad puuduvad</li>
+                  }
+                  <li className="ShareButton">
+                    <FacebookProvider appId="188929011649">
+                      <ShareButton
+                        href={'https://www.tsitaat.com/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                        Jaga
+                      </ShareButton>
+                    </FacebookProvider>
+                  </li>
+                </ul>
                 : null
             }
-            {this.props.quote.tag_links.length > 0 ? (
-              <li className="tags">
-                {this.props.quote.tag_links.map((tag, i) => (
-                  <Link route={'/tsitaadid/teemad/' + tag.machine_name} key={i}>
-                    <a>{tag.name}</a>
-                  </Link>
-                ))}
-              </li>
-            ) : <li className="tags">Märksõnad puuduvad</li>
-            }
-            <li class="ShareButton">
-              <FacebookProvider appId="188929011649">
-                <ShareButton href={'https://www.tsitaat.com/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
-                  Jaga
-                </ShareButton>
-              </FacebookProvider>
-            </li>
-          </ul>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
+    else {
+      return (null)
+    }
   }
 }
 

@@ -1405,56 +1405,6 @@ form input[type="button"] {
   margin-left: -1%;
   margin-right: -1%; }
 
-.block-tsitaatcom-qotd {
-  background-color: #f1f8f9;
-  margin: 0 20px;
-  max-width: 600px;
-  padding: 0 20px; }
-  .block-tsitaatcom-qotd .quote-container {
-    padding: 40px 0 30px 0; }
-    .block-tsitaatcom-qotd .quote-container .wrap--author-name--author-profession,
-    .block-tsitaatcom-qotd .quote-container p.quote {
-      padding-left: 0; }
-    .block-tsitaatcom-qotd .quote-container div.quote {
-      padding-top: 0;
-      position: relative; }
-    .block-tsitaatcom-qotd .quote-container .author-name {
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 91.66667%; }
-    .block-tsitaatcom-qotd .quote-container .author-profession,
-    .block-tsitaatcom-qotd .quote-container .quote-source {
-      font-size: 13px;
-      font-size: 0.8125rem;
-      line-height: 169.23077%; }
-    .block-tsitaatcom-qotd .quote-container .author-profession {
-      padding-bottom: 8px; }
-    .block-tsitaatcom-qotd .quote-container .quote-source {
-      padding-top: 16px; }
-
-@media (min-width: 610px) {
-  .block-tsitaatcom-qotd {
-    background-color: transparent;
-    background-image: url(../img/10-global/block-tsitaatcom-qotd-bg.png);
-    background-position: 100% 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 0 4px 0; }
-    .block-tsitaatcom-qotd .quote-container {
-      background-image: url(../img/10-global/block-tsitaatcom-qotd-bg.png);
-      padding: 65px 0 51px 0; }
-      .block-tsitaatcom-qotd .quote-container .wrap--author-name--author-profession,
-      .block-tsitaatcom-qotd .quote-container p.quote {
-        padding-left: 23px; }
-      .block-tsitaatcom-qotd .quote-container div.quote:before {
-        background: url(../img/10-global/block-tsitaatcom-qotd-quote.png);
-        content: "";
-        height: 22px;
-        left: -34px;
-        position: absolute;
-        top: 0;
-        width: 36px; } }
-
 .h1-width-author-portrait {
   display: flex;
   margin: 0 10px; }
@@ -1574,6 +1524,44 @@ form input[type="button"] {
   .pager > li:last-child > span {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px; }
+
+.quote-of-the-day {
+  background-color: transparent;
+  background-image: url(../img/10-global/quote-of-the-day-bg.png);
+  background-position: 100% 100%;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 0 0 4px 0; }
+  .quote-of-the-day div.quote-container {
+    background-image: url(../img/10-global/quote-of-the-day-bg.png);
+    padding: 60px 70px 60px 75px; }
+    .quote-of-the-day div.quote-container div.quote {
+      padding-top: 0;
+      position: relative; }
+      .quote-of-the-day div.quote-container div.quote:before {
+        background: url(../img/10-global/quote-of-the-day-quote.png);
+        content: "";
+        height: 22px;
+        left: -50px;
+        position: absolute;
+        top: 0;
+        width: 36px; }
+    .quote-of-the-day div.quote-container .author-name {
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 91.66667%; }
+    .quote-of-the-day div.quote-container .author-profession,
+    .quote-of-the-day div.quote-container .quote-source {
+      font-size: 13px;
+      font-size: 0.8125rem;
+      line-height: 169.23077%; }
+    .quote-of-the-day div.quote-container .author-profession {
+      padding-bottom: 8px; }
+    .quote-of-the-day div.quote-container .quote-source {
+      padding-top: 16px; }
+  .quote-of-the-day div.quote-container-inner {
+    margin: 0;
+    max-width: none; }
 
 .quote-container {
   padding: 30px 0 10px 0; }
