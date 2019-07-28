@@ -61,7 +61,8 @@ class Tags extends React.Component {
             <meta name="description"
                   content={'Tsitaadid ja ütlemised teemal ' + this.tagWithoutUnderscore() + '.'} />
           </Head>
-          <h1>{this.tagWithoutUnderscore().charAt(0).toUpperCase() + this.tagWithoutUnderscore().slice(1)}</h1>
+          <h1 className="element-invisible">Tsitaadid teemal {this.tagWithoutUnderscore()}</h1>
+          <p class="h1">{this.tagWithoutUnderscore().charAt(0).toUpperCase() + this.tagWithoutUnderscore().slice(1)}</p>
           <Quotes quotes={this.props.data} cookies={this.props.cookies} pager={this.props.pager} />
         </div>
       );

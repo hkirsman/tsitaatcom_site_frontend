@@ -6,6 +6,7 @@ class QuoteOfTheDay extends Component {
   render() {
     return (
       <div class="quote-of-the-day">
+        <h2 class="element-invisible">Päeva tsitaat</h2>
         <Quote
           quote={this.props.quote[0]}
           hide_author_image={true}

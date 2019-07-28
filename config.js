@@ -2,3 +2,4 @@
 export const endpoint = 'https://backend.tsitaat.com';
 export const perPage = 4;
 export const siteTitle = 'Tsitaat.com';
+export const siteDefaultFullTitle = 'Tsitaat.com - tsitaadid, aforismid, vanasõnad, mõtteterad';

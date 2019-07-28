@@ -3,9 +3,8 @@ import React from "react";
 import TagCloud from '../components/TagCloud';
 import QuoteOfTheDay from '../components/QuoteOfTheDay'
 import fetch from 'isomorphic-unfetch';
-import { siteTitle, endpoint } from '../config';
+import { siteDefaultFullTitle, endpoint } from '../config';
 import Head from 'next/head';
-
 
 class Home extends Component {
   constructor(props) {
@@ -34,10 +33,10 @@ class Home extends Component {
     return (
       <div>
         <Head>
-          <meta name="description" content="Eesti keelsed tsitaadid ja mõtteterad." />
+          <meta name="description" content="Eestikeelsed tsitaadid ja mõtteterad." />
           <meta name="keywords" content="tsitaadid, aforismid, mõtteterad, tsitaat, aforism, mõttetera, vanasõnad, vanasõna" />
         </Head>
-        <h1>{siteTitle}</h1>
+        <h1>{siteDefaultFullTitle}</h1>
         <TagCloud tags={this.props.tags} />
         <QuoteOfTheDay
           quote={this.props.quote_of_the_day}

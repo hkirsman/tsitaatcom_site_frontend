@@ -1,11 +1,12 @@
 import Head from 'next/head';
 import {withRouter} from "next/router";
+import { siteDefaultFullTitle } from "../config";
 
 const Meta = (props) => (
   <Head>
     <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" />
-    <title>Tsitaat.com - tsitaadid, aforismid, vanasõnad, mõtteterad</title>
+    <title>{siteDefaultFullTitle}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="/static/public/img/favicons/favicon.ico" />
     <meta name="Generator" content="Drupal Mothership" />
