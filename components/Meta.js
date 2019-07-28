@@ -25,11 +25,11 @@ const Meta = (props) => (
     <meta property="og:type"          content="website" />
 
     <link rel="stylesheet" href="/static/public/css/global.css" />
-    {
-      typeof props.router.query.page !== 'undefined' && props.router.query.page > 0 ?
-        <meta name="robots" content="noindex" />
-        : null
-    }
+    {/*{*/}
+      {/*typeof props.router.query.page !== 'undefined' && props.router.query.page > 0 ?*/}
+        {/*<meta name="robots" content="noindex" />*/}
+        {/*: null*/}
+    {/*}*/}
   </Head>
 );
 
