@@ -20,8 +20,11 @@ class Tags extends React.Component {
     return { data: items, pager: data.pager, query: query }
   }
 
+  /**
+   * Helper function to remove underscores and replace with spaces.
+   */
   tagWithoutUnderscore() {
-    return this.props.query.tag.replace('_', ' ');
+    return this.props.query.tag.replace(/_/g, ' ');
   }
 
   render() {

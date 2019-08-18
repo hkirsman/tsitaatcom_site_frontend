@@ -42,5 +42,4 @@ ps2'le peab restardi tegema tundub
 1. Some images have black border https://www.tsitaat.com/tsitaadid/autorid/max_jacob
 1. When adding the link to fb chat it gets ? appended. Unfortunately this will break
    the link https://www.tsitaat.com/tsitaadid/autorid/juudi_vanas%C3%B5na?fbclid=IwAR3ZUjjso3UPnpiYFTVygx7PShHS2hURF4dPyHqzxeX-9546WwxDj8sxzrg
-1. Title is broken at https://www.tsitaat.com/tsitaadid/teemad/s%C3%B6%C3%B6mine_ja_joomine
 1. Is components/ErrorMessage.js used?
