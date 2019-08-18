@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch'
 import Head from 'next/head';
 import headTitle from "../../lib/headTitle";
 import isAuthorListingPage from '../../lib/isAuthorListingPage';
+import filterObject from '../../lib/filterObject';
 import isAuthorPage from '../../lib/isAuthorPage';
 import Quotes from '../../components/Quotes';
 import React from "react";
@@ -17,7 +18,10 @@ class Authors extends React.Component {
 
     // https://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object
     let query_clone = JSON.parse(JSON.stringify(query));
-    delete(query_clone['page'])
+    query_clone = filterObject(query_clone, [
+      'author_name',
+      'quote_id',
+    ]);
     const query_to_string = Object.values(query_clone).map(x => encodeURI(x)).join('/');
     if (isAuthorListingPage(query)) {
       const res = await fetch(endpoint + '/tsitaatcom_json/authors/' + query_to_string);
