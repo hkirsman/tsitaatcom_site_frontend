@@ -2,7 +2,9 @@
 
 ## Todo
 
-1. Add cron to https://backend.tsitaat.com/tsitaatcom-qotd-quote-of-the-day-cron-2
+1. Vasta FB'is viikingi tsitaadile ja lõpuks pane ka üles
+1. Add Twitter to Footer
+1. Beers for Siim
 1. Is there point in shortening the twitter messege in _tsitaatcom_qotd_shorten_twitter_message()
    to that particular size? They increased the message I think
 1. Refactor styles and markup.
@@ -30,9 +32,15 @@ ps2'le peab restardi tegema tundub
 1. dns kirjed max peale?
 1. Fix error in dev for allowing data-linkTarget="_self" in Page.js
 1. Set up old domain for time-being
-1. Beers for Siim
 1. Create tsitaat.com company and pay the bills
 1. Remove graphql and apollo for now ( git commit 13cd85f8f9cbbc807f52ff75139fc579f8d1119d )
 1. Remove space before comma (Napoleon , 1769-1821) - https://www.tsitaat.com/tsitaadid/teemad/alistus
-1. Fix quote - add dot? "Enne laenad. Siis kerjad"
 1. .quote-container-inner margin in mobile is 20px?
+1. On https://www.tsitaat.com/tsitaadid/autorid/h some authors have same names:
+   Holmes, Wendell Oliver
+   Holmes, Wendell Oliver
+1. Some images have black border https://www.tsitaat.com/tsitaadid/autorid/max_jacob
+1. When adding the link to fb chat it gets ? appended. Unfortunately this will break
+   the link https://www.tsitaat.com/tsitaadid/autorid/juudi_vanas%C3%B5na?fbclid=IwAR3ZUjjso3UPnpiYFTVygx7PShHS2hURF4dPyHqzxeX-9546WwxDj8sxzrg
+1. Title is broken at https://www.tsitaat.com/tsitaadid/teemad/s%C3%B6%C3%B6mine_ja_joomine
+1. Is components/ErrorMessage.js used?
