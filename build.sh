@@ -12,4 +12,4 @@ git pull
 rm -rf node_modules/
 npm install --production
 npm run build
-pm2 restart tsitaat-com
+pm2 reload tsitaat-com

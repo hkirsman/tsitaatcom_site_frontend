@@ -19,7 +19,6 @@
    Was not able to use class functions inside getInitialProps().
 1. Remove all different kinds of fonts like Muli and the custom local font
 1. http://localhost:7777/tsitaadid/teemad/inimese_eluiga shows underscore in title.
-1. npm install express --save but do I need to uninstall the default server?
 1. handle all kinds of weird urls like http://localhost:7777/tsitaadid/autorid/lennart_meri2
 1. Where do you add in the build process:
 npm install
