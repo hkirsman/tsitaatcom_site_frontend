@@ -26,16 +26,12 @@ npm install
 npm run build
 ps2'le peab restardi tegema tundub
 1. configure https://tsitaat.deploybot.com
-1. https://new.tsitaat.com/tsitaadid/autorid/tommy_hellsten/14416 peaks näitama spetsiifilist lehte
 1. Change old ip 212.47.217.129 to new 217.146.69.42
 1. IP piirangud ssh'le tagasi pärast deployboti korda tegemist
-1. dns kirjed max peale?
 1. Fix error in dev for allowing data-linkTarget="_self" in Page.js
 1. Set up old domain for time-being
 1. Create tsitaat.com company and pay the bills
 1. Remove graphql and apollo for now ( git commit 13cd85f8f9cbbc807f52ff75139fc579f8d1119d )
-1. Remove space before comma (Napoleon , 1769-1821) - https://www.tsitaat.com/tsitaadid/teemad/alistus
-1. .quote-container-inner margin in mobile is 20px?
 1. On https://www.tsitaat.com/tsitaadid/autorid/h some authors have same names:
    Holmes, Wendell Oliver
    Holmes, Wendell Oliver
