@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script'
+import { fb_app_id } from '../config';
 
 /**
  * Code for initializing Facebook.
@@ -13,7 +14,7 @@ class InitFacebook extends Component {
     return (
       <div>
         <div id="fb-root"></div>
-        <Script url="https://connect.facebook.net/et_EE/sdk.js#xfbml=1&version=v3.3&appId=188929011649" />
+        <Script url={"https://connect.facebook.net/et_EE/sdk.js#xfbml=1&version=v3.3&appId=" + fb_app_id} />
       </div>
     )
   }

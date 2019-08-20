@@ -4,3 +4,4 @@ export const baseurl = 'https://www.tsitaat.com';
 export const perPage = 4;
 export const siteTitle = 'Tsitaat.com';
 export const siteDefaultFullTitle = 'Tsitaat.com - tsitaadid, aforismid, vanasõnad, mõtteterad';
+export const fb_app_id = '188929011649';

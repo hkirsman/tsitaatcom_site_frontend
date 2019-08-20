@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {withRouter} from "next/router";
-import { siteDefaultFullTitle, baseurl } from "../config";
+import { siteDefaultFullTitle, baseurl, fb_app_id } from "../config";
 
 const Meta = (props) => (
   <Head>
@@ -23,6 +23,7 @@ const Meta = (props) => (
 
     <meta property="og:url" content={baseurl + props.router.asPath} />
     <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content={fb_app_id} />
 
     <link rel="stylesheet" href="/static/public/css/global.css" />
     {/*{*/}
