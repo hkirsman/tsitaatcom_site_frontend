@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import React, { Component } from 'react';
-import { endpoint } from '../config';
+import { endpoint, baseurl } from '../config';
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
 import {Link} from '../routes';
 import {withRouter} from "next/router";
@@ -186,7 +186,7 @@ class QuoteInternal extends Component {
                   <li className="ShareButton">
                     <FacebookProvider appId="188929011649">
                       <ShareButton
-                        href={'https://www.tsitaat.com/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
+                        href={baseurl + '/tsitaadid/autorid/' + this.props.quote.quote_author_urlfriendly_name + '/' + this.props.quote.quote_nid}>
                         Jaga
                       </ShareButton>
                     </FacebookProvider>

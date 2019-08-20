@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import {withRouter} from "next/router";
-import { siteDefaultFullTitle } from "../config";
+import { siteDefaultFullTitle, baseurl } from "../config";
 
 const Meta = (props) => (
   <Head>
@@ -21,8 +21,8 @@ const Meta = (props) => (
     <meta http-equiv="cleartype" content="on" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <meta property="og:url"           content={props.router.asPath} />
-    <meta property="og:type"          content="website" />
+    <meta property="og:url" content={baseurl + props.router.asPath} />
+    <meta property="og:type" content="website" />
 
     <link rel="stylesheet" href="/static/public/css/global.css" />
     {/*{*/}
