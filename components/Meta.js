@@ -21,9 +21,9 @@ const Meta = (props) => (
     <meta http-equiv="cleartype" content="on" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <meta property="og:url" content={baseurl + props.router.asPath} />
-    <meta property="og:type" content="website" />
     <meta property="fb:app_id" content={fb_app_id} />
+    <meta property="og:url" content={baseurl + props.router.asPath} />
+    <meta property="og:type" content="website" key="og_type" />
 
     <link rel="stylesheet" href="/static/public/css/global.css" />
     {/*{*/}

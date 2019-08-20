@@ -79,6 +79,7 @@ class Authors extends React.Component {
             <meta property="og:description" content={this.props.data[0].quote} />
             <meta property="og:title" content={this.props.data[0].quote_author_name_without_bracket_content} />
             <meta property="og:image" content={this.props.data[0].author_portrait_url_facebook} />
+            <meta property="og:type" content="article" key="og_type" />
           </Head>
           <div className="normal-content">
             <div className={"h1-width-author-portrait" +
